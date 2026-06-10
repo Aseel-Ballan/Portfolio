@@ -360,7 +360,4 @@ MigrationBackup/
 .ionide/
 
 # Fody - auto-generated XML schema
-FodyWeavers.xsdProjects/Flashcards Website.mp4
-Projects/Obstacle Game.mp4
-Projects/Flashcards Website.ogg
-Projects/Obstacle Game.ogg
+FodyWeavers.xsd
