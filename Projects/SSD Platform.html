@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSD Platform — Screen Designs</title>
+<style>
+/* ─────────────────────────────────────────
+   DESIGN TOKENS — exact MyGJU portal colors
+   Blue: #1A73B5  Orange: #F5A623
+   Font: Arial, system sans-serif (MyGJU match)
+───────────────────────────────────────── */
+:root {
+  --B:   #1A73B5;
+  --BD:  #0F5A96;
+  --BL:  #EBF5FD;
+  --BM:  #C5DFF5;
+  --O:   #F5A623;
+  --OL:  #FEF4E0;
+  --W:   #FFFFFF;
+  --F:   #F5F7FA;
+  --C:   #E8ECF1;
+  --T1:  #1C2733;
+  --T2:  #4A6275;
+  --T3:  #8FA8BC;
+  --OK:  #1A9E5C;
+  --OKL: #E5F7EF;
+  --WN:  #D97706;
+  --WNL: #FEF3CD;
+  --ER:  #CC3333;
+  --ERL: #FDEAEA;
+  --SH:  0 1px 4px rgba(0,0,0,.08);
+  --SH2: 0 2px 10px rgba(0,0,0,.10);
+  --R:   8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#0C1520;
+  color:#ddd;
+  line-height:1.4;
+}
+
+/* ─── PAGE HEADER ─── */
+.ph{
+  background:linear-gradient(135deg,#081628 0%,#0D3560 100%);
+  padding:44px 44px 36px;
+  border-bottom:3px solid rgba(26,115,181,.25);
+}
+.ph-row{display:flex;align-items:center;gap:18px;margin-bottom:24px}
+.ph-icon{
+  width:52px;height:52px;
+  background:var(--B);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;
+  box-shadow:0 6px 20px rgba(26,115,181,.4);
+  flex-shrink:0;
+}
+.ph-name{font-size:30px;font-weight:700;color:#fff;letter-spacing:-.5px}
+.ph-name b{color:var(--O)}
+.ph-sub{font-size:13px;color:rgba(255,255,255,.45);margin-top:3px}
+.ph-tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag-b{background:rgba(26,115,181,.15);border:1px solid rgba(26,115,181,.3);color:rgba(255,255,255,.7);font-size:11px;font-weight:600;padding:4px 12px;border-radius:14px}
+.tag-o{background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.3);color:var(--O);font-size:11px;font-weight:600;padding:4px 12px;border-radius:14px}
+
+/* ─── TRACK ─── */
+.track{padding:36px 44px 0}
+.track-hd{
+  display:flex;align-items:center;gap:14px;
+  padding-bottom:12px;margin-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.trk-num{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--O)}
+.trk-ttl{font-size:17px;font-weight:700;color:#fff}
+.trk-meta{margin-left:auto;font-size:11px;color:rgba(255,255,255,.3)}
+
+/* ─── PHONES ROW ─── */
+.pr{display:flex;gap:20px;flex-wrap:wrap;padding-bottom:36px;align-items:flex-start}
+
+/* ─── PHONE SHELL ─── */
+.pw{display:flex;flex-direction:column;gap:8px}
+.pw-lbl{font-size:9.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);text-align:center}
+.phone{
+  width:224px;flex-shrink:0;
+  background:#111E2C;
+  border-radius:36px;
+  padding:12px 8px;
+  border:2px solid #1A2D42;
+  box-shadow:0 24px 60px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.05);
+}
+.pn{width:60px;height:7px;background:#1A2D42;border-radius:4px;margin:0 auto 9px}
+.screen{
+  width:100%;height:410px;
+  border-radius:24px;overflow:hidden;
+  background:var(--F);
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.screen.xl{height:510px}
+.screen.lg{height:460px}
+
+/* ─── SAMPLE TAG ─── */
+.s{
+  display:inline-block;
+  background:var(--O);color:#fff;
+  font-size:6px;font-weight:700;
+  padding:1px 4px;border-radius:3px;
+  text-transform:uppercase;letter-spacing:.3px;
+  vertical-align:middle;margin-left:2px;
+}
+
+/* ─── TOOLBAR ─── */
+.tb{
+  background:var(--B);
+  padding:9px 11px;
+  display:flex;align-items:center;gap:7px;
+  flex-shrink:0;
+}
+.tb-back{
+  width:24px;height:24px;
+  background:rgba(255,255,255,.17);
+  border-radius:5px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;color:#fff;font-weight:700;
+  flex-shrink:0;
+}
+.tb-c{flex:1}
+.tb-ttl{font-size:12px;font-weight:700;color:#fff;line-height:1.2}
+.tb-sub{font-size:7px;color:rgba(255,255,255,.6);margin-top:1px}
+.tb-ico{
+  width:26px;height:26px;
+  background:rgba(255,255,255,.15);
+  border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;flex-shrink:0;
+}
+.tb-brand{display:flex;align-items:center;gap:6px;flex:1}
+.tb-bx{
+  width:22px;height:22px;background:#fff;border-radius:5px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:6px;font-weight:700;color:var(--B);
+}
+.tb-bn{font-size:11px;font-weight:700;color:#fff}
+.tb-bn span{color:var(--O)}
+
+/* ─── BODY SCROLL ─── */
+.sb{flex:1;overflow-y:auto;background:var(--F)}
+.sb::-webkit-scrollbar{display:none}
+
+/* ─── BOTTOM NAV ─── */
+.bnav{
+  background:#fff;border-top:1px solid var(--C);
+  display:flex;padding:6px 0 5px;
+  flex-shrink:0;
+}
+.bni{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px}
+.bni-ico{font-size:15px}
+.bni-lbl{font-size:6.5px;font-weight:700;color:var(--T3)}
+.bni.on .bni-lbl{color:var(--B)}
+.bni-dot{width:4px;height:4px;background:var(--O);border-radius:50%}
+
+/* ─── COMMON ELEMENTS ─── */
+.badge{display:inline-block;padding:2px 7px;border-radius:10px;font-size:7px;font-weight:700}
+.b-ok {background:var(--OKL);color:var(--OK)}
+.b-wn {background:var(--WNL);color:var(--WN)}
+.b-er {background:var(--ERL);color:var(--ER)}
+.b-bl {background:var(--BL);color:var(--B)}
+.seg{display:flex;gap:3px}
+.sbt{flex:1;padding:4px 2px;border-radius:5px;font-size:7.5px;font-weight:700;text-align:center;border:1.5px solid var(--C);color:var(--T3);background:#fff}
+.sbt.on{background:var(--B);color:#fff;border-color:var(--B)}
+.fld{background:var(--BL);border:1.5px solid var(--BM);border-radius:6px;padding:7px 9px;font-size:8.5px;color:var(--T1);width:100%}
+.flbl{font-size:8px;font-weight:700;color:var(--B);margin-bottom:3px;display:flex;align-items:center;gap:4px}
+.rdot{width:5px;height:5px;background:var(--ER);border-radius:50%;flex-shrink:0}
+.sh{padding:8px 11px 4px;font-size:8.5px;font-weight:700;color:var(--B);text-transform:uppercase;letter-spacing:.7px}
+.sho{color:var(--O)}
+.crow{
+  background:#fff;
+  display:flex;align-items:center;gap:9px;
+  padding:9px 11px;border-bottom:1px solid var(--C);
+}
+.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
+.ir{background:#fff;display:flex;align-items:center;gap:9px;padding:8px 11px;border-bottom:1px solid var(--C)}
+.ir-ico{font-size:14px;flex-shrink:0}
+.ir-lbl{font-size:7px;color:var(--T3)}
+.ir-val{font-size:9px;font-weight:700;color:var(--T1)}
+.ir-arr{margin-left:auto;font-size:9px;color:var(--T3)}
+.stat{flex:1;background:#fff;border-radius:var(--R);padding:9px 6px;text-align:center;box-shadow:var(--SH)}
+.stat-n{font-size:18px;font-weight:700;color:var(--B);line-height:1}
+.stat-l{font-size:6.5px;color:var(--T3);margin-top:2px;line-height:1.3}
+.tog{width:34px;height:18px;background:var(--B);border-radius:9px;position:relative;flex-shrink:0}
+.tog-t{position:absolute;top:2px;right:2px;width:14px;height:14px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.tog.off{background:var(--C)}
+.tog.off .tog-t{right:auto;left:2px}
+.dc{flex-shrink:0;width:30px;padding:5px 0;border-radius:7px;text-align:center;background:#fff;border:1.5px solid var(--C)}
+.dc.on{background:var(--B);border-color:var(--B)}
+.dc-d{font-size:7px;font-weight:700;color:var(--T3)}
+.dc.on .dc-d{color:rgba(255,255,255,.7)}
+.dc-n{font-size:11px;font-weight:700;color:var(--T1);line-height:1.2}
+.dc.on .dc-n{color:#fff}
+.dc-dot{width:4px;height:4px;border-radius:50%;background:var(--O);margin:2px auto 0}
+.pt{background:rgba(255,255,255,.25);border-radius:3px;height:5px;overflow:hidden}
+.pf{background:var(--O);height:100%;border-radius:3px}
+.fab{position:absolute;bottom:48px;right:10px;width:36px;height:36px;background:var(--O);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 4px 14px rgba(245,166,35,.5);z-index:5}
+.greet{background:var(--BL);padding:9px 11px;display:flex;align-items:flex-start;justify-content:space-between}
+.g-sub{font-size:7.5px;color:var(--T3)}
+.g-name{font-size:11px;font-weight:700;color:var(--B)}
+.g-role{display:inline-block;background:var(--O);color:#fff;font-size:7px;font-weight:700;padding:2px 8px;border-radius:10px;margin-top:3px}
+.tstrip{background:var(--BL);padding:5px 10px;display:flex;gap:5px;align-items:center;border-bottom:1px solid var(--BM)}
+.ttag{background:var(--B);color:#fff;font-size:7px;font-weight:700;padding:2px 8px;border-radius:10px}
+.steps{display:flex;align-items:center;justify-content:center;gap:0;padding:10px 12px 6px}
+.sc2{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700}
+.sc2.dn{background:var(--B);color:#fff}
+.sc2.cu{background:var(--O);color:#fff}
+.sc2.td{background:var(--C);color:var(--T3)}
+.sl{width:22px;height:2px}
+.sl.dn{background:var(--B)}
+.sl.td{background:var(--C)}
+.stars{font-size:15px;color:var(--O);letter-spacing:1px}
+.stars .e{color:var(--C)}
+.lc{background:#fff;margin:6px 8px;border-radius:var(--R);padding:9px 11px;display:flex;align-items:center;gap:7px;box-shadow:var(--SH)}
+.lo{flex:1;padding:5px 0;border-radius:6px;text-align:center;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:5px}
+.lo.on{background:var(--B);color:#fff}
+.lo.off{background:var(--F);color:var(--T3)}
+.scan-bg{background:#0a0f1a;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.scan-top{position:absolute;top:0;left:0;right:0;background:rgba(0,0,0,.55);padding:9px 11px;display:flex;align-items:center;gap:7px}
+.scan-x{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff}
+.scan-ttl{font-size:10px;font-weight:700;color:#fff}
+.sf{width:120px;height:120px;position:relative}
+.sc3{position:absolute;width:18px;height:18px;border-style:solid;border-color:var(--O)}
+.c-tl{top:-1px;left:-1px;border-width:3px 0 0 3px;border-radius:2px 0 0 0}
+.c-tr{top:-1px;right:-1px;border-width:3px 3px 0 0;border-radius:0 2px 0 0}
+.c-bl{bottom:-1px;left:-1px;border-width:0 0 3px 3px;border-radius:0 0 0 2px}
+.c-br{bottom:-1px;right:-1px;border-width:0 3px 3px 0;border-radius:0 0 2px 0}
+.sline{position:absolute;left:4px;right:4px;height:2px;background:linear-gradient(90deg,transparent,var(--B),transparent);animation:sl 1.8s ease-in-out infinite alternate;top:10%}
+@keyframes sl{from{top:8%}to{top:88%}}
+.scan-hint{color:rgba(255,255,255,.4);font-size:8px;margin-top:12px;text-align:center}
+.sr{position:absolute;bottom:0;left:0;right:0;background:#fff;border-radius:12px 12px 0 0;padding:11px}
+.sr-ok{font-size:8px;font-weight:700;color:var(--OK);margin-bottom:7px}
+.sr-g{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:8px}
+.sr-lbl{font-size:7px;color:var(--T3)}
+.sr-val{font-size:9px;font-weight:700;color:var(--T1)}
+.cam{background:#080808;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;position:relative}
+.cam-x{position:absolute;top:10px;left:10px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff}
+.cam-row{width:100%;background:rgba(0,0,0,.65);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.cam-th{width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:14px}
+.cam-btn{width:50px;height:50px;border-radius:50%;border:3px solid #fff;display:flex;align-items:center;justify-content:center}
+.cam-in{width:38px;height:38px;border-radius:50%;background:#fff}
+.cam-fl{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:15px}
+.pstrip{display:flex;gap:5px;padding:5px 10px 6px;overflow-x:auto}
+.pstrip::-webkit-scrollbar{display:none}
+.pthumb{width:38px;height:38px;border-radius:6px;flex-shrink:0;background:var(--BL);border:1.5px solid var(--BM);display:flex;align-items:center;justify-content:center;font-size:14px}
+.rth{background:var(--B);display:grid;grid-template-columns:1.7fr 2.2fr 1.5fr}
+.rhd{padding:5px 6px;font-size:7px;font-weight:700;color:#fff}
+.rtr{display:grid;grid-template-columns:1.7fr 2.2fr 1.5fr;background:#fff}
+.rtr:nth-child(even){background:var(--BL)}
+.rd{padding:5px 6px;font-size:7.5px;color:var(--T1)}
+
+/* ─── T10 ACTION BUTTONS ─── */
+.task-actions{display:flex;gap:4px;margin-top:5px}
+.ta-btn{display:flex;align-items:center;gap:3px;padding:3px 7px;border-radius:5px;font-size:7px;font-weight:700;cursor:pointer;flex-shrink:0}
+.ta-rate{background:var(--OL);color:var(--WN);border:1px solid #f0d8a0}
+.ta-pic{background:var(--BL);color:var(--B);border:1px solid var(--BM)}
+
+/* ─── FOOTER ─── */
+.pfoot{
+  background:#070E18;border-top:1px solid rgba(255,255,255,.05);
+  padding:30px 44px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:14px;
+  margin-top:20px;
+}
+.ft-brand{font-size:20px;font-weight:700;color:#fff}
+.ft-brand b{color:var(--O)}
+.ft-meta{font-size:11px;color:rgba(255,255,255,.25);margin-top:3px}
+.ft-sup{background:rgba(26,115,181,.1);border:1px solid rgba(26,115,181,.2);padding:8px 18px;border-radius:16px;text-align:right}
+.ft-sl{font-size:9px;color:rgba(255,255,255,.3)}
+.ft-sn{font-size:12px;font-weight:700;color:var(--B)}
+.ft-se{font-size:11px;color:var(--O)}
+.ft-note{width:100%;text-align:center;font-size:10px;color:rgba(255,255,255,.15)}
+</style>
+</head>
+<body>
+
+<!-- ══════════ PAGE HEADER ══════════ -->
+<div class="ph">
+  <div class="ph-row">
+    <div class="ph-icon">🏢</div>
+    <div>
+      <div class="ph-name">SSD<b>Platform</b></div>
+      <div class="ph-sub">Facility Cleaning Management System · German Jordanian University</div>
+    </div>
+  </div>
+  <div class="ph-tags">
+    <div class="tag-b">18 Screens</div>
+    <div class="tag-b">4 Roles</div>
+    <div class="tag-b">14 Buildings</div>
+    <div class="tag-b">Cleaning + Documentation</div>
+    <div class="tag-b">PHP / MySQL</div>
+    <div class="tag-o">3 Weeks · 6 Members</div>
+    <div class="tag-o">Supervised by Eng. Bara Al-Qudah</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     TRACK 1 · AUTH & SHARED
+══════════════════════════════════════ -->
+<div class="track">
+  <div class="track-hd">
+    <div class="trk-num">Track 01</div>
+    <div class="trk-ttl">Auth & Shared Screens</div>
+    <div class="trk-meta">All Roles · Member 1</div>
+  </div>
+  <div class="pr">
+
+    <!-- S0: SPLASH -->
+    <div class="pw">
+      <div class="pw-lbl">S0 · Splash</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen" style="background:#fff;align-items:center;justify-content:center;gap:0;padding:26px 20px">
+          <div style="width:72px;height:72px;background:var(--B);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(26,115,181,.3);margin-bottom:10px">
+            <span style="font-size:28px">🏢</span>
+          </div>
+          <div style="font-size:20px;font-weight:700;color:var(--B)">SSD<span style="color:var(--O)">Platform</span></div>
+          <div style="font-size:9.5px;color:var(--T2);margin-top:3px;text-align:center">Facility Cleaning Management System</div>
+          <div style="font-size:8.5px;color:var(--T3);text-align:center;margin-top:2px">German Jordanian University</div>
+          <div style="display:flex;gap:7px;margin-top:24px">
+            <div style="padding:6px 18px;border-radius:20px;font-size:9px;font-weight:700;background:var(--B);color:#fff">🇬🇧 English</div>
+            <div style="padding:6px 18px;border-radius:20px;font-size:9px;font-weight:700;background:#fff;color:var(--B);border:1.5px solid var(--B)">🇯🇴 عربي</div>
+          </div>
+          <div style="width:100%;background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:10px;border-radius:7px;text-align:center;margin-top:20px">Get Started</div>
+          <div style="font-size:8px;color:var(--T3);margin-top:9px;text-align:center">For employees & supervisors only</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- S1: LOGIN -->
+  <!-- S1: LOGIN -->
+    <div class="pw">
+      <div class="pw-lbl">S1 · Login</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen" style="background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 18px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+            <div style="width:34px;height:34px;background:var(--B);border-radius:9px;display:flex;align-items:center;justify-content:center">
+              <span style="font-size:16px">🏢</span>
+            </div>
+            <div style="font-size:18px;font-weight:700"><span style="color:var(--O)">SSD</span><span style="color:var(--B)">Platform</span></div>
+          </div>
+          <div style="font-size:8.5px;color:var(--T3);text-align:center;margin-bottom:20px">Cleaning Management Portal<br>Employees &amp; Supervisors only</div>
+          
+          <!-- حقل إدخال الرقم الوطني -->
+          <div style="width:100%;margin-bottom:15px">
+            <div class="flbl">National ID:</div>
+            <div class="fld">0000000000 <span class="s">sample</span></div>
+          </div>
+          <!-- تم إزالة أي أثر لكلمة المرور -->
+
+          <div style="width:100%;background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:10px;border-radius:7px;text-align:center">Login as Employee</div>
+          
+          <div style="font-size:8px;color:var(--O);font-weight:700;text-align:center;margin-top:10px">Please enter your National ID to login</div>
+          
+          <div style="margin-top:16px;display:flex;background:var(--F);border-radius:16px;padding:4px;gap:3px">
+            <div style="padding:4px 13px;border-radius:12px;background:var(--B);color:#fff;font-size:8.5px;font-weight:700">🇬🇧 EN</div>
+            <div style="padding:4px 13px;border-radius:12px;color:var(--T3);font-size:8.5px;font-weight:700">🇯🇴 AR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- PROFILE -->
+    <div class="pw">
+      <div class="pw-lbl">SP1 · Profile</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-brand"><div class="tb-bx">SSD</div><div class="tb-bn">SSD<span>Platform</span></div></div><div class="tb-ico">🔔</div></div>
+          <div style="background:var(--BL);padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <div class="av" style="width:52px;height:52px;background:var(--B);font-size:14px;border:3px solid #fff;box-shadow:0 4px 14px rgba(26,115,181,.3)">MH</div>
+            <div style="font-size:12px;font-weight:700;color:var(--B)">Mohammed Al-Hassan <span class="s">s</span></div>
+            <div style="background:var(--O);color:#fff;font-size:7px;font-weight:700;padding:2px 9px;border-radius:10px">Supervisor</div>
+            <div style="font-size:8px;color:var(--T3)">Cleaning Dept. · Main Building <span class="s">s</span></div>
+          </div>
+          <div class="sb">
+            <div class="ir"><div class="ir-ico">🪪</div><div><div class="ir-lbl">Employee ID</div><div class="ir-val">EMP-2024-047 <span class="s">s</span></div></div></div>
+            <div class="ir"><div class="ir-ico">📧</div><div><div class="ir-lbl">Email</div><div class="ir-val">m.hassan@gju.edu.jo <span class="s">s</span></div></div></div>
+            <div class="ir"><div class="ir-ico">🏛️</div><div><div class="ir-lbl">Building</div><div class="ir-val">Building A <span class="s">s</span></div></div><div class="ir-arr">›</div></div>
+            <div class="ir"><div class="ir-ico">⏰</div><div><div class="ir-lbl">Shift</div><div class="ir-val">Morning · 07:00–15:00 <span class="s">s</span></div></div></div>
+            <div class="ir"><div class="ir-ico">⚙️</div><div><div class="ir-lbl">Settings</div><div class="ir-val">Language &amp; Notifications</div></div><div class="ir-arr">›</div></div>
+            <div style="padding:10px"><div style="background:var(--ERL);color:var(--ER);font-weight:700;font-size:10px;padding:8px;border-radius:7px;text-align:center">Sign Out</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="pw">
+      <div class="pw-lbl">SS1 · Settings</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Settings</div></div></div>
+          <div class="sb" style="background:var(--F)">
+            <div class="sh">Language</div>
+            <div class="lc">
+              <div class="lo on">🇬🇧 English</div>
+              <div style="font-size:9px;color:var(--C)">|</div>
+              <div class="lo off">🇯🇴 عربي</div>
+            </div>
+            <div class="sh">Notifications</div>
+            <div class="ir" style="background:#fff"><div class="ir-ico">📋</div><div class="ir-val" style="flex:1">Task Alerts</div><div class="tog"><div class="tog-t"></div></div></div>
+            <div class="ir" style="background:#fff"><div class="ir-ico">⭐</div><div class="ir-val" style="flex:1">Rating Received</div><div class="tog off"><div class="tog-t"></div></div></div>
+            <div class="ir" style="background:#fff"><div class="ir-ico">📅</div><div class="ir-val" style="flex:1">Report Reminders</div><div class="tog"><div class="tog-t"></div></div></div>
+            <div class="sh">About</div>
+            <div class="ir" style="background:#fff"><div class="ir-ico">👤</div><div><div class="ir-lbl">Supervised by</div><div class="ir-val" style="color:var(--B)">Eng. Bara Al-Qudah</div><div style="font-size:7px;color:var(--O)">bara.alqudah@gju.edu.jo</div></div></div>
+            <div class="ir" style="background:#fff"><div class="ir-ico">ℹ️</div><div class="ir-val" style="flex:1">SSD Platform v1.0</div><div style="font-size:8px;color:var(--T3)">2025–26</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     TRACK 2 · HEAD OF DEPARTMENT T1–T9
+══════════════════════════════════════ -->
+<div class="track">
+  <div class="track-hd">
+    <div class="trk-num">Track 02</div>
+    <div class="trk-ttl">Head of Department — T1 to T9</div>
+    <div class="trk-meta">Members 2 &amp; 3</div>
+  </div>
+  <div class="pr">
+
+    <!-- T1: BUILDING SELECTION — updated names -->
+    <div class="pw">
+      <div class="pw-lbl">T1 · Building Selection</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen xl">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Select Building</div><div class="tb-sub">Cleaning Service</div></div></div>
+          <div style="background:var(--B);margin:8px;border-radius:var(--R);padding:9px 11px;display:flex;align-items:center;gap:8px">
+            <span style="font-size:20px">🧹</span>
+            <div><div style="font-size:10px;font-weight:700;color:#fff">Cleaning Service</div><div style="font-size:7.5px;color:rgba(255,255,255,.65)">Building facility cleaning</div></div>
+            <div style="margin-left:auto;background:var(--O);color:#fff;font-size:7px;font-weight:700;padding:2px 7px;border-radius:8px">Active</div>
+          </div>
+          <div class="sb">
+            <!-- Main Academic Buildings -->
+            <div class="sh sho">Academic Buildings</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 8px 6px">
+              <div style="background:var(--B);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:rgba(255,255,255,.6);font-weight:700">BLDG</div><div style="font-size:9px;font-weight:700;color:#fff;margin-top:1px">A</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">BLDG</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">B</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7.5px;color:var(--T3);font-weight:700">BLDG</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">C</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:6.5px;color:var(--WN);font-weight:700">PREFAB</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">D</div></div>
+            </div>
+            <!-- Prefab -->
+            <div class="sh sho">Prefab Buildings</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;padding:0 8px 6px">
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 6px"><div style="font-size:6.5px;color:var(--WN);font-weight:700">PREFAB</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">E</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 6px"><div style="font-size:6.5px;color:var(--WN);font-weight:700">PREFAB</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">F</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 6px"><div style="font-size:6.5px;color:var(--WN);font-weight:700">PREFAB</div><div style="font-size:9px;font-weight:700;color:var(--T1);margin-top:1px">G</div></div>
+            </div>
+            <!-- Facilities -->
+            <div class="sh sho">Campus Facilities</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 8px 6px">
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7px;color:var(--T3)">⚽</div><div style="font-size:8px;font-weight:700;color:var(--T1);margin-top:1px">Sport Hall</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 8px"><div style="font-size:7px;color:var(--T3)">🌱</div><div style="font-size:8px;font-weight:700;color:var(--T1);margin-top:1px">Nursery</div></div>
+            </div>
+            <!-- Departments -->
+            <div class="sh sho">Service Departments</div>
+            <div style="display:grid;grid-template-columns:1fr;gap:5px;padding:0 8px 6px">
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">🏗️</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Support Services Dept.</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">📦</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Supply Department</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">🏛️</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Civil Engineering Bldg.</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">🚌</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Transportation Division</div></div>
+              <div style="background:#fff;border:1.5px solid var(--C);border-radius:7px;padding:7px 9px;display:flex;align-items:center;gap:7px"><div style="font-size:13px">💧</div><div style="font-size:8px;font-weight:700;color:var(--T1)">Water Tank Building</div></div>
+            </div>
+            <div style="padding:0 8px 10px"><div style="background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:9px;border-radius:7px;text-align:center">View Daily Activity →</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T2: DAILY ACTIVITY -->
+    <div class="pw">
+      <div class="pw-lbl">T2 · Daily Activity</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen lg">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Daily Activity</div><div class="tb-sub">Building A · Cleaning</div></div></div>
+          <div style="display:flex;gap:4px;padding:7px 9px 5px;overflow-x:auto">
+            <div class="dc"><div class="dc-d">Mon</div><div class="dc-n">5</div></div>
+            <div class="dc"><div class="dc-d">Tue</div><div class="dc-n">6</div></div>
+            <div class="dc on"><div class="dc-d">Wed</div><div class="dc-n">7</div><div class="dc-dot"></div></div>
+            <div class="dc"><div class="dc-d">Thu</div><div class="dc-n">8</div></div>
+            <div class="dc"><div class="dc-d">Fri</div><div class="dc-n">9</div></div>
+            <div class="dc"><div class="dc-d">Sat</div><div class="dc-n">10</div></div>
+            <div class="dc"><div class="dc-d">Sun</div><div class="dc-n">11</div></div>
+          </div>
+          <!-- NEW: Dropdowns for Filtering -->
+          <div style="display:flex;gap:6px;padding:4px 9px 8px;">
+            <div style="flex:1;background:#fff;border:1px solid var(--C);border-radius:6px;padding:5px 7px;font-size:7.5px;font-weight:700;color:var(--T1);display:flex;justify-content:space-between;align-items:center;">
+              <span>Building A <span class="s">s</span></span><span style="color:var(--T3)">▾</span>
+            </div>
+            <div style="flex:1;background:#fff;border:1px solid var(--C);border-radius:6px;padding:5px 7px;font-size:7.5px;font-weight:700;color:var(--T1);display:flex;justify-content:space-between;align-items:center;">
+              <span>All Floors <span class="s">s</span></span><span style="color:var(--T3)">▾</span>
+            </div>
+          </div>
+          <div class="sb">
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:9px 10px;box-shadow:var(--SH);border-left:4px solid var(--OK)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 1 — Lobby <span class="s">s</span></div><span class="badge b-ok">Done</span></div>
+              <div style="font-size:7.5px;color:var(--T3)">Sara Khalil · 08:00–10:00 <span class="s">s</span></div>
+            </div>
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:9px 10px;box-shadow:var(--SH);border-left:4px solid var(--B)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 2 — Offices <span class="s">s</span></div><span class="badge b-bl">In Progress</span></div>
+              <div style="font-size:7.5px;color:var(--T3)">Mohammed H. · 10:00–12:00 <span class="s">s</span></div>
+            </div>
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:9px 10px;box-shadow:var(--SH);border-left:4px solid var(--WN)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 3 — Classrooms <span class="s">s</span></div><span class="badge b-wn">Pending</span></div>
+              <div style="font-size:7.5px;color:var(--T3)">Unassigned · 13:00–15:00 <span class="s">s</span></div>
+            </div>
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:9px 10px;box-shadow:var(--SH);border-left:4px solid var(--OK)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Restrooms — All Floors <span class="s">s</span></div><span class="badge b-ok">Done</span></div>
+              <div style="font-size:7.5px;color:var(--T3)">Lina M. · 07:00–09:00 <span class="s">s</span></div>
+            </div>
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:9px 10px;box-shadow:var(--SH);border-left:4px solid var(--ER)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Stairwells — Deep Clean <span class="s">s</span></div><span class="badge b-er">Issue Logged</span></div>
+              <div style="font-size:7.5px;color:var(--T3)">Ahmad N. · 09:00 · Equipment malfunction <span class="s">s</span></div>
+            </div>
+          </div>
+          <div style="padding:5px 8px;background:#fff;border-top:1px solid var(--C)">
+            <div style="background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:9px;border-radius:7px;text-align:center">Go to Dashboard →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T3: HOD DASHBOARD -->
+    <div class="pw">
+      <div class="pw-lbl">T3 · HoD Dashboard</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-brand"><div class="tb-bx">SSD</div><div class="tb-bn">SSD<span>Platform</span></div></div><div class="tb-ico">🔔</div></div>
+          <div class="greet">
+            <div><div class="g-sub">Good Morning,</div><div class="g-name">Eng. Bara Al-Qudah</div><div class="g-role">Head of Department</div></div>
+            <div style="text-align:right"><div style="font-size:8px;color:var(--T3)">Wed, May 7</div><div class="s">sample</div></div>
+          </div>
+          <div class="sb">
+            <div style="padding:9px 8px;display:flex;flex-direction:column;gap:6px">
+              <div style="background:#fff;border-radius:var(--R);padding:10px 11px;display:flex;align-items:center;gap:9px;border-left:4px solid var(--B);box-shadow:var(--SH)">
+                <span style="font-size:20px">📊</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--T1)">Generate Report</div><div style="font-size:8px;color:var(--T3)">Weekly · Monthly · Yearly</div></div><div style="font-size:10px;color:var(--T3)">›</div>
+              </div>
+              <div style="background:#fff;border-radius:var(--R);padding:10px 11px;display:flex;align-items:center;gap:9px;border-left:4px solid var(--B);box-shadow:var(--SH)">
+                <span style="font-size:20px">📅</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--T1)">Calendar</div><div style="font-size:8px;color:var(--T3)">Select day &amp; building</div></div><div style="font-size:10px;color:var(--T3)">›</div>
+              </div>
+              <div style="background:#fff;border-radius:var(--R);padding:10px 11px;display:flex;align-items:center;gap:9px;border-left:4px solid var(--O);box-shadow:var(--SH)">
+                <span style="font-size:20px">👥</span><div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--T1)">Employees</div><div style="font-size:8px;color:var(--T3)">Search &amp; view profiles</div></div><div style="font-size:10px;color:var(--T3)">›</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:6px;padding:0 8px 10px">
+              <div class="stat"><div class="stat-n">14</div><div class="stat-l">Buildings</div></div>
+              <div class="stat"><div class="stat-n">24</div><div class="stat-l">On Duty <span class="s">s</span></div></div>
+              <div class="stat"><div class="stat-n" style="color:var(--O)">3</div><div class="stat-l">Pending <span class="s">s</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T7: REPORT -->
+    <div class="pw">
+      <div class="pw-lbl">T7 · Generated Report</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Performance Report</div></div><div class="tb-ico">⬆️</div></div>
+          <div class="tstrip"><div class="ttag">Weekly</div><div class="ttag">Sara Khalil</div><div class="ttag">May 1–7</div><span class="s">sample filters</span></div>
+          <div style="padding:6px 10px 3px;font-size:9px;font-weight:700;color:var(--B)">Sara Khalil · Cleaning Dept. <span class="s">s</span></div>
+          <div style="margin:0 8px;border-radius:7px;overflow:hidden">
+            <div class="rth"><div class="rhd">Date</div><div class="rhd">Task</div><div class="rhd">Status</div></div>
+            <div class="rtr"><div class="rd">Mon 1</div><div class="rd">Floor 1 <span class="s">s</span></div><div class="rd"><span class="badge b-ok">Done</span></div></div>
+            <div class="rtr"><div class="rd">Tue 2</div><div class="rd">Restrooms <span class="s">s</span></div><div class="rd"><span class="badge b-ok">Done</span></div></div>
+            <div class="rtr"><div class="rd">Wed 3</div><div class="rd">Stairwells <span class="s">s</span></div><div class="rd"><span class="badge b-wn">Progress</span></div></div>
+            <div class="rtr"><div class="rd">Thu 4</div><div class="rd">Office Block <span class="s">s</span></div><div class="rd"><span class="badge b-ok">Done</span></div></div>
+            <div class="rtr"><div class="rd">Fri 5</div><div class="rd">Inspection <span class="s">s</span></div><div class="rd"><span class="badge b-er">Issue</span></div></div>
+          </div>
+          <div style="display:flex;gap:5px;padding:6px 8px">
+            <div class="stat"><div class="stat-n" style="font-size:14px">4</div><div class="stat-l">Done</div></div>
+            <div class="stat"><div class="stat-n" style="font-size:14px;color:var(--O)">1</div><div class="stat-l">Pending</div></div>
+            <div class="stat"><div class="stat-n" style="font-size:13px;color:var(--O)">4.2★</div><div class="stat-l">Avg Rating</div></div>
+          </div>
+          <div style="padding:0 8px 8px"><div style="background:var(--O);color:#fff;font-weight:700;font-size:9px;padding:8px;border-radius:7px;text-align:center">⬇ Export as PDF</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T8: EMPLOYEE LIST -->
+    <div class="pw">
+      <div class="pw-lbl">T8 · Employee List</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Employees</div></div><div class="tb-ico">🔍</div></div>
+          <div style="padding:7px 8px 5px"><div style="background:var(--BL);border:1.5px solid var(--BM);border-radius:20px;padding:6px 11px;font-size:9px;color:var(--T3);display:flex;gap:6px">🔍 <span>Search by name or ID <span class="s">s</span></span></div></div>
+          <div style="padding:0 8px 5px;display:flex;gap:5px;overflow-x:auto">
+            <div style="padding:3px 10px;border-radius:14px;font-size:7.5px;font-weight:700;background:var(--B);color:#fff;border:1.5px solid var(--B);white-space:nowrap">All</div>
+            <div style="padding:3px 10px;border-radius:14px;font-size:7.5px;font-weight:700;background:#fff;color:var(--B);border:1.5px solid var(--B);white-space:nowrap">Floor 1</div>
+            <div style="padding:3px 10px;border-radius:14px;font-size:7.5px;font-weight:700;background:#fff;color:var(--B);border:1.5px solid var(--B);white-space:nowrap">Floor 2</div>
+            <div style="padding:3px 10px;border-radius:14px;font-size:7.5px;font-weight:700;background:#fff;color:var(--B);border:1.5px solid var(--B);white-space:nowrap">Outdoor</div>
+          </div>
+          <div style="padding:0 11px 4px;font-size:7.5px;color:var(--T3)">Showing 24 employees <span class="s">s</span></div>
+          <div class="sb">
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:#2E86C1">MH</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Mohammed Hasan <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Bldg A</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--OK)">SK</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Bldg B</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:#7D3C98">LM</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Lina Mansour <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Civil Eng.</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--WN)">KA</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Karim Al-Ayed <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Sport Hall</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+            <div class="crow"><div class="av" style="width:31px;height:31px;font-size:10px;background:var(--ER)">AN</div><div><div style="font-size:9.5px;font-weight:700;color:var(--B)">Ahmad Nasser <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Supply Dept.</div></div><div style="margin-left:auto;font-size:9px;color:var(--T3)">›</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T9: EMPLOYEE PROFILE -->
+    <div class="pw">
+      <div class="pw-lbl">T9 · Employee Profile</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Employee Profile</div></div></div>
+          <div style="background:var(--BL);padding:13px 11px;display:flex;flex-direction:column;align-items:center;gap:4px">
+            <div class="av" style="width:46px;height:46px;background:var(--OK);font-size:13px;border:3px solid #fff;box-shadow:0 3px 10px rgba(26,158,92,.3)">SK</div>
+            <div style="font-size:12px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div>
+            <div style="background:var(--O);color:#fff;font-size:7px;font-weight:700;padding:2px 9px;border-radius:10px">Cleaning Worker</div>
+          </div>
+          <div style="display:flex;background:#fff;border-bottom:2px solid var(--C)">
+            <div style="flex:1;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:var(--B);border-bottom:2px solid var(--B);margin-bottom:-2px">Overview</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:var(--T3)">Task History</div>
+            <div style="flex:1;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:var(--T3)">Evaluations</div>
+          </div>
+          <div class="sb">
+            <div class="ir"><div class="ir-ico">🏛️</div><div><div class="ir-lbl">Building</div><div class="ir-val">Building B <span class="s">s</span></div></div></div>
+            <div class="ir"><div class="ir-ico">⏰</div><div><div class="ir-lbl">Shift</div><div class="ir-val">Morning · 07:00–15:00 <span class="s">s</span></div></div></div>
+            <div class="ir"><div class="ir-ico">📋</div><div><div class="ir-lbl">Tasks This Week</div><div class="ir-val">8 completed, 1 issue <span class="s">s</span></div></div></div>
+            <div class="ir"><div class="ir-ico">⭐</div><div><div class="ir-lbl">Last Rating</div><div class="ir-val" style="color:var(--O)">★★★★☆ (4.2) <span class="s">s</span></div></div></div>
+            <div style="display:flex;gap:6px;padding:8px">
+              <div style="flex:1;background:#fff;color:var(--B);font-weight:700;font-size:8.5px;padding:8px;border-radius:7px;text-align:center;border:1.5px solid var(--B)">View Reports</div>
+              <div style="flex:1;background:var(--B);color:#fff;font-weight:700;font-size:8.5px;padding:8px;border-radius:7px;text-align:center">Rate Employee</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     TRACK 3 · SUPERVISOR T10–T14
+══════════════════════════════════════ -->
+<div class="track">
+  <div class="track-hd">
+    <div class="trk-num">Track 03</div>
+    <div class="trk-ttl">Supervisor Module — T10 to T14</div>
+    <div class="trk-meta">Member 4</div>
+  </div>
+  <div class="pr">
+
+    <!-- T10: DISTRIBUTION — with ⭐ Rate + 📷 Photo per task -->
+    <div class="pw">
+      <div class="pw-lbl">T10 · Service Distribution</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen lg">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Today's Cleaning</div><div class="tb-sub">Wed, May 7 · 14 buildings <span style="color:rgba(255,255,255,.35)">(s)</span></div></div></div>
+          <div style="display:flex;gap:6px;padding:7px 8px">
+            <div style="flex:1;background:#fff;color:var(--B);font-weight:700;font-size:8px;padding:7px;border-radius:6px;text-align:center;border:1.5px solid var(--B)">📋 View Requests</div>
+            <div style="flex:1;background:var(--B);color:#fff;font-weight:700;font-size:8px;padding:7px;border-radius:6px;text-align:center">➕ Assign Task</div>
+          </div>
+          <div class="sb">
+
+            <!-- Building A -->
+            <div class="sh sho">Building A</div>
+            <!-- Task 1: Floor 1 Lobby - Assigned -->
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--B);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Floor 1 — Lobby <span class="s">s</span></div>
+                <span class="badge b-bl">Assigned: M.Hasan</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">08:00–10:00</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
+            </div>
+            <!-- Task 2: Floor 2 Offices - Unassigned -->
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--WN);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Floor 2 — Offices <span class="s">s</span></div>
+                <span class="badge b-wn">⚠ Unassigned</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">10:00–12:00</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate" style="opacity:.4;pointer-events:none">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
+            </div>
+
+            <!-- Building B -->
+            <div class="sh sho">Building B</div>
+            <!-- Task 3: Floor 3 Labs - In Progress -->
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--OK);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Floor 3 — Labs <span class="s">s</span></div>
+                <span class="badge b-ok">In Progress</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">09:00–11:00 · Sara Khalil</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
+            </div>
+            <!-- Task 4: Restrooms - Unassigned -->
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--WN);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Restrooms <span class="s">s</span></div>
+                <span class="badge b-wn">⚠ Unassigned</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">13:00–14:00</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate" style="opacity:.4;pointer-events:none">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
+            </div>
+
+            <!-- Sport Hall -->
+            <div class="sh sho">Sport Hall</div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;border-left:3px solid var(--OK);box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div style="font-size:9px;font-weight:700;color:var(--T1)">Main Hall <span class="s">s</span></div>
+                <span class="badge b-ok">Done</span>
+              </div>
+              <div style="font-size:7px;color:var(--T3);margin-top:2px">07:00–09:00 · Karim A.</div>
+              <div class="task-actions">
+                <div class="ta-btn ta-rate">⭐ Rate</div>
+                <div class="ta-btn ta-pic">📷 Photo</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T11: TASK DETAIL -->
+    <div class="pw">
+      <div class="pw-lbl">T11 · Task Detail</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Task Detail</div></div></div>
+          <div style="background:var(--B);margin:8px;border-radius:var(--R);padding:10px 11px">
+            <div style="font-size:12px;font-weight:700;color:#fff">Floor 2 — Office Cleaning <span class="s">s</span></div>
+            <div style="font-size:8px;color:rgba(255,255,255,.7);margin-top:3px">Building A · Floor 2</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+              <div style="font-size:8px;color:rgba(255,255,255,.8)">🕐 10:00–12:00</div>
+              <span style="background:var(--WNL);color:var(--WN);font-size:7px;font-weight:700;padding:2px 7px;border-radius:8px">⚠ Unassigned</span>
+            </div>
+          </div>
+          <div style="background:#fff;margin:0 8px;border-radius:var(--R);padding:9px 10px;box-shadow:var(--SH)">
+            <div style="font-size:8px;font-weight:700;color:var(--O);margin-bottom:6px">ASSIGNED WORKER</div>
+            <div style="display:flex;align-items:center;gap:8px"><div class="av" style="width:28px;height:28px;font-size:9px;background:var(--T3)">?</div><div style="font-size:8.5px;color:var(--T3);font-style:italic">No worker assigned yet</div></div>
+          </div>
+          <div style="display:flex;gap:7px;padding:7px 8px">
+            <div style="flex:1;background:var(--B);color:#fff;font-weight:700;font-size:9px;padding:10px;border-radius:7px;text-align:center">📷 Take Picture</div>
+            <div style="flex:1;background:var(--O);color:#fff;font-weight:700;font-size:9px;padding:10px;border-radius:7px;text-align:center">⭐ Rate</div>
+          </div>
+          <div style="background:#fff;margin:0 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)">
+            <div style="font-size:8px;font-weight:700;color:var(--B);margin-bottom:6px">ACTIVITY LOG</div>
+            <div style="display:flex;gap:7px;padding-bottom:5px;align-items:flex-start">
+              <div style="display:flex;flex-direction:column;align-items:center;padding-top:2px"><div style="width:7px;height:7px;border-radius:50%;background:var(--B);flex-shrink:0"></div><div style="width:1px;flex:1;background:var(--C);min-height:12px;margin-top:2px"></div></div>
+              <div><div style="font-size:8px;color:var(--T1)">Task created by admin <span class="s">s</span></div><div style="font-size:7px;color:var(--T3);margin-top:1px">07:30</div></div>
+            </div>
+            <div style="display:flex;gap:7px;align-items:flex-start">
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--WN);flex-shrink:0;margin-top:2px"></div>
+              <div><div style="font-size:8px;color:var(--T1)">Awaiting assignment <span class="s">s</span></div><div style="font-size:7px;color:var(--T3);margin-top:1px">Now</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T12: SCANNER -->
+    <div class="pw">
+      <div class="pw-lbl">T12 · QR Scanner</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="scan-bg">
+            <div class="scan-top"><div class="scan-x">✕</div><div class="scan-ttl">Scan Employee Badge</div></div>
+            <div class="sf"><div class="sc3 c-tl"></div><div class="sc3 c-tr"></div><div class="sc3 c-bl"></div><div class="sc3 c-br"></div><div class="sline"></div></div>
+            <div class="scan-hint">Point at QR code on<br>employee badge</div>
+            <div class="sr">
+              <div class="sr-ok">✅ Badge Scanned — Auto-filled</div>
+              <div class="sr-g">
+                <div><div class="sr-lbl">Employee</div><div class="sr-val">Sara Khalil <span class="s">s</span></div></div>
+                <div><div class="sr-lbl">Building</div><div class="sr-val">Building B <span class="s">s</span></div></div>
+                <div><div class="sr-lbl">Floor</div><div class="sr-val">Floor 3 <span class="s">s</span></div></div>
+                <div><div class="sr-lbl">Task</div><div class="sr-val">Floor Cleaning <span class="s">s</span></div></div>
+              </div>
+              <div style="background:var(--B);color:#fff;font-weight:700;font-size:9px;padding:8px;border-radius:7px;text-align:center">Confirm &amp; Fill Form</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T13: RATING FORM -->
+    <div class="pw">
+      <div class="pw-lbl">T13 · Rating Form</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Rate Employee</div></div></div>
+          <div style="background:var(--BL);padding:9px 11px;display:flex;align-items:center;gap:8px">
+            <div class="av" style="width:32px;height:32px;font-size:10px;background:var(--OK)">SK</div>
+            <div><div style="font-size:10px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:8px;color:var(--T3)">Cleaning · Building B</div></div>
+          </div>
+          <div class="sb">
+            <div style="padding:8px 11px;border-bottom:1px solid var(--C)">
+              <div class="flbl"><div class="rdot"></div> Overall Score</div>
+              <div class="stars">★★★★<span class="e">★</span></div>
+            </div>
+            <div style="padding:8px 11px;border-bottom:1px solid var(--C)">
+              <div class="flbl"><div class="rdot"></div> Punctuality</div>
+              <div class="seg" style="margin-top:4px"><div class="sbt">Late</div><div class="sbt on">On Time</div><div class="sbt">Early</div></div>
+            </div>
+            <div style="padding:8px 11px;border-bottom:1px solid var(--C)">
+              <div class="flbl"><div class="rdot"></div> Uniform &amp; Appearance</div>
+              <div class="seg" style="margin-top:4px"><div class="sbt on">Excellent</div><div class="sbt">Good</div><div class="sbt">Needs Work</div></div>
+            </div>
+            <div style="padding:8px 11px;border-bottom:1px solid var(--C)">
+              <div class="flbl"><div class="rdot"></div> Cleaning Quality</div>
+              <div class="seg" style="margin-top:4px"><div class="sbt" style="background:var(--O);color:#fff;border-color:var(--O)">Excellent</div><div class="sbt">Acceptable</div><div class="sbt">Poor</div></div>
+            </div>
+            <div style="padding:8px 11px">
+              <div class="flbl"><div class="rdot"></div> Performance Notes</div>
+              <div style="background:var(--F);border:1px solid var(--C);border-radius:6px;padding:7px;font-size:7.5px;color:var(--T3);font-style:italic;height:38px;margin-top:3px">Describe performance... <span class="s">s</span></div>
+            </div>
+            <div style="padding:0 10px 8px"><div style="background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:9px;border-radius:7px;text-align:center">✓ Confirm Review</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T14: RATING REVIEW -->
+    <div class="pw">
+      <div class="pw-lbl">T14 · Rating Review</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Review Submission</div><div class="tb-sub">Please verify before submitting</div></div></div>
+          <div class="sb">
+            <div style="background:#fff;margin:8px;border-radius:var(--R);padding:10px 11px;box-shadow:var(--SH2)">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--C)">
+                <div class="av" style="width:30px;height:30px;font-size:9px;background:var(--OK)">SK</div>
+                <div><div style="font-size:10px;font-weight:700;color:var(--B)">Sara Khalil <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Cleaning · Building B</div></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px"><div style="font-size:8px;color:var(--T3)">Overall Score</div><div class="stars" style="font-size:12px">★★★★<span class="e">★</span></div></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px"><div style="font-size:8px;color:var(--T3)">Punctuality</div><span class="badge b-ok">On Time</span></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px"><div style="font-size:8px;color:var(--T3)">Appearance</div><span class="badge b-bl">Excellent</span></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:5px"><div style="font-size:8px;color:var(--T3)">Cleaning Quality</div><span class="badge b-ok">Excellent</span></div>
+              
+              <!-- NEW: ADD A PICTURE under Cleaning Quality -->
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-top:2px;">
+                <div style="width:36px;height:36px;background:var(--BL);border:1.5px dashed var(--B);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;">🖼️</div>
+                <div style="font-size:7.5px;font-weight:700;color:var(--B);background:var(--BL);border:1px solid var(--BM);padding:5px 8px;border-radius:6px;">+ ADD A PICTURE</div>
+              </div>
+              
+              <div style="font-size:7.5px;color:var(--T3);font-style:italic;padding-top:6px;border-top:1px solid var(--C)">"Good performance overall..." <span class="s">s</span></div>
+              <div style="font-size:7px;color:var(--T3);margin-top:3px">Reviewed on: May 7, 2026 <span class="s">s</span></div>
+            </div>
+            <div style="display:flex;gap:7px;padding:0 8px">
+              <div style="flex:1;background:var(--F);color:var(--T2);font-weight:700;font-size:9px;padding:9px;border-radius:7px;text-align:center;border:1.5px solid var(--C)">Edit</div>
+              <div style="flex:2;background:var(--B);color:#fff;font-weight:700;font-size:9px;padding:9px;border-radius:7px;text-align:center">Submit Rating ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     TRACK 4 · ADMIN T15–T18
+══════════════════════════════════════ -->
+<div class="track">
+  <div class="track-hd">
+    <div class="trk-num">Track 04</div>
+    <div class="trk-ttl">Admin Module — T15 to T18</div>
+    <div class="trk-meta">Member 5</div>
+  </div>
+  <div class="pr">
+
+    <!-- T15: CREATE EMPLOYEE -->
+    <div class="pw">
+      <div class="pw-lbl">T15 · Create Employee</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen lg">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Add New Employee</div></div></div>
+          <div class="sb">
+            <div style="width:60px;height:60px;background:var(--BL);border:2px dashed var(--B);border-radius:50%;margin:10px auto 5px;display:flex;align-items:center;justify-content:center;font-size:22px">📷</div>
+            <div style="text-align:center;font-size:8px;color:var(--B);font-weight:700;margin-bottom:6px">Tap to add photo</div>
+            <div style="padding:4px 9px"><div class="flbl">Full Name <span style="color:var(--ER)">*</span></div><div class="fld">John Smith <span class="s">s</span></div></div>
+            <div style="padding:4px 9px"><div class="flbl">Employee ID <span style="color:var(--ER)">*</span></div><div class="fld">EMP-2026-001 <span class="s">s</span></div></div>
+            <div style="padding:4px 9px"><div class="flbl">Role <span style="color:var(--ER)">*</span></div><div class="fld" style="display:flex;justify-content:space-between"><span style="color:var(--B)">Cleaning Worker</span><span style="color:var(--T3)">▾</span></div></div>
+            <div style="padding:4px 9px"><div class="flbl">Email <span style="color:var(--ER)">*</span></div><div class="fld">j.smith@gju.edu.jo <span class="s">s</span></div></div>
+            <div style="padding:4px 9px"><div class="flbl">Building Assignment <span style="color:var(--ER)">*</span></div><div class="fld" style="display:flex;justify-content:space-between"><span style="color:var(--B)">Building A</span><span style="color:var(--T3)">▾</span></div></div>
+            <div style="padding:4px 9px"><div class="flbl">Shift <span style="color:var(--ER)">*</span></div><div class="seg" style="margin-top:2px"><div class="sbt on" style="font-size:8px">Morning</div><div class="sbt" style="font-size:8px">Afternoon</div><div class="sbt" style="font-size:8px">Night</div></div></div>
+            <div style="padding:8px 9px"><div style="background:var(--B);color:#fff;font-weight:700;font-size:10px;padding:9px;border-radius:7px;text-align:center">Save Employee</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T16: DAILY FOLLOW-UP -->
+    <div class="pw">
+      <div class="pw-lbl">T16 · Daily Follow-Up</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen" style="position:relative">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Daily Follow-Up</div><div class="tb-sub">Wednesday, May 7 <span style="color:rgba(255,255,255,.35)">(s)</span></div></div></div>
+          <div class="sb">
+            <div style="padding:6px 8px 2px;font-size:8px;font-weight:700;color:var(--B);text-transform:uppercase;letter-spacing:.7px">Required Fields</div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Daily Summary</div><div class="rdot"></div></div>
+              <div style="font-size:7.5px;color:var(--T3);font-style:italic">Write daily summary here... <span class="s">s</span></div>
+            </div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Issues Reported</div><div class="rdot"></div></div>
+              <div style="font-size:7.5px;color:var(--T3);font-style:italic">Equipment fault in Building A... <span class="s">s</span></div>
+            </div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Attendance Notes</div><div class="rdot"></div></div>
+              <div style="font-size:7.5px;color:var(--T3);font-style:italic">Late arrivals, absences... <span class="s">s</span></div>
+            </div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Action Required</div><div class="rdot"></div></div>
+              <div style="font-size:7.5px;color:var(--T3);font-style:italic">Follow-up actions needed... <span class="s">s</span></div>
+            </div>
+            <div class="pstrip"><div class="pthumb">📷</div><div style="width:38px;height:38px;border-radius:6px;background:var(--OKL);border:1.5px solid var(--OK);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">🖼️</div></div>
+            <div style="display:flex;gap:6px;padding:4px 8px 10px">
+              <div style="flex:1;background:var(--F);color:var(--T2);font-weight:700;font-size:8.5px;padding:8px;border-radius:7px;text-align:center;border:1.5px solid var(--C)">Save Draft</div>
+              <div style="flex:2;background:var(--B);color:#fff;font-weight:700;font-size:8.5px;padding:8px;border-radius:7px;text-align:center">Submit Report</div>
+            </div>
+          </div>
+          <div class="fab">📷</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T17: WEEKLY FOLLOW-UP -->
+    <div class="pw">
+      <div class="pw-lbl">T17 · Weekly Follow-Up</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen" style="position:relative">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Weekly Follow-Up</div><div class="tb-sub">Week 19 · May 5–11 <span style="color:rgba(255,255,255,.35)">(s)</span></div></div></div>
+          <div style="background:var(--OL);padding:6px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #f0d8a0">
+            <div style="background:var(--O);color:#fff;font-size:7px;font-weight:700;padding:2px 9px;border-radius:10px">Week 19 <span class="s">s</span></div>
+            <div style="display:flex;gap:3px;margin-left:auto">
+              <div style="width:14px;height:14px;border-radius:3px;background:var(--OK);display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;font-weight:700">M</div>
+              <div style="width:14px;height:14px;border-radius:3px;background:var(--OK);display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;font-weight:700">T</div>
+              <div style="width:14px;height:14px;border-radius:3px;background:var(--B);display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff;font-weight:700">W</div>
+              <div style="width:14px;height:14px;border-radius:3px;background:var(--C);display:flex;align-items:center;justify-content:center;font-size:7px;color:var(--T3);font-weight:700">T</div>
+              <div style="width:14px;height:14px;border-radius:3px;background:var(--C);display:flex;align-items:center;justify-content:center;font-size:7px;color:var(--T3);font-weight:700">F</div>
+            </div>
+          </div>
+          <div class="sb">
+            <div style="padding:5px 8px 2px;font-size:8px;font-weight:700;color:var(--B);text-transform:uppercase;letter-spacing:.7px">Required Fields</div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Weekly Summary</div><div class="rdot"></div></div><div style="font-size:7.5px;color:var(--T3);font-style:italic">Overall summary... <span class="s">s</span></div></div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Issues This Week</div><div class="rdot"></div></div><div style="font-size:7.5px;color:var(--T3);font-style:italic">Recurring problems... <span class="s">s</span></div></div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Attendance Summary</div><div class="rdot"></div></div><div style="font-size:7.5px;color:var(--T3);font-style:italic">Weekly attendance notes... <span class="s">s</span></div></div>
+            <div style="background:#fff;margin:3px 8px;border-radius:var(--R);padding:8px 10px;box-shadow:var(--SH)"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px"><div class="flbl" style="margin:0">Weekly Highlights</div><div style="font-size:7px;color:var(--T3);font-weight:700">Optional</div></div><div style="font-size:7.5px;color:var(--T3);font-style:italic">Notable achievements... <span class="s">s</span></div></div>
+            <div style="display:flex;gap:6px;padding:5px 8px 10px">
+              <div style="flex:1;background:var(--F);color:var(--T2);font-weight:700;font-size:8.5px;padding:8px;border-radius:7px;text-align:center;border:1.5px solid var(--C)">Save Draft</div>
+              <div style="flex:2;background:var(--B);color:#fff;font-weight:700;font-size:8.5px;padding:8px;border-radius:7px;text-align:center">Submit Report</div>
+            </div>
+          </div>
+          <div class="fab">📷</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- T18: CAMERA -->
+    <div class="pw">
+      <div class="pw-lbl">T18 · Camera</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="cam">
+            <div class="cam-x">✕</div>
+            <div style="position:absolute;top:12px;right:10px;background:rgba(245,166,35,.85);color:#fff;font-size:8px;font-weight:700;padding:3px 8px;border-radius:10px">2 photos</div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:7px;border:2px dashed rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:26px;opacity:.35">🏛️</div>
+            <div class="cam-row">
+              <div class="cam-th">🖼️</div>
+              <div class="cam-btn"><div class="cam-in"></div></div>
+              <div class="cam-fl">🔄</div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;background:#fff;border-radius:12px 12px 0 0;padding:10px 11px">
+              <div style="font-size:8px;font-weight:700;color:var(--OK);margin-bottom:6px">Photo captured — review:</div>
+              <div style="background:var(--F);border-radius:7px;height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:8px"><span style="font-size:20px">🖼️</span><span style="font-size:8px;color:var(--T3);margin-left:6px">Preview <span class="s">s</span></span></div>
+              <div style="display:flex;gap:7px">
+                <div style="flex:1;background:var(--F);color:var(--T2);font-weight:700;font-size:9px;padding:7px;border-radius:7px;text-align:center;border:1.5px solid var(--C)">Retake</div>
+                <div style="flex:2;background:var(--O);color:#fff;font-weight:700;font-size:9px;padding:7px;border-radius:7px;text-align:center">Use Photo ✓</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     TRACK 5 · WORKER
+══════════════════════════════════════ -->
+<div class="track">
+  <div class="track-hd">
+    <div class="trk-num">Track 05</div>
+    <div class="trk-ttl">Worker Module — Cleaning &amp; Documentation</div>
+    <div class="trk-meta">Member 6</div>
+  </div>
+  <div class="pr">
+
+    <!-- WORKER HOME -->
+    <div class="pw">
+      <div class="pw-lbl">SW1 · Worker Home</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-c"><div class="tb-ttl">My Tasks Today</div><div class="tb-sub">Wed, May 7 · Building A <span style="color:rgba(255,255,255,.35)">(s)</span></div></div><div class="tb-ico">👤</div></div>
+          <div style="background:var(--B);padding:8px 11px">
+            <div style="font-size:8.5px;color:rgba(255,255,255,.75);margin-bottom:5px">Completed: 2 of 5 tasks <span style="color:rgba(255,255,255,.3);font-size:7px">(s)</span></div>
+            <div class="pt"><div class="pf" style="width:40%"></div></div>
+          </div>
+          <div class="sb">
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--SH)">
+              <div style="background:var(--BL);border-radius:6px;padding:4px 6px;text-align:center;flex-shrink:0"><div style="font-size:9px;font-weight:700;color:var(--B);line-height:1">08:00</div><div style="font-size:6px;color:var(--T3)">AM</div></div>
+              <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 1 — Lobby <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Building A</div></div>
+              <span class="badge b-ok">✓ Done</span>
+            </div>
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--SH);border:1.5px solid var(--B)">
+              <div style="background:var(--B);border-radius:6px;padding:4px 6px;text-align:center;flex-shrink:0"><div style="font-size:9px;font-weight:700;color:#fff;line-height:1">10:00</div><div style="font-size:6px;color:rgba(255,255,255,.6)">AM</div></div>
+              <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Floor 2 — Offices <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">Building A</div></div>
+              <span class="badge b-bl">Active</span>
+            </div>
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--SH)">
+              <div style="background:var(--BL);border-radius:6px;padding:4px 6px;text-align:center;flex-shrink:0"><div style="font-size:9px;font-weight:700;color:var(--B);line-height:1">12:00</div><div style="font-size:6px;color:var(--T3)">PM</div></div>
+              <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Restrooms <span class="s">s</span></div><div style="font-size:7.5px;color:var(--T3)">All Floors</div></div>
+              <span class="badge b-wn">Pending</span>
+            </div>
+            <div style="background:#fff;margin:4px 8px;border-radius:var(--R);padding:8px 10px;display:flex;align-items:center;gap:8px;box-shadow:var(--SH);border:1.5px solid var(--ER)">
+              <div style="background:var(--ERL);border-radius:6px;padding:4px 6px;text-align:center;flex-shrink:0"><div style="font-size:9px;font-weight:700;color:var(--ER);line-height:1">09:00</div><div style="font-size:6px;color:var(--ER)">AM</div></div>
+              <div style="flex:1"><div style="font-size:9.5px;font-weight:700;color:var(--T1)">Stairwells <span class="s">s</span></div><div style="font-size:7.5px;color:var(--ER)">⚠ Issue logged</div></div>
+              <span class="badge b-er">Issue</span>
+            </div>
+          </div>
+          <div class="bnav">
+            <div class="bni on"><div class="bni-ico">🏠</div><div class="bni-lbl">Home</div><div class="bni-dot"></div></div>
+            <div class="bni"><div class="bni-ico">📋</div><div class="bni-lbl">My Tasks</div></div>
+            <div class="bni"><div class="bni-ico">🔔</div><div class="bni-lbl">Alerts</div></div>
+            <div class="bni"><div class="bni-ico">👤</div><div class="bni-lbl">Profile</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SW2: TASK CHECKLIST -->
+    <div class="pw">
+      <div class="pw-lbl">SW2 · Task Checklist</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Floor 2 — Offices <span style="font-size:8px;opacity:.5">(s)</span></div><div class="tb-sub">Building A · 10:00–12:00</div></div></div>
+          <div style="background:var(--B);padding:7px 11px">
+            <div style="font-size:8.5px;color:rgba(255,255,255,.75);margin-bottom:5px">3 of 7 steps <span style="color:rgba(255,255,255,.3);font-size:7px">(s)</span></div>
+            <div class="pt"><div class="pf" style="width:43%"></div></div>
+          </div>
+          <div class="sb">
+            <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;background:var(--OK);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0">✓</div><div style="font-size:8.5px;color:var(--T3);text-decoration:line-through">Sweep all floor areas <span class="s">s</span></div></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;background:var(--OK);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0">✓</div><div style="font-size:8.5px;color:var(--T3);text-decoration:line-through">Mop with disinfectant <span class="s">s</span></div></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;background:var(--OK);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0">✓</div><div style="font-size:8.5px;color:var(--T3);text-decoration:line-through">Clean door handles <span class="s">s</span></div></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;border:1.5px solid var(--T3);flex-shrink:0"></div><div style="font-size:8.5px;color:var(--T1)">Clean window sills <span class="s">s</span></div></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:#fff;border-bottom:1px solid var(--C)"><div style="width:17px;height:17px;border-radius:4px;border:1.5px solid var(--T3);flex-shrink:0"></div><div style="font-size:8.5px;color:var(--T1);flex:1">Empty waste bins <span class="s">s</span></div><span style="font-size:14px;color:var(--T3)">📷</span></div>
+            <div style="display:flex;align-items:center;gap:8px;padding:7px 11px;background:var(--ERL);border-bottom:1px solid #f5c0c0">
+              <div style="width:17px;height:17px;border-radius:4px;border:1.5px solid var(--ER);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ER);font-weight:700">!</div>
+              <div style="flex:1"><div style="font-size:8.5px;color:var(--ER);font-weight:700">Cannot Clean — Log Issue <span class="s">s</span></div><div style="font-size:7px;color:var(--ER)">Equipment malfunction</div></div>
+            </div>
+            <div style="padding:6px 9px">
+              <div style="border:1px solid var(--C);border-radius:6px;padding:6px 8px;font-size:7.5px;color:var(--T3);font-style:italic">Additional notes or issue description... <span class="s">s</span></div>
+            </div>
+          </div>
+          <div style="padding:5px 8px 6px;background:#fff;border-top:1px solid var(--C)">
+            <div style="background:var(--C);color:var(--T3);font-weight:700;font-size:9px;padding:9px;border-radius:7px;text-align:center">Submit Task (4 remaining)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SW3: ISSUE LOGGING -->
+    <div class="pw">
+      <div class="pw-lbl">SW3 · Log Issue (Cannot Clean)</div>
+      <div class="phone"><div class="pn"></div>
+        <div class="screen">
+          <div class="tb"><div class="tb-back">←</div><div class="tb-c"><div class="tb-ttl">Log Issue</div><div class="tb-sub">Cannot complete cleaning task</div></div></div>
+          <div style="background:var(--ERL);padding:9px 11px;border-bottom:1px solid #f5c0c0;display:flex;align-items:center;gap:8px">
+            <span style="font-size:18px">⚠️</span>
+            <div><div style="font-size:10px;font-weight:700;color:var(--ER)">Task Cannot Be Completed</div><div style="font-size:8px;color:var(--ER);opacity:.8">Stairwells · Building A <span class="s">s</span></div></div>
+          </div>
+          <div class="sb">
+            <div style="padding:7px 9px;border-bottom:1px solid var(--C)">
+              <div class="flbl"><div class="rdot"></div> Reason for Inability</div>
+              <div class="seg" style="margin-top:4px">
+                <div class="sbt" style="font-size:7px;background:var(--ER);color:#fff;border-color:var(--ER)">Equipment Fault</div>
+                <div class="sbt" style="font-size:7px">Area Blocked</div>
+                <div class="sbt" style="font-size:7px">Other</div>
+              </div>
+            </div>
+            <div style="padding:7px 9px;border-bottom:1px solid var(--C)">
+              <div class="flbl"><div class="rdot"></div> Issue Description</div>
+              <div style="background:var(--F);border:1px solid var(--C);border-radius:6px;padding:7px;font-size:7.5px;color:var(--T3);font-style:italic;height:44px;margin-top:3px">Cleaning machine broken, needs repair... <span class="s">s</span></div>
+            </div>
+            <div style="padding:7px 9px;border-bottom:1px solid var(--C)">
+              <div class="flbl"><div class="rdot"></div> Urgency Level</div>
+              <div class="seg" style="margin-top:4px">
+                <div class="sbt" style="font-size:7.5px">Low</div>
+                <div class="sbt on" style="font-size:7.5px">Medium</div>
+                <div class="sbt" style="font-size:7.5px">High</div>
+              </div>
+            </div>
+            <div style="padding:7px 9px">
+              <div class="flbl">Photo Evidence <span style="font-size:7px;color:var(--T3);font-weight:400">(Optional)</span></div>
+              <div class="pstrip" style="padding:4px 0 0"><div class="pthumb">📷</div><div style="width:38px;height:38px;border-radius:6px;background:var(--OKL);border:1.5px solid var(--OK);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">🖼️</div></div>
+            </div>
+            <div style="padding:0 9px 8px">
+              <div style="background:var(--ER);color:#fff;font-weight:700;font-size:10px;padding:9px;border-radius:7px;text-align:center">Submit Issue Report</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<div class="pfoot">
+  <div>
+    <div class="ft-brand">SSD<b>Platform</b></div>
+    <div class="ft-meta">Facility Cleaning Management System · German Jordanian University · 2025–2026</div>
+    <div style="margin-top:8px;font-size:9.5px;color:rgba(255,255,255,.18)">All text marked <span style="background:var(--O);color:#fff;font-size:7px;padding:1px 5px;border-radius:3px;font-weight:700">sample</span> / <span style="background:var(--O);color:#fff;font-size:7px;padding:1px 4px;border-radius:3px;font-weight:700">s</span> is placeholder content for presentation purposes only</div>
+  </div>
+  <div class="ft-sup">
+    <div class="ft-sl">Project Supervisor</div>
+    <div class="ft-sn">Eng. Bara Al-Qudah</div>
+    <div class="ft-se">bara.alqudah@gju.edu.jo</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,987 @@
+﻿/* Base Styles & Reset */
+/* Enable Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    /* This prevents the sticky navbar from hiding your section titles when it scrolls */
+    scroll-padding-top: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #3b28cc, #8b40ff); /* Blue to Purple gradient */
+    color: white;
+    text-align: center;
+    padding: 30px 20px 55px;
+    margin-bottom: 40px;
+}
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+.hero-image {
+    width: 250px !important; /* This controls the size! Change this number to make it bigger or smaller */
+    height: auto; /* Keeps the proportions correct */
+    animation: floatProfile 4s ease-in-out infinite;
+    margin-top: 10px;
+}
+
+/* Typography Headings */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* About Section */
+.about {
+    margin-bottom: 80px;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    background: #E6E6FA; /* Very light green */
+    border-radius: 20px;
+    padding: 40px;
+}
+
+
+
+/* Projects Grid (2x2) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    /* Add this line to make the change smooth: */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+        transform: translateY(-10px); /* Lifts the card up by 10 pixels */
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* Makes the shadow larger and darker */
+        cursor: pointer; /* Changes the mouse to a pointing hand */
+}
+
+.card-image {
+    height: 200px; /* أو الارتفاع الذي تفضلينه للبطاقة */
+    width: 100%;
+    background-size: cover; /* 👈 يضمن أن الصورة تملأ المساحة بالكامل بدون أن تتمطط */
+    background-position: center; /* 👈 يركز الصورة في المنتصف */
+    background-repeat: no-repeat; /* 👈 يمنع تكرار الصورة إذا كانت صغيرة */
+    border-top-left-radius: inherit; /* للحفاظ على انحناء زوايا الكرت */
+    border-top-right-radius: inherit;
+}
+
+/* Placeholder Gradients for Projects */
+/* Placeholder Gradients for Projects */
+.gradient-1 {
+    background: linear-gradient(135deg, #d4b3ff 0%, #93c5fd 100%);
+}
+
+.gradient-2 {
+    background: linear-gradient(135deg, #b4c5fc 0%, #dcb3ff 100%);
+}
+
+.gradient-3 {
+    background: linear-gradient(135deg, #c2e9fb 0%, #E0B0FF 100%);
+}
+
+.gradient-4 {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.card-info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 3-Column Info Cards */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.info-card {
+    background: #f1f5f9;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.mini-graphic {
+    height: 100px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.placeholder-1 {
+    background: #fde047;
+}
+
+.placeholder-2 {
+    background: #7dd3fc;
+}
+
+.placeholder-3 {
+    background: #a7f3d0;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    /* نفس التدرج البنفسجي الموجود في البداية */
+    background: linear-gradient(135deg, #3b28cc, #8b40ff);
+    padding: 60px 20px;
+    margin-top: 80px;
+    color: white; /* تحويل لون النصوص إلى الأبيض */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+/* لون النصوص التوضيحية */
+.footer-text p {
+    color: #f0fdf4;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin-right: 100px; /* 👈 هذا السطر هو الذي سيدفعها لليسار */
+    margin-top: 20px;
+}
+
+/* روابط التواصل */
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    
+}
+
+    /* تأثير التمرير للروابط */
+    .footer-links a:hover {
+        color: #F4BBFF; /* لون ليلكي مضيء عند التأشير */
+        transform: translateX(5px); /* حركة بسيطة لليمين */
+    }
+
+/* --- زر السيرة الذاتية بخلفية ثابتة ممتلئة --- */
+.btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background-color: blueviolet !important; /* 👈 هنا لون خلفية الزر الثابتة (بنفسجي فاتح) */
+    color: white !important; /* لون النص داكن ليظهر بوضوح فوق الخلفية الفاتحة */
+    text-decoration: none;
+    border-radius: 30px; /* زوايا دائرية ناعمة (يمكنك تغييرها لـ 8px إذا كنت تفضلين الزوايا الحادة) */
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+    /* تأثير عند تمرير الماوس (Hover) */
+    .btn-download:hover {
+        background-color: mediumpurple !important; /* 👈 يتغير لون الخلفية لدرجة أفتح عند التمرير */
+        transform: translateY(-3px); /* يرتفع قليلاً للأعلى */
+        box-shadow: 0 5px 15px rgba(224, 176, 255, 0.4); /* توهج ناعم متناسق */
+    }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Define the up-and-down floating motion */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Apply it to the hero image */
+.hero-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    /* This runs the float animation over 4 seconds, smoothly, forever */
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Define the fade-in and slide-up motion */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply it to your main sections */
+.about, .projects-grid, .info-cards {
+    /* Starts invisible */
+    opacity: 0;
+    /* Runs the animation once and stays at the final state (forwards) */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Stagger the animations so they load one after another */
+.about {
+    animation-delay: 0.2s;
+}
+
+.projects-grid {
+    animation-delay: 0.5s;
+}
+
+.info-cards {
+    animation-delay: 0.8s;
+}
+
+/* --- New Star Animation --- */
+
+/* 1. Ensure the parent container is positioned relatively */
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, #3b28cc, #8b40ff); /* Your existing gradient */
+    overflow: hidden; /* Keeps stars inside the header */
+}
+
+/* 2. Style the stars container and individual star elements */
+.stars-container {
+    position: absolute;
+    inset: 0; /* Cover the entire header */
+    z-index: 1; /* Lowest z-index within the hero */
+    pointer-events: none; /* Mouse goes right through them */
+}
+
+.star {
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%; /* Make them tiny circles */
+    position: absolute;
+    opacity: 0; /* Start invisible for the twinkle effect */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Small glow */
+    /* Apply the new twinkle animation */
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+/* 3. Define the keyframes for twinkling */
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+/* 4. Ensure the main content stays ON TOP of the stars */
+.hero h1,
+.hero-image-container {
+    position: relative; /* Essential for z-index to work */
+    z-index: 2; /* Higher than the stars container */
+}
+
+/* --- New Styles for Updated Structure --- */
+
+/* Hero Subtitle */
+.hero-subtitle {
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Case Study Project Cards */
+.case-study {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.case-study-content {
+    padding: 25px;
+}
+
+    .case-study-content h3 {
+        margin-bottom: 15px;
+        color: #3b28cc;
+    }
+
+.case-study-details p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.case-study-details strong {
+    color: #1a1a1a;
+}
+
+/* Skills Grid */
+.skills-section {
+    margin-bottom: 80px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.skill-category h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #f0fdf4;
+    padding-bottom: 10px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+    .skill-list li {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+        /* Custom bullet points */
+        .skill-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #8b40ff;
+        }
+
+/* Download Button */
+.btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+    .btn-download:hover {
+        background: #3b28cc;
+    }
+
+/* Responsive adjustment for Skills Grid */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   NEW INTERACTIVE & MODERN VISUAL STYLES
+   ========================================= */
+
+/* --- 1. The Morphing Background Shape (About Section) --- */
+.relative-container {
+    position: relative;
+    overflow: hidden; /* Keeps the shape from breaking the page width */
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.modern-shape {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #8b40ff55, #3b28cc55); /* Semi-transparent */
+    z-index: 0;
+    filter: blur(20px); /* Gives it that modern "glass" feel */
+    /* This creates the organic, non-square shape: */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: morphShape 8s ease-in-out infinite;
+}
+
+@keyframes morphShape {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        transform: rotate(360deg);
+    }
+}
+
+/* --- 2. Advanced Hover Reveal (Project Cards) --- */
+/* --- Adjusting the Scale of Featured Projects --- */
+
+.case-study {
+    max-width: 850px; /* Stops the boxes from stretching across the whole screen */
+    margin: 0 auto 35px auto; /* Centers the box perfectly and adds bottom spacing */
+    /* Keeps your existing hover transition: */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+    .case-study .card-image {
+        height: 180px; /* Shrinks the top image/gradient height (down from 250px) */
+    }
+
+.case-study-content {
+    padding: 20px; /* Tightens the empty space inside the text area */
+}
+
+    .case-study-content h3 {
+        font-size: 1.3rem; /* Slightly scales down the project title */
+        margin-bottom: 10px;
+    }
+
+.case-study-details p {
+    font-size: 0.95rem; /* Makes the description text just a touch smaller */
+}
+
+/* --- 3. The 3D Flip Cards (Skills Section) --- */
+.skills-grid {
+    perspective: 1000px; /* Essential for the 3D effect */
+}
+
+.flip-card {
+    background-color: transparent;
+    height: 280px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1); /* Smooth 3D curve */
+    transform-style: preserve-3d;
+}
+
+/* Trigger the flip on hover */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari support */
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.flip-card-front {
+    color: #1a1a1a;
+}
+
+    .flip-card-front h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+/* The back of the card */
+.flip-card-back {
+    background-color: #8b40ff;
+    color: white;
+    transform: rotateY(180deg); /* Start it flipped backward */
+    text-align: left;
+    align-items: flex-start; /* Align lists to the left */
+}
+
+    .flip-card-back .skill-list li::before {
+        color: #84fab0; /* Change bullet color to pop against dark background */
+    }
+
+/* Optional: Arrange projects in a 3-column grid on large screens */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+    .projects h2 {
+        width: 100%; /* Keeps the "Featured Projects" title on its own line */
+        text-align: center; /* Centers the section title */
+    }
+
+.case-study {
+    width: calc(33.333% - 20px); /* Forces them into 3 columns */
+    min-width: 300px; /* Ensures they don't get too squished on mobile */
+    margin: 0 0 20px 0; /* Resets the margin for the grid layout */
+}
+/* =========================================
+   NAVIGATION BAR
+   ========================================= */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Modern glass blur effect */
+    position: sticky; /* Makes it stick to the top when scrolling */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above all other elements */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    padding: 5px 0;
+}
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 50px; /* Space between links */
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+
+        .navbar a:hover {
+            color: #8b40ff; /* Highlights purple on hover */
+        }
+
+
+/* Mobile Adjustments for Navbar */
+@media (max-width: 768px) {
+    .navbar ul {
+        gap: 15px; /* Shrinks the gap on mobile */
+    }
+
+    .navbar a {
+        font-size: 0.95rem; /* Shrinks the text slightly on mobile */
+    }
+}
+/* <--- THIS BRACKET WAS MISSING! It closes the mobile styles properly. */
+
+
+/* =========================================
+   TIMELINE (My Journey)
+   ========================================= */
+.timeline-section {
+    margin-bottom: 100px; /* Matches the background of About Me */
+}
+
+/* New box to match the About Me purple container */
+.journey-wrapper {
+    background: #E6E6FA; /* Light lavender color */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px;
+    border-left: 3px solid #E0B0FF; /* Light purple line */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 20px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -38px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #3b28cc;
+    border: 4px solid #F4BBFF; /* Glowing dot */
+    border-radius: 50%;
+    box-shadow: 0 0 10px #F4BBFF;
+}
+
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+    .timeline-content:hover {
+        transform: translateX(10px); /* Slides right on hover */
+        border-left: 4px solid #8b40ff;
+    }
+
+.timeline-date {
+    color: #8b40ff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* Timeline Mobile Fix */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .journey-wrapper {
+        padding: 25px 15px; /* Less padding on small screens */
+    }
+}
+/* =========================================
+   PROJECT FILTERS TOOLBAR
+   ========================================= */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* يسمح للأزرار بالنزول لسطر جديد في الشاشات الصغيرة */
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px; /* يجعل الزر بيضاوي الشكل */
+    background-color: transparent;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    /* تأثير التمرير (Hover) */
+    .filter-btn:hover {
+        color: #8b40ff;
+    }
+
+    /* تصميم الزر النشط (المضغوط عليه) */
+    .filter-btn.active {
+        background-color: #8b40ff; /* لون بنفسجي جميل */
+        color: white;
+        box-shadow: 0 4px 10px rgba(139, 64, 255, 0.3); /* توهج خفيف */
+    }
+
+/* كلاس مساعد لإخفاء المشاريع برمجياً */
+.hide-project {
+    display: none !important;
+}
+/* كلاس مساعد لإخفاء المشاريع برمجياً عند الفلترة */
+.hide-project {
+    display: none !important;
+}
+
+/* تصميم شريط الفلترة والأزرار */
+/* =========================================
+   PROJECT FILTERS TOOLBAR (تعديل الحجم والموقع)
+   ========================================= */
+.project-filters {
+    width: 100%; /* 👈 هذا السطر هو السر! يجبر الشريط على البقاء في سطر مستقل فوق المشاريع */
+    display: flex;
+    justify-content: center; /* يضع الأزرار في المنتصف */
+    align-items: center; /* 👈 يمنع الأزرار من التمدد بالطول */
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px; /* مسافة بين الأزرار والمشاريع */
+}
+
+.filter-btn {
+    padding: 8px 24px;
+    height: fit-content; /* 👈 يجبر الزر على الالتفاف حول النص فقط ليبقى صغيراً */
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background-color: #E6E6FA; /* لون بنفسجي فاتح للأزرار غير النشطة */
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .filter-btn:hover {
+        background-color: #e0c3fc;
+    }
+
+    /* تصميم الزر الفعال (المضغوط عليه) */
+    .filter-btn.active {
+        background-color: #8b40ff;
+        color: white;
+        box-shadow: 0 4px 10px rgba(139, 64, 255, 0.3);
+    }
+
+/* --- تصميم أزرار تحميل شهادات اللغة داخل البطاقة --- */
+.lang-download {
+    display: block; /* يجعل الرابط يظهر في سطر جديد أسفل اسم اللّغة */
+    font-size: 0.8rem; /* حجم خط صغير ومناسب لمساحة البطاقة */
+    color: #E0B0FF; /* لون بنفسجي فاتح يتناسق مع الثيم */
+    text-decoration: none; /* إزالة الخط السفلي التقليدي */
+    margin-top: 4px; /* مسافة بسيطة بين النص والزر */
+    font-weight: bold;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+    /* تأثير عند تمرير الماوس فوق زر الشهادة */
+    .lang-download:hover {
+        color: #84fab0; /* يتغير للون الأخضر الفاتح ليوحي بقابلية الضغط */
+        transform: translateX(3px); /* يتحرك قليلاً لليمين بشكل تفاعلي */
+    }
+
+/* --- تصميم أزرار تحميل الشهادات التقنية داخل البطاقة --- */
+.cert-download {
+    display: block; /* يجبر الروابط على الظهور تحت بعضها البعض */
+    font-size: 0.78rem; /* حجم خط صغير ليناسب النصوص الطويلة للشهادات */
+    color: #E0B0FF; /* لون بنفسجي فاتح متناسق مع ثيم الموقع */
+    text-decoration: none; /* إزالة الخط السفلي */
+    margin-top: 10px; /* مسافة فارغة من الأعلى لفصلها عن القائمة */
+    font-weight: bold;
+    text-align: left; /* محاذاة النص لليسار لأن الشهادات بالإنجليزية */
+    width: 100%;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+    /* تأثير التمرير للشهادات التقنية */
+    .cert-download:hover {
+        color: #84fab0; /* يتغير للون الأخضر المضيء عند التأشير */
+        transform: translateX(3px); /* حركة تفاعلية بسيطة لليمين */
+    }
+
+/* تنسيق الأيقونات الاحترافية في الفوتر */
+.footer-links a i {
+    margin-right: 10px; /* مسافة بين الأيقونة والنص */
+    font-size: 1.2rem; /* تكبير الأيقونة قليلاً */
+    width: 24px; /* توحيد العرض لكي تكون النصوص تحت بعضها بشكل مستقيم ومثالي */
+    text-align: center;
+}
+
+/* =========================================
+   MODALS (تصميم النوافذ المنبثقة)
+   ========================================= */
+.project-card {
+    cursor: pointer; /* يغير شكل الماوس ليدل على أنه قابل للضغط */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(139, 64, 255, 0.2);
+    }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* خلفية معتمة */
+    backdrop-filter: blur(5px); /* تأثير زجاجي (Blur) */
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+    .modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+.modal-box {
+    background: white;
+    border-radius: 20px;
+    width: 95%; /* 👈 تأخذ مساحة أكبر من الشاشة */
+    max-width: 1000px; /* 👈 تكبير الحد الأقصى للعرض لتصبح عريضة مثل الصورة */
+    max-height: 90vh; /* السماح للنافذة بأخذ طول الشاشة تقريباً */
+    overflow-y: auto;
+    position: relative;
+    overflow-x: hidden;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-overlay.active .modal-box {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+    .close-btn:hover {
+        color: #1a1a1a;
+    }
+
+.modal-header {
+    height: 120px;
+    width: 100%;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+    .modal-body h2 {
+        color: #3b28cc;
+        margin-bottom: 15px;
+    }
+
+    .modal-body p {
+        margin-bottom: 10px;
+        color: #333;
+        line-height: 1.6;
+    }
+
+/* --- تنسيق مشغلات الفيديو داخل النوافذ المنبثقة --- */
+.project-video {
+    width: 100%;
+    height: auto;
+    max-height: 350px; /* تحديد ارتفاع أقصى لكي لا تخرج عن نطاق الشاشة */
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    background-color: #000; /* خلفية سوداء خلف الفيديو قبل التشغيل */
+    display: block;
+}
+
+/* --- تنسيق إطارات عرض الـ HTML والـ PDF داخل النوافذ المنبثقة --- */
+.project-preview-frame {
+    width: 100%;
+    height: 65vh; /* 👈 زيادة الارتفاع ليعرض الـ PDF بشكل كبير وواضح */
+    min-height: 450px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+}
+
+/* --- تنسيق الصورة داخل نافذة المشروع --- */
+.project-modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 350px; /* نفس الارتفاع الأقصى للفيديوهات والـ iframe لتوحيد الشكل */
+    object-fit: contain; /* يضمن عرض الصورة كاملة دون قص أطرافها */
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* خلفية خفيفة تظهر إذا كانت الصورة بخلفية شفافة */
+}
+
+}
