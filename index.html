@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Design & Media Informatics Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Journey</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="stars-container">
+            <div class="star" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+            <div class="star" style="top: 20%; left: 80%; animation-delay: 1s;"></div>
+            <div class="star" style="top: 40%; left: 15%; animation-delay: 2s;"></div>
+            <div class="star" style="top: 50%; left: 60%; animation-delay: 0.5s;"></div>
+            <div class="star" style="top: 70%; left: 25%; animation-delay: 1.5s;"></div>
+            <div class="star" style="top: 30%; left: 90%; animation-delay: 0.2s;"></div>
+            <div class="star" style="top: 60%; left: 5%; animation-delay: 1.2s;"></div>
+            <div class="star" style="top: 80%; left: 75%; animation-delay: 0.8s;"></div>
+        </div>
+
+        <h1>My Portfolio</h1>
+        <p class="hero-subtitle">Merging technology with creative design</p>
+
+        <div class="hero-image-container">
+            <img src="Portfolio Picture2.png" alt="My Personal Picture" class="hero-image">
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="about relative-container" id="about">
+            <div class="modern-shape"></div>
+
+            <h2 style="text-align: center; margin-bottom: 30px; position: relative; z-index: 2;">About Me</h2>
+            <div class="about-content" style="position: relative; z-index: 2;">
+
+                <div class="about-text">
+                    <p>Hello! I am a student deeply passionate about Game Design and Media Informatics. I focus on creating interactive media, developing seamless web experiences, and designing intuitive user interfaces. My goal is to build immersive digital experiences by combining strong technical foundations with creative visual communication.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section relative-container" id="experience">
+            <div class="modern-shape"></div>
+
+            <h2 style="text-align: center; margin-bottom: 40px; position: relative; z-index: 2;">My Journey</h2>
+
+            <div class="journey-wrapper" style="position: relative; z-index: 2;">
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>BSc. Game Design & Media Informatics</h3>
+                            <p class="timeline-date">Sep 2023</p>
+                            <p>Studying at the <strong>German-Jordanian University (GJU)</strong> with a focus on Visual Programming, Android Studio, 3D Modeling & Animation, and Virtual/Augmented Reality.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Exchange Semester: Game Design & Media Informatics</h3>
+                            <p class="timeline-date">Sep 2026</p>
+                            <p>I will study abroad at <strong>TH Brandenburg</strong> in Germany to expand my academic and international perspective.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <h2 style="text-align: center; margin-bottom: 20px;">Featured Projects</h2>
+
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="games-ar">Games & AR</button>
+                <button class="filter-btn" data-filter="web-app">Web & Mobile App</button>
+                <button class="filter-btn" data-filter="3d-animation">3D & Animation</button>
+                <button class="filter-btn" data-filter="graphic-design">Graphic & Visual Design</button>
+            </div>
+
+            <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-ar-aroma')">
+                <div class="card-image" style="background-image: url('Projects/AR image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Aroma Diffuser AR Project</h3>
+                    <p>Click to watch AR Project & details ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-obstacle')">
+                <div class="card-image" style="background-image: url('Projects/Obstacle image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Obstacle Game</h3>
+                    <p>Click to watch Game & details ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-dungeon')">
+                <div class="card-image" style="background-image: url('Projects/dungeon image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Dungeon Game</h3>
+                    <p>Click to watch Game & details ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="web-app" onclick="openModal('modal-flashcards')">
+                <div class="card-image" style="background-image: url('Projects/Flashcards image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Educational Flashcards Website</h3>
+                    <p>Click to view Website & details ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="web-app" onclick="openModal('modal-ssd')">
+                <div class="card-image" style="background-image: url('Projects/sdd image.png');"></div>
+                <div class="case-study-content">
+                    <h3>SSD Platform App</h3>
+                    <p>Click to view App & details ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="web-app" onclick="openModal('modal-refood')">
+                <div class="card-image" style="background-image: url('Projects/refood figma image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Refood App</h3>
+                    <p>Click to view App & details ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-objects')">
+                <div class="card-image" style="background-image: url('Projects/3D objects.png');"></div>
+                <div class="case-study-content">
+                    <h3>3D Objects Showcase</h3>
+                    <p>Click to view 3D Model ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-car')">
+                <div class="card-image" style="background-image: url('Projects/car in small village.png');"></div>
+                <div class="case-study-content">
+                    <h3>3D Car in Small Village</h3>
+                    <p>Click to view 3D Model ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-dungeon')">
+                <div class="card-image" style="background-image: url('Projects/Low Poly Dungeon.png');"></div>
+                <div class="case-study-content">
+                    <h3>3D Low-Poly Dungeon</h3>
+                    <p>Click to view 3D Model ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-seaport')">
+                <div class="card-image" style="background-image: url('Projects/Seaport_village.png');"></div>
+                <div class="case-study-content">
+                    <h3>3D Seaport Village</h3>
+                    <p>Click to view 3D Model ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-market')">
+                <div class="card-image" style="background-image: url('Projects/Low-Poly Market Square.png');"></div>
+                <div class="case-study-content">
+                    <h3>3D Low-Poly Market Square</h3>
+                    <p>Click to view 3D Model ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-refood-video')">
+                <div class="card-image" style="background-image: url('Projects/refood animation image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Refood App Promo Video</h3>
+                    <p>Click to watch Video ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-arabic-proverb')">
+                <div class="card-image" style="background-image: url('Projects/animation image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Arabic Proverb Animation</h3>
+                    <p>Click to watch Animation ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="graphic-design" onclick="openModal('modal-stars')">
+                <div class="card-image" style="background-image: url('Projects/stars zine image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Stars Magazine</h3>
+                    <p>Click to view magazine design ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="graphic-design" onclick="openModal('modal-happiness')">
+                <div class="card-image" style="background-image: url('Projects/happy image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Feeling: Happiness</h3>
+                    <p>Click to view photography project ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="graphic-design" onclick="openModal('modal-memories')">
+                <div class="card-image" style="background-image: url('Projects/memories image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Memories</h3>
+                    <p>Click to view photography project ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="graphic-design" onclick="openModal('modal-refood-design')">
+                <div class="card-image" style="background-image: url('Projects/refood pres image.png');"></div>
+                <div class="case-study-content">
+                    <h3>Refood Brand & Presentation</h3>
+                    <p>Click to view design deck ▹</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <div id="modal-ar-aroma" class="modal-overlay" onclick="closeOutside(event, 'modal-ar-aroma')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-ar-aroma')">&times;</span>
+                <div class="modal-body">
+                    <h2>Aroma Diffuser AR Project</h2>
+                    
+                        <video controls class="project-video">
+                            <source src="Projects/Aroma Diffuser AR Project.mp4" type="video/mp4">
+                                <source src="Projects/Aroma Diffuser AR Project.ogg" type="video/ogg"> Your browser does not support the video tag.
+                        </video>
+                      
+                        <p><strong>Goal:</strong> To show how a simple physical object can become more engaging inside an AR environment by responding to different scents with lighting, matching sounds, and real-time steam effects (Marketing of industrial products).</p>
+                        <p><strong>Tools:</strong> Unity, Vuforia (Image Target), C# Scripting.</p>
+                        <p><strong>Key Features:</strong> Interactive UI with tooltips, dynamic particle effects, audio integration, and real-time object manipulation (scaling & rotation).</p>
+                        <p><strong>Result:</strong> A smooth and responsive AR interaction on mobile that brings together visual and audio effects realistically.</p>
+                    </div>
+                </div>
+        </div>
+
+        <div id="modal-obstacle" class="modal-overlay" onclick="closeOutside(event, 'modal-obstacle')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-obstacle')">&times;</span>
+                <div class="modal-body">
+                    <h2>Obstacle Game</h2>
+
+                    <iframe width="100%" height="315" 
+                            src="https://www.youtube.com/embed/ycdQwsObWDI?si=WFZqmH83mPc7n1EU" 
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+                    </iframe>
+
+                            <p><strong>Goal:</strong> Create a fast-paced 3D platformer game designed to test player reflexes through dynamic obstacles and precise movement mechanics.</p>
+                            <p><strong>Tools:</strong> Unity, C# Scripting.</p>
+                            <p><strong>Key Focus:</strong> Level design, physics-based programming, custom animation states, and highly responsive character controls.</p>
+                            <p><strong>Result:</strong> A fully functional 3D prototype featuring progressive difficulty scaling, moving hazards, and smooth player mechanics that maximize engagement and replayability.</p>
+                        </div>
+                    </div>
+        </div>
+
+        <div id="modal-dungeon" class="modal-overlay" onclick="closeOutside(event, 'modal-dungeon')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-dungeon')">&times;</span>
+                <div class="modal-body">
+                    <h2>Dungeon Game</h2>
+
+                    <iframe width="100%" height="315" 
+                            src="https://www.youtube.com/embed/Eijfh-trEFM?si=j3TDuUJw8H6HUHgu" 
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+                    </iframe>
+
+                        <p><strong>Goal:</strong> Design an atmospheric adventure game featuring stylized lighting and interactive environment mechanics focusing on immersive environmental design and player exploration.</p>
+                        <p><strong>Tools:</strong> Unity, C#, Blender.</p>
+                        <p><strong>Key Focus:</strong> Visual aesthetics, dungeon generation concepts, real-time lighting and shadows, environment interaction, and spatial audio integration.</p>
+                        <p><strong>Result:</strong> An immersive adventure prototype delivering a polished player experience with interactive prop mechanics (doors/chests), dynamic ambient audio, and custom-designed 3D environments.</p>
+                    </div>
+                </div>
+        </div>
+
+        <div id="modal-flashcards" class="modal-overlay" onclick="closeOutside(event, 'modal-flashcards')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-flashcards')">&times;</span>
+                <div class="modal-body">
+                    <h2>Educational Flashcards Website</h2>
+
+                         <video controls class="project-video">
+                             <source src="Projects/Flashcards Website.mp4" type="video/mp4">
+                             <source src="Projects/Flashcards Website.ogg" type="video/ogg"> Your browser does not support the video tag.
+                         </video>
+
+
+                        <p><strong>Goal:</strong> Develop an interactive web platform utilizing digital flashcards to optimize student learning and memory retention.</p>
+                        <p><strong>Tools:</strong> Apache NetBeans: PHP, CSS.</p>
+                        <p><strong>Key Focus:</strong> Interactive front-end development, CSS animations (card flipping), dynamic DOM manipulation, and responsive UI design.</p>
+                        <p><strong>Result:</strong> A highly responsive web application with custom card-flipping animations and progress tracking features.</p>
+                    </div>
+                </div>
+        </div>
+
+        <div id="modal-ssd" class="modal-overlay" onclick="closeOutside(event, 'modal-ssd')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-ssd')">&times;</span>
+                <div class="modal-body">
+                    <h2>SSD Platform App</h2>
+
+                    <iframe src="Projects/SSD Platform.html" class="project-preview-frame" title="SSD Platform Preview"></iframe>
+
+                    <p><strong>Goal:</strong> Develop a comprehensive Facility Cleaning Management System for the German Jordanian University to streamline task distribution across multiple departments and roles.</p>
+                    <p><strong>Tools:</strong> Android Studio: Kotlin, XML, Database & Firebase.</p>
+                    <p><strong>Key Focus:</strong> Role-based dashboards (HoD, Supervisor, Worker), real-time task tracking, QR code employee scanning, and daily/weekly automated reporting.</p>
+                    <p><strong>Result:</strong> Designed an interactive 18-screen platform that provides a scalable solution for facility management, issue logging, and performance evaluation.</p>
+                    <a href="Projects/SSD Platform.html" target="_blank" class="btn-download" style="text-align: center; display: block; margin-top: 15px;"><i class="fas fa-external-link-alt"></i> Open Full Screen</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-refood" class="modal-overlay" onclick="closeOutside(event, 'modal-refood')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-refood')">&times;</span>
+                <div class="modal-body">
+                    <h2>Refood App</h2>
+
+                    <div style="background-color: #1a1a1a; padding: 20px; border-radius: 12px; display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                        <img src="Projects/Refood app.png" alt="Refood App Preview" style="max-height: 280px; width: auto; max-width: 100%; border-radius: 6px; object-fit: contain;">
+                    </div>
+
+                        <p><strong>Goal:</strong> Conceptualize a sustainable mobile application "REFOOD" aimed at combating food waste by connecting users with recycling machines and organic compost markets.</p>
+                        <p><strong>Tools:</strong> Figma, Adobe Photoshop (Logo), UI/UX Mobile Design, Wireframing.</p>
+                        <p><strong>Key Focus:</strong> Eco-friendly user journeys, gamification (competitions and leaderboards), location-based recycling tracking, and a dedicated green marketplace.</p>
+                        <p><strong>Result:</strong> A comprehensive UI/UX design showcasing a user-centered approach to environmental sustainability, featuring intuitive navigation and engaging reward systems.</p>
+                        <a href="Projects/figma refood app.pdf" target="_blank" class="btn-download" style="text-align: center; display: block; margin-top: 15px;"><i class="fas fa-file-pdf"></i> Open Full Screen</a>
+                    </div>
+                </div>
+        </div>
+
+        <div id="modal-3d-objects" class="modal-overlay" onclick="closeOutside(event, 'modal-3d-objects')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-3d-objects')">&times;</span>
+                <div class="modal-body">
+                    <h2>3D Objects Showcase</h2>
+                    <img src="Projects/3D Objects.png" class="project-modal-img" alt="3D Objects Showcase">
+                    <p><strong>Goal:</strong> Model and texture a diverse asset library of production-ready 3D objects with precise geometry and stylized shading.</p>
+                    <p><strong>Tools:</strong> Blender.</p>
+                    <p><strong>Key Focus:</strong> Modeling diverse shapes (Hard-surface & Organic), stylized PBR material creation, and aesthetic scene composition.</p>
+                    <p><strong>Result:</strong> A polished collection of optimized models including a detailed bedroom set, realistic food assets, characters and accessories.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-3d-car" class="modal-overlay" onclick="closeOutside(event, 'modal-3d-car')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-3d-car')">&times;</span>
+                <div class="modal-body">
+                    <h2>3D Car in Small Village</h2>
+                    <img src="Projects/car in small village.png" class="project-modal-img" alt="3D Car in Small Village">
+                    <p><strong>Goal:</strong> Design and build a charming low-poly 3D diorama featuring a detailed vehicle inside a stylized village environment.</p>
+                    <p><strong>Tools:</strong> Blender.</p>
+                    <p><strong>Key Focus:</strong> Environment layout, residential architecture design, vehicle props, Character modeling, ambient lighting (street lighting effects) and narrative world-building.</p>
+                    <p><strong>Result:</strong> An engaging miniature village scene that effectively captures a moment of daily life through environmental storytelling.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-3d-dungeon" class="modal-overlay" onclick="closeOutside(event, 'modal-3d-dungeon')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-3d-dungeon')">&times;</span>
+                <div class="modal-body">
+                    <h2>3D Low Poly Dungeon</h2>
+                    <img src="Projects/Low Poly Dungeon.png" class="project-modal-img" alt="3D Low Poly Dungeon">
+                    <p><strong>Goal:</strong> Craft a modular low-poly fantasy dungeon crawler environment specifically tailored for game level design configurations.</p>
+                    <p><strong>Tools:</strong> Blender.</p>
+                    <p><strong>Key Focus:</strong> Modular room architecture (modular kit-bashing), interior prop placement, low-poly aesthetics, palette coordination and high-contrast atmospheric lighting for an immersive mood.</p>
+                    <p><strong>Result:</strong> Built a game-ready modular environment pack that optimizes scene rendering while maximizing exploration immersion.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-3d-seaport" class="modal-overlay" onclick="closeOutside(event, 'modal-3d-seaport')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-3d-seaport')">&times;</span>
+                <div class="modal-body">
+                    <h2>3D Seaport Village</h2>
+                    <img src="Projects/Seaport_village.png" class="project-modal-img" alt="3D Seaport Village">
+                    <p><strong>Goal:</strong> Construct a night-time maritime environment centered around a lighthouse island, focusing on the interaction between water and land assets.</p>
+                    <p><strong>Tools:</strong> Blender.</p>
+                    <p><strong>Key Focus:</strong> Complex scene composition, architectural asset scaling, and object density control, stylized water shaders with reflections, lighthouse architecture, rocky terrain modeling, and dynamic moonlit lighting.</p>
+                    <p><strong>Result:</strong> Successfully engineered an intricate low-poly seaport environment with high visual interest distributed across multiple layers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-3d-market" class="modal-overlay" onclick="closeOutside(event, 'modal-3d-market')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-3d-market')">&times;</span>
+                <div class="modal-body">
+                    <h2>3D Low-Poly Market Square</h2>
+                    <img src="Projects/Low-Poly Market Square.png" class="project-modal-img" alt="3D Low-Poly Market Square">
+                    <p><strong>Goal:</strong> Design a lively 3D marketplace town square showcasing unique architectural props and vibrant marketplace asset density.</p>
+                    <p><strong>Tools:</strong> Blender.</p>
+                    <p><strong>Key Focus:</strong> Architectural variation, market stall prop design (carts, barrels, fountain), warm ambient color grading.</p>
+                    <p><strong>Result:</strong> A detailed and inviting town square environment that provides a rich sense of community and place within a low-poly aesthetic harmony.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-refood-video" class="modal-overlay" onclick="closeOutside(event, 'modal-refood-video')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-refood-video')">&times;</span>
+                <div class="modal-body">
+                    <h2>Refood App Promo Video</h2>
+
+                        <video controls class="project-video">
+                            <source src="Projects/refood project.mp4" type="video/mp4">
+                            <source src="Projects/refood project.ogg" type="video/ogg"> Your browser does not support the video tag.
+                        </video>
+
+                        <p><strong>Goal:</strong> Create a compelling awareness video to highlight the environmental impact of food waste and introduce the Refood app as a technological solution.</p>
+                        <p><strong>Tools:</strong> Adobe After Effects, Adobe Photoshop.</p>
+                        <p><strong>Key Focus:</strong> Narrative storytelling through motion graphics, bilingual kinetic typography, UI/UX asset animation, fluid screen transitions and visualizing the "Waste to Resource" transformation process.</p>
+                        <p><strong>Result:</strong> A professional promotional video that effectively communicates the app's mission, encouraging user adoption through strong visual calls to action.</p>
+                    </div>
+                </div>
+        </div>
+
+        <div id="modal-arabic-proverb" class="modal-overlay" onclick="closeOutside(event, 'modal-arabic-proverb')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-arabic-proverb')">&times;</span>
+                <div class="modal-body">
+                    <h2>Arabic Proverb Animation</h2>
+
+                            <video controls class="project-video">
+                                <source src="Projects/Animation.mp4" type="video/mp4">
+                                <source src="Projects/Animation.ogg" type="video/ogg"> Your browser does not support the video tag.
+                            </video>
+
+                        <p><strong>Goal:</strong> Create a creative cultural motion graphics piece animating a traditional Arabic proverb ("The winds blow contrary to what the ships desire") to convey its philosophical meaning through creative visual storytelling.</p>
+                        <p><strong>Tools:</strong> Adobe After Effects, Adobe Illustrator.</p>
+                        <p><strong>Key Focus:</strong> Vector character illustration, narrative timing, environment effects (wind & waves) and educational content design using kinetic typography.</p>
+                        <p><strong>Result:</strong> Formed an expressive visual narrative short film demonstrating advanced motion principles and creative art direction.</p>
+                    </div>
+                </div>
+        </div>
+
+        <div id="modal-stars" class="modal-overlay" onclick="closeOutside(event, 'modal-stars')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-stars')">&times;</span>
+                <div class="modal-body">
+                    <h2>Stars Magazine</h2>
+                    <iframe src="Projects/stars_magazine.pdf" class="project-preview-frame" title="Stars Magazine Design"></iframe>
+                    <p><strong>Goal:</strong> Design a captivating editorial magazine layout that balances typography, imagery, and whitespace to create an engaging reading experience.</p>
+                    <p><strong>Tools:</strong> Adobe InDesign.</p>
+                    <p><strong>Key Focus:</strong> Editorial layout, typographic hierarchy, grid systems, and print-ready digital publishing.</p>
+                    <p><strong>Result:</strong> A beautifully structured multi-page zine/magazine that demonstrates a strong grasp of visual hierarchy and editorial design principles.</p>
+                    <a href="Projects/stars_magazine.pdf" target="_blank" class="btn-download" style="text-align: center; display: block; margin-top: 15px;"><i class="fas fa-file-pdf"></i> Open Full Magazine</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-happiness" class="modal-overlay" onclick="closeOutside(event, 'modal-happiness')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-happiness')">&times;</span>
+                <div class="modal-body">
+                    <h2>Feeling: Happiness (Photography)</h2>
+                    <iframe src="Projects/happiness_photography.pdf" class="project-preview-frame" title="Feeling Happiness Photography"></iframe>
+                    <p><strong>Goal:</strong> Capture, curate, and present a photography series that visually explores and translates the abstract human emotion of happiness.</p>
+                    <p><strong>Tools:</strong> Digital Camera, Adobe InDesign.</p>
+                    <p><strong>Key Focus:</strong> Photographic composition, natural lighting, photo curation, and editorial presentation layout.</p>
+                    <p><strong>Result:</strong> A compelling visual photobook that effectively communicates emotion through carefully composed shots and clean editorial design.</p>
+                    <a href="Projects/happiness_photography.pdf" target="_blank" class="btn-download" style="text-align: center; display: block; margin-top: 15px;"><i class="fas fa-file-pdf"></i> Open Full PDF Document</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-memories" class="modal-overlay" onclick="closeOutside(event, 'modal-memories')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-memories')">&times;</span>
+                <div class="modal-body">
+                    <h2>Memories (Photography)</h2>
+                    <iframe src="Projects/memories_photography.pdf" class="project-preview-frame" title="Memories Photography"></iframe>
+                    <p><strong>Goal:</strong> Document and preserve nostalgic moments through a cohesive photography collection presented in a well-structured digital layout.</p>
+                    <p><strong>Tools:</strong> Digital Camera, Adobe InDesign.</p>
+                    <p><strong>Key Focus:</strong> Visual storytelling, framing techniques, subject focus, and page layout consistency.</p>
+                    <p><strong>Result:</strong> A cohesive photographic narrative that preserves visual memories inside an elegant, minimalist presentation format.</p>
+                    <a href="Projects/memories_photography.pdf" target="_blank" class="btn-download" style="text-align: center; display: block; margin-top: 15px;"><i class="fas fa-file-pdf"></i> Open Full PDF Document</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-refood-design" class="modal-overlay" onclick="closeOutside(event, 'modal-refood-design')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-refood-design')">&times;</span>
+                <div class="modal-body">
+                    <h2>Refood Brand & Presentation</h2>
+                    <iframe src="Projects/refood project.pdf" class="project-preview-frame" title="Refood Branding and Pitch"></iframe>
+                    <p><strong>Goal:</strong> Develop a comprehensive visual identity and a persuasive presentation deck for the Refood initiative to attract stakeholders and users.</p>
+                    <p><strong>Tools:</strong> Adobe Illustrator, Adobe Photoshop, Figma, Microsoft PowerPoint.</p>
+                    <p><strong>Key Focus:</strong> Brand identity design, logo creation, presentation structure, moodboard, posters and cross-platform visual consistency.</p>
+                    <p><strong>Result:</strong> A highly professional pitch deck and unified brand identity that effectively communicates the project’s green vision and technological solutions.</p>
+                    <a href="Projects/refood_presentation.pdf" target="_blank" class="btn-download" style="text-align: center; display: block; margin-top: 15px;"><i class="fas fa-file-pdf"></i> Open Full PDF Document</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="skills-section" id="skills">
+            <h2 style="text-align: center; margin-bottom: 40px;">Skills & Languages</h2>
+            <div class="skills-grid">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front gradient-1">
+                            <h3>Technical Skills</h3>
+                            <p>Hover to reveal ▹</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <ul class="skill-list">
+                                <li>Unity & Blender</li>
+                                <li>Adobe (Ps, Ai, Ae, Id) & Figma</li>
+                                <li>Visual Studio (HTML, CSS, JS)</li>
+                                <li>Android Studio</li>
+                                <li>MS office</li>
+                            </ul>
+
+                            <a href="Android_Fundamentals_Certificate.pdf" class="cert-download" download>🔽 Android App Fundamentals Certificate</a>
+                            <a href="AI_Basics_Certificate.pdf" class="cert-download" download>🔽 AI Basics Certificate</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front gradient-2">
+                            <h3>Interests & Soft Skills</h3>
+                            <p>Hover to reveal ▹</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <ul class="skill-list">
+                                <li>Game Development</li>
+                                <li>Web Development</li>
+                                <li>UI/UX Design</li>
+                                <li>VR & AR</li>
+                                <li>Animation & 3D Modeling</li>
+                                <li>Creative Problem Solving</li>
+                                <li>Teamwork & Attention to Detail</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front gradient-3">
+                            <h3>Languages</h3>
+                            <p>Hover to reveal ▹</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <ul class="skill-list language-list">
+                                <li><strong>Arabic:</strong> Native</li>
+
+                                <li>
+                                    <strong>English:</strong> Very Good (B2)
+                                    <a href="English_Certificate.pdf" class="lang-download" download>🔽 Download Certificate</a>
+                                </li>
+
+                                <li>
+                                    <strong>German:</strong> Good (B1)
+                                    <a href="German_Certificate.pdf" class="lang-download" download>🔽 Download Certificate</a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact" style="position: relative; overflow: hidden;">
+
+        <div class="stars-container"> </div>
+
+        <div class="footer-content" style="position: relative; z-index: 2;">
+            <div class="footer-text">
+                <h2>Let's work together to build something great 😊</h2>
+                <p>Feel free to reach out for collaborations</p>
+                <p style="font-size: 14px; margin-bottom: 20px;">
+                    <b>"Fun fact"</b> I designed and developed this entire website myself ✨
+                </p>
+                <a href="CV Aseel Ballan.pdf" class="btn-download" download>📄 Download CV (PDF)</a>
+            </div>
+
+            <div class="footer-links">
+                <h4 style="color: white; margin-bottom: 15px;">Connect with me:</h4>
+                <a href="mailto:Aseel6Ballan@outlook.com"><i class="fas fa-envelope"></i> Email Me</a>
+                <a href="https://linkedin.com/in/aseelballan" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.behance.net/aseelballan"><i class="fab fa-behance"></i> Behance</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. كود فلترة المشاريع
+            const filterBtns = document.querySelectorAll(".filter-btn");
+            const projects = document.querySelectorAll(".project-card");
+
+            function filterProjects(filterValue) {
+                projects.forEach(project => {
+                    if (project.getAttribute("data-category") === filterValue) {
+                        project.classList.remove("hide-project");
+                    } else {
+                        project.classList.add("hide-project");
+                    }
+                });
+            }
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    filterBtns.forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    filterProjects(btn.getAttribute("data-filter"));
+                });
+            });
+
+            const activeBtn = document.querySelector(".filter-btn.active");
+            if (activeBtn) filterProjects(activeBtn.getAttribute("data-filter"));
+
+
+            // 🌟 3. كود توليد النجوم المطور والمضمون لجميع الأقسام 🌟
+            const allStarContainers = document.querySelectorAll('.stars-container');
+            const numberOfStars = 50;
+
+            allStarContainers.forEach(container => {
+                // إعطاء الحاوية أبعاداً كاملة لتغطية الخلفية تماماً ومنع انهيار الارتفاع
+                container.style.position = 'absolute';
+                container.style.top = '0';
+                container.style.left = '0';
+                container.style.width = '100%';
+                container.style.height = '100%';
+                container.style.zIndex = '1';
+
+                for (let i = 0; i < numberOfStars; i++) {
+                    let star = document.createElement('div');
+                    star.className = 'star';
+
+                    let randomTop = Math.random() * 100;
+                    let randomLeft = Math.random() * 100;
+                    let randomDelay = Math.random() * 3;
+
+                    star.style.top = randomTop + '%';
+                    star.style.left = randomLeft + '%';
+                    star.style.animationDelay = randomDelay + 's';
+
+                    container.appendChild(star);
+                }
+            });
+        });
+
+        // 2. دوال فتح وإغلاق النوافذ المنبثقة (Popups)
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+
+            const video = modal.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+
+            const iframe = modal.querySelector('iframe');
+            if (iframe) {
+                iframe.src = iframe.src;
+            }
+        }
+
+        function closeOutside(event, modalId) {
+            if (event.target.id === modalId) {
+                closeModal(modalId);
+            }
+        }
+    </script>
+
+</body>
+</html>
