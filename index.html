@@ -74,9 +74,18 @@
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
+                            <h3>Internship Experience: Tomandora Production</h3>
+                            <p class="timeline-date">Jun-Jul 2026</p>
+                            <p>Completed a one-month internship at <strong>Tomandora Production</strong>, gaining practical experience in <strong>Adobe After Effects</strong> and motion graphics. Worked on creating educational videos for an online learning platform, focusing on animation, visual communication, and engaging digital content.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
                             <h3>Exchange Semester: Game Design & Media Informatics</h3>
                             <p class="timeline-date">Sep 2026</p>
-                            <p>I will study abroad at <strong>TH Brandenburg</strong> in Germany to expand my academic and international perspective.</p>
+                            <p>I'm currently studying abroad at <strong>TH Brandenburg</strong> in Germany to expand my academic and international perspective.</p>
                         </div>
                     </div>
 
@@ -92,6 +101,14 @@
                 <button class="filter-btn" data-filter="web-app">Web & Mobile App</button>
                 <button class="filter-btn" data-filter="3d-animation">3D & Animation</button>
                 <button class="filter-btn" data-filter="graphic-design">Graphic & Visual Design</button>
+            </div>
+
+            <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-triverse')">
+                <div class="card-image" style="background-image: url('Projects/triverse logo.png');"></div>
+                <div class="case-study-content">
+                    <h3>Triverse - Graduation Project &quot;Team Development&quot;</h3>
+                    <p>Click to watch Game &amp; details ▹</p>
+                </div>
             </div>
 
             <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-ar-aroma')">
@@ -131,6 +148,14 @@
                 <div class="case-study-content">
                     <h3>SSD Platform App</h3>
                     <p>Click to view App & details ▹</p>
+                </div>
+            </div>
+
+            <div class="project-card case-study hide-project" data-category="web-app" onclick="openModal('modal-little-explorer')">
+                <div class="card-image" style="background-image: url('Projects/Little Explorer App.png');"></div>
+                <div class="case-study-content">
+                    <h3>Little Explorer App</h3>
+                    <p>Click to watch App & details ▹</p>
                 </div>
             </div>
 
@@ -232,6 +257,24 @@
 
         </section>
 
+        <div id="modal-triverse" class="modal-overlay" onclick="closeOutside(event, 'modal-triverse')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-triverse')">&times;</span>
+                <div class="modal-body">
+                    <h2>Triverse - Graduation Project &quot;Team Development&quot;</h2>
+
+                    <video controls class="project-video">
+                        <source src="Projects/Triverse Project.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <p><strong>Goal:</strong> Create an educational 3D adventure game that combines environmental awareness with interactive gameplay, encouraging players aged 12+ to explore different worlds and learn about protecting the environment.</p>
+                    <p><strong>Tools:</strong> Unity, C#, Blender, Adobe Photoshop, GitHub.</p>
+                    <p><strong>Key Focus:</strong> Game design, level design, character abilities, interactive quests, environmental storytelling, UI/UX design, 3D environments, and gameplay programming.</p>
+                    <p><strong>Result:</strong> A fully functional 3D adventure game featuring three themed worlds (Ice, Lava, and Forest) with unique characters, missions, rewards, and environmental challenges. The game combines exploration, interactive quests, and educational content to create an engaging learning experience.</p>
+                </div>
+            </div>
+        </div>
 
         <div id="modal-ar-aroma" class="modal-overlay" onclick="closeOutside(event, 'modal-ar-aroma')">
             <div class="modal-box">
@@ -258,13 +301,11 @@
                 <div class="modal-body">
                     <h2>Obstacle Game</h2>
 
-                    <iframe width="100%" height="315" 
-                            src="https://www.youtube.com/embed/ycdQwsObWDI?si=WFZqmH83mPc7n1EU" 
-                            title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-                    </iframe>
+                    <video controls class="project-video">
+                        <source src="Projects/Obstacle Game.mp4" type="video/mp4">
+                        <source src="Projects/Obstacle Game.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
 
                             <p><strong>Goal:</strong> Create a fast-paced 3D platformer game designed to test player reflexes through dynamic obstacles and precise movement mechanics.</p>
                             <p><strong>Tools:</strong> Unity, C# Scripting.</p>
@@ -280,12 +321,11 @@
                 <div class="modal-body">
                     <h2>Dungeon Game</h2>
 
-                    <iframe width="100%" height="315" 
-                            src="https://www.youtube.com/embed/Eijfh-trEFM?si=j3TDuUJw8H6HUHgu" 
-                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
-                    </iframe>
+                    <video controls class="project-video">
+                        <source src="Projects/Dungeon Game.mp4" type="video/mp4">
+                        <source src="Projects/Dungeon Game.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
 
                         <p><strong>Goal:</strong> Design an atmospheric adventure game featuring stylized lighting and interactive environment mechanics focusing on immersive environmental design and player exploration.</p>
                         <p><strong>Tools:</strong> Unity, C#, Blender.</p>
@@ -328,6 +368,25 @@
                     <p><strong>Key Focus:</strong> Role-based dashboards (HoD, Supervisor, Worker), real-time task tracking, QR code employee scanning, and daily/weekly automated reporting.</p>
                     <p><strong>Result:</strong> Designed an interactive 18-screen platform that provides a scalable solution for facility management, issue logging, and performance evaluation.</p>
                     <a href="Projects/SSD Platform.html" target="_blank" class="btn-download" style="text-align: center; display: block; margin-top: 15px;"><i class="fas fa-external-link-alt"></i> Open Full Screen</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-little-explorer" class="modal-overlay" onclick="closeOutside(event, 'modal-little-explorer')">
+            <div class="modal-box">
+                <span class="close-btn" onclick="closeModal('modal-little-explorer')">&times;</span>
+                <div class="modal-body">
+                    <h2>Little Explorer App</h2>
+
+                    <video controls class="project-video">
+                        <source src="Projects/Littel Explorer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <p><strong>Goal:</strong> Design an interactive educational mobile app that makes learning engaging and accessible for children.</p>
+                    <p><strong>Tools:</strong> Figma, UI/UX Design, Prototyping.</p>
+                    <p><strong>Key Focus:</strong> Mobile UI design, user flows, interactive prototyping, navigation, and child-friendly visual design.</p>
+                    <p><strong>Result:</strong> A complete interactive prototype featuring educational activities, interactive challenges, results screens, and customizable settings, designed to create a playful and intuitive learning experience.</p>
                 </div>
             </div>
         </div>
