@@ -536,10 +536,19 @@ footer {
     perspective: 1000px; /* Essential for the 3D effect */
 }
 
+@media (min-width: 769px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 320px));
+        justify-content: center;
+    }
+}
+
 .flip-card {
     background-color: transparent;
-    height: 280px;
+    height: 320px;
     perspective: 1000px;
+    overflow: hidden;
+    border-radius: 16px;
 }
 
 .flip-card-inner {
@@ -586,7 +595,35 @@ footer {
     color: white;
     transform: rotateY(180deg); /* Start it flipped backward */
     text-align: left;
-    align-items: flex-start; /* Align lists to the left */
+    align-items: flex-start;
+    padding: 20px;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.flip-card-back .skill-list {
+    width: 100%;
+}
+
+.flip-card-back .skill-list li {
+    margin-bottom: 9px;
+    padding-left: 20px;
+    font-size: 1rem;
+    line-height: 1.35;
+    text-align: left;
+}
+
+.flip-card-back .skill-list li::before {
+    position: absolute;
+    margin-right: 0;
+}
+
+.flip-card-back .cert-download {
+    margin-top: 5px;
+    font-size: 0.75rem;
+    line-height: 1.25;
+    text-align: left;
+    white-space: nowrap;
 }
 
     .flip-card-back .skill-list li::before {
@@ -984,4 +1021,58 @@ footer {
     background-color: #f9f9f9; /* خلفية خفيفة تظهر إذا كانت الصورة بخلفية شفافة */
 }
 
+/* Keep the layout usable on narrow phone screens. */
+@media (max-width: 480px) {
+    .navbar ul {
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        padding: 6px 10px;
+    }
+
+    .navbar a {
+        font-size: 0.8rem;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .projects {
+        gap: 12px;
+    }
+
+    .case-study {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .skills-section {
+        padding: 25px 15px;
+    }
+
+    .modal-body {
+        padding: 25px 18px;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .flip-card-back {
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .flip-card-back .skill-list li {
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .flip-card-back .skill-list li::before {
+        position: absolute;
+        margin-right: 0;
+    }
+
+    .flip-card-back .cert-download {
+        text-align: left;
+    }
 }
