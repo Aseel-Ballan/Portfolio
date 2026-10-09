@@ -29,9 +29,32 @@ body {
 .hero {
     background: linear-gradient(135deg, #3b28cc, #8b40ff); /* Blue to Purple gradient */
     color: white;
-    text-align: center;
-    padding: 30px 20px 55px;
-    margin-bottom: 40px;
+    text-align: left;
+    padding: 30px 20px;
+    margin-bottom: 70px;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-copy {
+    flex: 0 1 auto;
+}
+
+.hero-image-container {
+    flex: 0 0 250px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
     .hero h1 {
@@ -43,8 +66,7 @@ body {
 .hero-image {
     width: 250px !important; /* This controls the size! Change this number to make it bigger or smaller */
     height: auto; /* Keeps the proportions correct */
-    animation: floatProfile 4s ease-in-out infinite;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 /* Typography Headings */
@@ -55,7 +77,7 @@ h2 {
 
 /* About Section */
 .about {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
 }
 
 .about-content {
@@ -105,7 +127,7 @@ h2 {
 /* Placeholder Gradients for Projects */
 /* Placeholder Gradients for Projects */
 .gradient-1 {
-    background: linear-gradient(135deg, #d4b3ff 0%, #93c5fd 100%);
+    background: linear-gradient(135deg, #b4c5fc 0%, #dcb3ff 100%);
 }
 
 .gradient-2 {
@@ -113,7 +135,7 @@ h2 {
 }
 
 .gradient-3 {
-    background: linear-gradient(135deg, #c2e9fb 0%, #E0B0FF 100%);
+    background: linear-gradient(135deg, #b4c5fc 0%, #dcb3ff 100%);
 }
 
 .gradient-4 {
@@ -166,13 +188,14 @@ h2 {
 footer {
     /* نفس التدرج البنفسجي الموجود في البداية */
     background: linear-gradient(135deg, #3b28cc, #8b40ff);
-    padding: 60px 20px;
-    margin-top: 80px;
+    padding: 26px 16px;
+    margin-top: 64px;
+    font-size: 0.8rem;
     color: white; /* تحويل لون النصوص إلى الأبيض */
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -183,12 +206,17 @@ footer {
 /* لون النصوص التوضيحية */
 .footer-text p {
     color: #f0fdf4;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+}
+
+.footer-text h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
 }
 
 .footer-links {
-    margin-right: 100px; /* 👈 هذا السطر هو الذي سيدفعها لليسار */
-    margin-top: 20px;
+    margin-right: 90px; /* 👈 هذا السطر هو الذي سيدفعها لليسار */
+    margin-top: 14px;
 }
 
 /* روابط التواصل */
@@ -196,9 +224,16 @@ footer {
     display: block;
     color: white;
     text-decoration: none;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: color 0.3s ease, transform 0.3s ease;
     
+}
+
+footer .btn-download {
+    margin-top: 16px;
+    padding: 10px 19px;
+    border-radius: 24px;
+    font-size: 0.76rem;
 }
 
     /* تأثير التمرير للروابط */
@@ -244,7 +279,26 @@ footer {
 
     .footer-content {
         flex-direction: column;
-        gap: 30px;
+        gap: 24px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero-copy {
+        flex: none;
+    }
+
+    .hero h1 {
+        text-align: center;
+    }
+
+    .hero-image-container {
+        flex-basis: auto;
+        justify-content: center;
     }
 }
 
@@ -268,8 +322,7 @@ footer {
     max-width: 400px;
     width: 100%;
     height: auto;
-    /* This runs the float animation over 4 seconds, smoothly, forever */
-    animation: float 4s ease-in-out infinite;
+    display: block;
 }
 
 /* Define the fade-in and slide-up motion */
@@ -376,7 +429,7 @@ footer {
 .case-study {
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .case-study-content {
@@ -424,7 +477,7 @@ footer {
 }
 
     .skill-list li {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         padding-left: 20px;
         position: relative;
     }
@@ -531,9 +584,9 @@ footer {
     font-size: 0.95rem; /* Makes the description text just a touch smaller */
 }
 
-/* --- 3. The 3D Flip Cards (Skills Section) --- */
+/* --- Static Skill Cards --- */
 .skills-grid {
-    perspective: 1000px; /* Essential for the 3D effect */
+    align-items: stretch;
 }
 
 @media (min-width: 769px) {
@@ -543,92 +596,47 @@ footer {
     }
 }
 
-.flip-card {
-    background-color: transparent;
-    height: 320px;
-    perspective: 1000px;
-    overflow: hidden;
-    border-radius: 16px;
-}
-
-.flip-card-inner {
-    position: relative;
+.skill-card {
     width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1); /* Smooth 3D curve */
-    transform-style: preserve-3d;
-}
-
-/* Trigger the flip on hover */
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari support */
-    backface-visibility: hidden;
+    min-height: 320px;
     border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 24px;
+    color: #1a1a1a;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-.flip-card-front {
-    color: #1a1a1a;
+.skill-card h3 {
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(59, 40, 204, 0.25);
+    font-size: 1.25rem;
 }
 
-    .flip-card-front h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-
-/* The back of the card */
-.flip-card-back {
-    background-color: #8b40ff;
-    color: white;
-    transform: rotateY(180deg); /* Start it flipped backward */
-    text-align: left;
-    align-items: flex-start;
-    padding: 20px;
-    justify-content: center;
-    overflow-y: auto;
-}
-
-.flip-card-back .skill-list {
+.skill-card .skill-list {
     width: 100%;
 }
 
-.flip-card-back .skill-list li {
-    margin-bottom: 9px;
-    padding-left: 20px;
-    font-size: 1rem;
+.skill-card .skill-list li {
+    margin-bottom: 8px;
+    padding-left: 18px;
+    font-size: 0.92rem;
     line-height: 1.35;
     text-align: left;
 }
 
-.flip-card-back .skill-list li::before {
-    position: absolute;
-    margin-right: 0;
-}
-
-.flip-card-back .cert-download {
-    margin-top: 5px;
+.skill-card .cert-download,
+.skill-card .lang-download {
     font-size: 0.75rem;
     line-height: 1.25;
     text-align: left;
-    white-space: nowrap;
+    white-space: normal;
+    color: #3b28cc;
 }
 
-    .flip-card-back .skill-list li::before {
-        color: #84fab0; /* Change bullet color to pop against dark background */
-    }
+.skill-card .cert-download:hover,
+.skill-card .lang-download:hover {
+    color: #1a1a1a;
+}
 
 /* Optional: Arrange projects in a 3-column grid on large screens */
 .projects {
@@ -636,6 +644,7 @@ footer {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-bottom: 60px;
 }
 
     .projects h2 {
@@ -660,6 +669,36 @@ footer {
     z-index: 1000; /* Ensures it stays above all other elements */
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     padding: 5px 0;
+}
+
+.language-switch {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    display: flex;
+    transform: translateY(-50%);
+    padding: 3px;
+    border: 1px solid rgba(26, 26, 26, 0.16);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.language-option {
+    min-width: 38px;
+    border: 0;
+    border-radius: 4px;
+    padding: 5px 8px;
+    background: transparent;
+    color: #1a1a1a;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.language-option.active {
+    background: #1a1a1a;
+    color: #fff;
 }
 
     .navbar ul {
@@ -688,10 +727,15 @@ footer {
 @media (max-width: 768px) {
     .navbar ul {
         gap: 15px; /* Shrinks the gap on mobile */
+        padding-right: 92px;
     }
 
     .navbar a {
         font-size: 0.95rem; /* Shrinks the text slightly on mobile */
+    }
+
+    .language-switch {
+        right: 8px;
     }
 }
 /* <--- THIS BRACKET WAS MISSING! It closes the mobile styles properly. */
@@ -701,7 +745,7 @@ footer {
    TIMELINE (My Journey)
    ========================================= */
 .timeline-section {
-    margin-bottom: 100px; /* Matches the background of About Me */
+    margin-bottom: 50px; /* Matches the background of About Me */
 }
 
 /* New box to match the About Me purple container */
@@ -888,9 +932,9 @@ footer {
 
 /* تنسيق الأيقونات الاحترافية في الفوتر */
 .footer-links a i {
-    margin-right: 10px; /* مسافة بين الأيقونة والنص */
-    font-size: 1.2rem; /* تكبير الأيقونة قليلاً */
-    width: 24px; /* توحيد العرض لكي تكون النصوص تحت بعضها بشكل مستقيم ومثالي */
+    margin-right: 8px; /* مسافة بين الأيقونة والنص */
+    font-size: 0.96rem; /* تكبير الأيقونة قليلاً */
+    width: 19px; /* توحيد العرض لكي تكون النصوص تحت بعضها بشكل مستقيم ومثالي */
     text-align: center;
 }
 
@@ -1021,12 +1065,142 @@ footer {
     background-color: #f9f9f9; /* خلفية خفيفة تظهر إذا كانت الصورة بخلفية شفافة */
 }
 
+.triverse-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 4px 2px 12px;
+    margin-bottom: 12px;
+}
+
+.triverse-gallery img {
+    display: block;
+    width: 160px;
+    height: 115px;
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.triverse-gallery a {
+    flex: 0 0 160px;
+    cursor: zoom-in;
+}
+
+.triverse-image-viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 72px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.84);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.24s ease, visibility 0.24s ease;
+}
+
+.triverse-image-viewer.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.triverse-image-viewer img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: scale(0.97);
+    transition: transform 0.24s ease;
+}
+
+.triverse-image-viewer.active img {
+    transform: scale(1);
+}
+
+.triverse-image-close {
+    position: absolute;
+    top: 16px;
+    right: 22px;
+    z-index: 1;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 32px;
+    line-height: 1;
+    padding: 0 0 7px;
+    cursor: pointer;
+}
+
+.triverse-image-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transform: translateY(-70%);
+}
+
+.triverse-image-previous {
+    left: 16px;
+}
+
+.triverse-image-next {
+    right: 16px;
+}
+
+.triverse-image-close:hover,
+.triverse-image-nav:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 600px) {
+    .triverse-image-viewer {
+        padding: 60px 48px;
+    }
+
+    .triverse-image-close {
+        top: 10px;
+        right: 10px;
+    }
+
+    .triverse-image-previous {
+        left: 6px;
+    }
+
+    .triverse-image-next {
+        right: 6px;
+    }
+
+    .triverse-image-nav {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 /* Keep the layout usable on narrow phone screens. */
 @media (max-width: 480px) {
     .navbar ul {
         flex-wrap: wrap;
         gap: 8px 12px;
         padding: 6px 10px;
+        margin-right: 92px;
     }
 
     .navbar a {
@@ -1055,24 +1229,3 @@ footer {
     }
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
-    .flip-card-back {
-        justify-content: center;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .flip-card-back .skill-list li {
-        padding-left: 20px;
-        text-align: left;
-    }
-
-    .flip-card-back .skill-list li::before {
-        position: absolute;
-        margin-right: 0;
-    }
-
-    .flip-card-back .cert-download {
-        text-align: left;
-    }
-}

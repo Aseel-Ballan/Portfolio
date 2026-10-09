@@ -18,6 +18,10 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="language-switch" role="group" aria-label="Website language">
+            <button type="button" class="language-option active" data-language="en" aria-pressed="true" onclick="setWebsiteLanguage('en')">En</button>
+            <button type="button" class="language-option" data-language="de" aria-pressed="false" onclick="setWebsiteLanguage('de')">De</button>
+        </div>
     </nav>
 
     <header class="hero" id="home">
@@ -32,11 +36,14 @@
             <div class="star" style="top: 80%; left: 75%; animation-delay: 0.8s;"></div>
         </div>
 
-        <h1>My Portfolio</h1>
-        <p class="hero-subtitle">Merging technology with creative design</p>
-
-        <div class="hero-image-container">
-            <img src="Portfolio Picture2.png" alt="My Personal Picture" class="hero-image">
+        <div class="hero-content">
+            <div class="hero-copy">
+                <h1>My Portfolio</h1>
+                <p class="hero-subtitle">Merging technology with creative design</p>
+            </div>
+            <div class="hero-image-container">
+                <img src="Portfolio Picture2.png" alt="My Personal Picture" class="hero-image">
+            </div>
         </div>
     </header>
 
@@ -61,6 +68,15 @@
 
             <div class="journey-wrapper" style="position: relative; z-index: 2;">
                 <div class="timeline">
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Secondary Education - General Secondary Education Certificate (Tawjihi)</h3>
+                            <p class="timeline-date">2017-2023</p>
+                            <p>Studied at two schools in Jordan, completing Grades 6–9 at <strong>Roaa Alfaroq School</strong> and Grades 10–12 at <strong>Golden Hills School</strong>. Graduated with the <strong>General Secondary Education Certificate (Tawjihi)</strong> in 2023, achieving an overall average of <strong>89%</strong>.</p>
+                        </div>
+                    </div>
 
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
@@ -268,12 +284,27 @@
                         Your browser does not support the video tag.
                     </video>
 
+                    <div class="triverse-gallery" aria-label="Triverse project images">
+                        <a href="Projects/characters triverse.jpeg" onclick="openTriverseImage(event, this)"><img src="Projects/characters triverse.jpeg" alt="Triverse characters"></a>
+                        <a href="Projects/ice map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/ice map triverse.png" alt="Triverse ice map"></a>
+                        <a href="Projects/lava map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/lava map triverse.png" alt="Triverse lava map"></a>
+                        <a href="Projects/forest map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/forest map triverse.png" alt="Triverse forest map"></a>
+                        <a href="Projects/HUI triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/HUI triverse.png" alt="Triverse user interface"></a>
+                    </div>
+
                     <p><strong>Goal:</strong> Create an educational 3D adventure game that combines environmental awareness with interactive gameplay, encouraging players aged 12+ to explore different worlds and learn about protecting the environment.</p>
                     <p><strong>Tools:</strong> Unity, C#, Blender, Adobe Photoshop, GitHub.</p>
                     <p><strong>Key Focus:</strong> Game design, level design, character abilities, interactive quests, environmental storytelling, UI/UX design, 3D environments, and gameplay programming.</p>
                     <p><strong>Result:</strong> A fully functional 3D adventure game featuring three themed worlds (Ice, Lava, and Forest) with unique characters, missions, rewards, and environmental challenges. The game combines exploration, interactive quests, and educational content to create an engaging learning experience.</p>
                 </div>
             </div>
+        </div>
+
+        <div id="triverse-image-viewer" class="triverse-image-viewer" role="dialog" aria-modal="true" aria-label="Triverse image preview" aria-hidden="true" onclick="if (event.target === this) closeTriverseImage()">
+            <button class="triverse-image-close" type="button" aria-label="Close image preview" onclick="closeTriverseImage()">&times;</button>
+            <button class="triverse-image-nav triverse-image-previous" type="button" aria-label="Previous image" onclick="navigateTriverseImage(-1)">&#10094;</button>
+            <img src="" alt="">
+            <button class="triverse-image-nav triverse-image-next" type="button" aria-label="Next image" onclick="navigateTriverseImage(1)">&#10095;</button>
         </div>
 
         <div id="modal-ar-aroma" class="modal-overlay" onclick="closeOutside(event, 'modal-ar-aroma')">
@@ -362,6 +393,12 @@
                     <h2>SSD Platform App</h2>
 
                     <iframe src="Projects/SSD Platform.html" class="project-preview-frame" title="SSD Platform Preview"></iframe>
+
+                    <h3>SDD Platform Video</h3>
+                    <video controls class="project-video">
+                        <source src="Projects/SSD Platform App Video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
 
                     <p><strong>Goal:</strong> Develop a comprehensive Facility Cleaning Management System for the German Jordanian University to streamline task distribution across multiple departments and roles.</p>
                     <p><strong>Tools:</strong> Android Studio: Kotlin, XML, Database & Firebase.</p>
@@ -582,71 +619,46 @@
             <h2 style="text-align: center; margin-bottom: 40px;">Skills & Languages</h2>
             <div class="skills-grid">
 
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front gradient-1">
-                            <h3>Technical Skills</h3>
-                            <p>Hover to reveal ▹</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <ul class="skill-list">
-                                <li>Unity & Blender</li>
-                                <li>Adobe (Ps, Ai, Ae, Id) & Figma</li>
-                                <li>Visual Studio (HTML, CSS, JS)</li>
-                                <li>Android Studio</li>
-                                <li>MS office</li>
-                            </ul>
+                <div class="skill-card gradient-2">
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Unity & Blender</li>
+                        <li>Adobe (Ps, Ai, Ae, Id) & Figma</li>
+                        <li>Visual Studio (HTML, CSS, JS)</li>
+                        <li>Android Studio</li>
+                        <li>MS office</li>
+                    </ul>
 
-                            <a href="Android_Fundamentals_Certificate.pdf" class="cert-download" download>🔽 Android App Fundamentals Certificate</a>
-                            <a href="AI_Basics_Certificate.pdf" class="cert-download" download>🔽 AI Basics Certificate</a>
-                        </div>
                     </div>
+
+                <div class="skill-card gradient-2">
+                    <h3>Interests & Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Game Development</li>
+                        <li>Web Development</li>
+                        <li>UI/UX Design</li>
+                        <li>VR & AR</li>
+                        <li>Animation & 3D Modeling</li>
+                        <li>Creative Problem Solving</li>
+                        <li>Teamwork & Attention to Detail</li>
+                    </ul>
                 </div>
 
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front gradient-2">
-                            <h3>Interests & Soft Skills</h3>
-                            <p>Hover to reveal ▹</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <ul class="skill-list">
-                                <li>Game Development</li>
-                                <li>Web Development</li>
-                                <li>UI/UX Design</li>
-                                <li>VR & AR</li>
-                                <li>Animation & 3D Modeling</li>
-                                <li>Creative Problem Solving</li>
-                                <li>Teamwork & Attention to Detail</li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front gradient-3">
-                            <h3>Languages</h3>
-                            <p>Hover to reveal ▹</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <ul class="skill-list language-list">
-                                <li><strong>Arabic:</strong> Native</li>
-
-                                <li>
-                                    <strong>English:</strong> Very Good (B2)
-                                    <a href="English_Certificate.pdf" class="lang-download" download>🔽 Download Certificate</a>
-                                </li>
-
-                                <li>
-                                    <strong>German:</strong> Good (B1)
-                                    <a href="German_Certificate.pdf" class="lang-download" download>🔽 Download Certificate</a>
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="skill-card gradient-2">
+                    <h3>Languages</h3>
+                    <ul class="skill-list language-list">
+                        <li><strong>Arabic:</strong> Native</li>
+                        <li>
+                            <strong>English:</strong> Very Good (B2)
+                        </li>
+                        <li>
+                            <strong>German:</strong> Good (B1)
+                        </li>
+                    </ul>
+                    
+                     <a href="English_Certificate.pdf" class="lang-download" download>🔽 English Certificate</a>
+                     <a href="German_Certificate.pdf" class="lang-download" download>🔽 German Certificate</a>
+                       
                 </div>
 
             </div>
@@ -662,14 +674,14 @@
             <div class="footer-text">
                 <h2>Let's work together to build something great 😊</h2>
                 <p>Feel free to reach out for collaborations</p>
-                <p style="font-size: 14px; margin-bottom: 20px;">
+                <p style="font-size: 11px; margin-bottom: 16px;">
                     <b>"Fun fact"</b> I designed and developed this entire website myself ✨
                 </p>
                 <a href="CV Aseel Ballan.pdf" class="btn-download" download>📄 Download CV (PDF)</a>
             </div>
 
             <div class="footer-links">
-                <h4 style="color: white; margin-bottom: 15px;">Connect with me:</h4>
+                <h4 style="color: white; margin-bottom: 12px;">Connect with me:</h4>
                 <a href="mailto:Aseel6Ballan@outlook.com"><i class="fas fa-envelope"></i> Email Me</a>
                 <a href="https://linkedin.com/in/aseelballan" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="https://www.behance.net/aseelballan"><i class="fab fa-behance"></i> Behance</a>
@@ -678,6 +690,249 @@
     </footer>
 
     <script>
+        const germanTranslations = {
+            "Home": "Startseite",
+            "About": "Über mich",
+            "Journey": "Mein Werdegang",
+            "Projects": "Projekte",
+            "Skills": "Fähigkeiten",
+            "Contact": "Kontakt",
+            "My Portfolio": "Mein Portfolio",
+            "Merging technology with creative design": "Technologie und kreatives Design vereint",
+            "About Me": "Über mich",
+            "Hello! I am a student deeply passionate about Game Design and Media Informatics. I focus on creating interactive media, developing seamless web experiences, and designing intuitive user interfaces. My goal is to build immersive digital experiences by combining strong technical foundations with creative visual communication.": "Hallo! Ich bin Studentin und begeistere mich für Game Design und Medieninformatik. Mein Schwerpunkt liegt auf interaktiven Medien, nahtlosen Web-Erlebnissen und intuitiven Benutzeroberflächen. Mein Ziel ist es, immersive digitale Erlebnisse zu schaffen, indem ich fundierte technische Kenntnisse mit kreativer visueller Kommunikation verbinde.",
+            "My Journey": "Mein Werdegang",
+            "Secondary Education - General Secondary Education Certificate (Tawjihi)": "Sekundarschulbildung – Allgemeiner Sekundarschulabschluss (Tawjihi)",
+            "Studied at two schools in Jordan, completing Grades 6–9 at": "Ich besuchte zwei Schulen in Jordanien und absolvierte die Klassen 6–9 an der",
+            "and Grades 10–12 at": "sowie die Klassen 10–12 an der",
+            ". Graduated with the": ". Im Jahr 2023 erwarb ich den",
+            "in 2023, achieving an overall average of": "mit einem Gesamtdurchschnitt von",
+            "BSc. Game Design & Media Informatics": "B.Sc. Game Design & Medieninformatik",
+            "Studying at the": "Ich studiere an der",
+            "with a focus on Visual Programming, Android Studio, 3D Modeling & Animation, and Virtual/Augmented Reality.": "mit Schwerpunkten in visuellem Programmieren, Android Studio, 3D-Modellierung und Animation sowie Virtual und Augmented Reality.",
+            "Internship Experience: Tomandora Production": "Praktikum: Tomandora Production",
+            "Completed a one-month internship at": "Ich absolvierte ein einmonatiges Praktikum bei",
+            ", gaining practical experience in": "und sammelte praktische Erfahrungen mit",
+            "and motion graphics. Worked on creating educational videos for an online learning platform, focusing on animation, visual communication, and engaging digital content.": "sowie Motion Graphics. Ich wirkte an Lernvideos für eine Online-Lernplattform mit und konzentrierte mich auf Animation, visuelle Kommunikation und ansprechende digitale Inhalte.",
+            "Exchange Semester: Game Design & Media Informatics": "Auslandssemester: Game Design & Medieninformatik",
+            "I'm currently studying abroad at": "Derzeit studiere ich im Ausland an der",
+            "in Germany to expand my academic and international perspective.": "in Deutschland, um meinen akademischen und internationalen Horizont zu erweitern.",
+            "Featured Projects": "Ausgewählte Projekte",
+            "Games & AR": "Spiele & AR",
+            "Web & Mobile App": "Web- & Mobile-Apps",
+            "3D & Animation": "3D & Animation",
+            "Graphic & Visual Design": "Grafik- & visuelles Design",
+            "Triverse - Graduation Project \"Team Development\"": "Triverse – Abschlussprojekt „Team Development“",
+            "Click to watch Game & details ▹": "Spiel und Details ansehen ▹",
+            "Aroma Diffuser AR Project": "AR-Projekt: Aroma-Diffusor",
+            "Click to watch AR Project & details ▹": "AR-Projekt und Details ansehen ▹",
+            "Obstacle Game": "Hindernisspiel",
+            "Click to watch Game & details ▹": "Spiel und Details ansehen ▹",
+            "Dungeon Game": "Dungeon-Spiel",
+            "Educational Flashcards Website": "Lernkartei-Website",
+            "Click to view Website & details ▹": "Website und Details ansehen ▹",
+            "SSD Platform App": "SSD-Plattform-App",
+            "Click to view App & details ▹": "App und Details ansehen ▹",
+            "Little Explorer App": "Little-Explorer-App",
+            "Click to watch App & details ▹": "App und Details ansehen ▹",
+            "Refood App": "Refood-App",
+            "Click to view App & details ▹": "App und Details ansehen ▹",
+            "3D Objects Showcase": "3D-Objekte",
+            "Click to view 3D Model ▹": "3D-Modell ansehen ▹",
+            "3D Car in Small Village": "3D-Auto in einem kleinen Dorf",
+            "3D Low-Poly Dungeon": "3D-Low-Poly-Dungeon",
+            "3D Seaport Village": "3D-Hafendorf",
+            "3D Low-Poly Market Square": "3D-Low-Poly-Marktplatz",
+            "Refood App Promo Video": "Refood-App-Werbevideo",
+            "Click to watch Video ▹": "Video ansehen ▹",
+            "Arabic Proverb Animation": "Animation eines arabischen Sprichworts",
+            "Click to watch Animation ▹": "Animation ansehen ▹",
+            "Stars Magazine": "Stars-Magazin",
+            "Click to view magazine design ▹": "Magazindesign ansehen ▹",
+            "Feeling: Happiness": "Gefühl: Glück",
+            "Click to view photography project ▹": "Fotoprojekt ansehen ▹",
+            "Memories": "Erinnerungen",
+            "Refood Brand & Presentation": "Refood-Marke und Präsentation",
+            "Click to view design deck ▹": "Designpräsentation ansehen ▹",
+            "Triverse - Graduation Project \"Team Development\"": "Triverse – Abschlussprojekt „Team Development“",
+            "Goal:": "Ziel:",
+            "Tools:": "Werkzeuge:",
+            "Key Focus:": "Schwerpunkte:",
+            "Key Features:": "Hauptmerkmale:",
+            "Result:": "Ergebnis:",
+            "Create an educational 3D adventure game that combines environmental awareness with interactive gameplay, encouraging players aged 12+ to explore different worlds and learn about protecting the environment.": "Entwicklung eines lehrreichen 3D-Abenteuers, das Umweltbewusstsein mit interaktivem Gameplay verbindet und Spielerinnen und Spieler ab 12 Jahren dazu anregt, verschiedene Welten zu erkunden und mehr über Umweltschutz zu erfahren.",
+            "Unity, C#, Blender, Adobe Photoshop, GitHub.": "Unity, C#, Blender, Adobe Photoshop, GitHub.",
+            "Game design, level design, character abilities, interactive quests, environmental storytelling, UI/UX design, 3D environments, and gameplay programming.": "Spieldesign, Leveldesign, Charakterfähigkeiten, interaktive Quests, Environmental Storytelling, UI/UX-Design, 3D-Umgebungen und Gameplay-Programmierung.",
+            "A fully functional 3D adventure game featuring three themed worlds (Ice, Lava, and Forest) with unique characters, missions, rewards, and environmental challenges. The game combines exploration, interactive quests, and educational content to create an engaging learning experience.": "Ein vollständig spielbares 3D-Abenteuer mit drei Themenwelten (Eis, Lava und Wald), individuellen Charakteren, Missionen, Belohnungen und Umweltaufgaben. Erkundung, interaktive Quests und Lerninhalte verbinden sich zu einem fesselnden Spielerlebnis.",
+            "To show how a simple physical object can become more engaging inside an AR environment by responding to different scents with lighting, matching sounds, and real-time steam effects (Marketing of industrial products).": "Das Projekt zeigt, wie ein einfacher Gegenstand in einer AR-Umgebung ansprechender wird: Verschiedene Düfte lösen passende Beleuchtung, Klänge und Dampfeffekte in Echtzeit aus (Marketing für Industrieprodukte).",
+            "Unity, Vuforia (Image Target), C# Scripting.": "Unity, Vuforia (Image Target), C#-Scripting.",
+            "Interactive UI with tooltips, dynamic particle effects, audio integration, and real-time object manipulation (scaling & rotation).": "Interaktive Benutzeroberfläche mit Tooltips, dynamischen Partikeleffekten, Audiointegration und Objektbearbeitung in Echtzeit (Skalierung und Drehung).",
+            "A smooth and responsive AR interaction on mobile that brings together visual and audio effects realistically.": "Eine flüssige und reaktionsschnelle mobile AR-Interaktion, die Bild- und Toneffekte realistisch verbindet.",
+            "Create a fast-paced 3D platformer game designed to test player reflexes through dynamic obstacles and precise movement mechanics.": "Entwicklung eines temporeichen 3D-Platformers, der mit dynamischen Hindernissen und präziser Steuerung die Reflexe der Spielenden auf die Probe stellt.",
+            "Unity, C# Scripting.": "Unity, C#-Scripting.",
+            "Level design, physics-based programming, custom animation states, and highly responsive character controls.": "Leveldesign, physikbasierte Programmierung, individuelle Animationszustände und eine präzise Charaktersteuerung.",
+            "A fully functional 3D prototype featuring progressive difficulty scaling, moving hazards, and smooth player mechanics that maximize engagement and replayability.": "Ein spielbarer 3D-Prototyp mit ansteigendem Schwierigkeitsgrad, beweglichen Gefahren und flüssiger Steuerung für hohen Spielspaß und Wiederspielwert.",
+            "Design an atmospheric adventure game featuring stylized lighting and interactive environment mechanics focusing on immersive environmental design and player exploration.": "Entwicklung eines atmosphärischen Abenteuers mit stilisierter Beleuchtung und interaktiven Umgebungsmechaniken, bei dem immersives Leveldesign und Erkundung im Mittelpunkt stehen.",
+            "Visual aesthetics, dungeon generation concepts, real-time lighting and shadows, environment interaction, and spatial audio integration.": "Visuelle Gestaltung, Konzepte zur Dungeon-Generierung, Echtzeitlicht und -schatten, Interaktion mit der Umgebung und räumliche Audiointegration.",
+            "An immersive adventure prototype delivering a polished player experience with interactive prop mechanics (doors/chests), dynamic ambient audio, and custom-designed 3D environments.": "Ein immersiver Abenteuerprototyp mit interaktiven Objekten wie Türen und Truhen, dynamischem Umgebungsklang und individuell gestalteten 3D-Umgebungen.",
+            "Develop an interactive web platform utilizing digital flashcards to optimize student learning and memory retention.": "Entwicklung einer interaktiven Webplattform mit digitalen Lernkarten, die das Lernen und Behalten von Inhalten unterstützt.",
+            "Apache NetBeans: PHP, CSS.": "Apache NetBeans: PHP, CSS.",
+            "Interactive front-end development, CSS animations (card flipping), dynamic DOM manipulation, and responsive UI design.": "Interaktive Frontend-Entwicklung, CSS-Animationen (Karten umdrehen), dynamische DOM-Manipulation und responsives UI-Design.",
+            "A highly responsive web application with custom card-flipping animations and progress tracking features.": "Eine responsive Webanwendung mit individuellen Kartenanimationen und Funktionen zur Lernfortschrittsanzeige.",
+            "SDD Platform Video": "SDD-Plattformvideo",
+            "Develop a comprehensive Facility Cleaning Management System for the German Jordanian University to streamline task distribution across multiple departments and roles.": "Entwicklung eines umfassenden Gebäudereinigungs-Managementsystems für die German Jordanian University, das die Aufgabenverteilung über mehrere Abteilungen und Rollen hinweg vereinfacht.",
+            "Android Studio: Kotlin, XML, Database & Firebase.": "Android Studio: Kotlin, XML, Datenbank und Firebase.",
+            "Role-based dashboards (HoD, Supervisor, Worker), real-time task tracking, QR code employee scanning, and daily/weekly automated reporting.": "Rollenbasierte Dashboards (Abteilungsleitung, Aufsicht, Mitarbeitende), Aufgabenverfolgung in Echtzeit, Mitarbeitendensuche per QR-Code und automatische Tages- und Wochenberichte.",
+            "Designed an interactive 18-screen platform that provides a scalable solution for facility management, issue logging, and performance evaluation.": "Entwurf einer interaktiven Plattform mit 18 Ansichten als skalierbare Lösung für Gebäudemanagement, Problemerfassung und Leistungsbewertung.",
+            "Open Full Screen": "Im Vollbild öffnen",
+            "Design an interactive educational mobile app that makes learning engaging and accessible for children.": "Entwicklung einer interaktiven Lern-App, die Kindern einen ansprechenden und leicht zugänglichen Lernzugang bietet.",
+            "Figma, UI/UX Design, Prototyping.": "Figma, UI/UX-Design, Prototyping.",
+            "Mobile UI design, user flows, interactive prototyping, navigation, and child-friendly visual design.": "Mobiles UI-Design, User Flows, interaktives Prototyping, Navigation und kindgerechte Gestaltung.",
+            "A complete interactive prototype featuring educational activities, interactive challenges, results screens, and customizable settings, designed to create a playful and intuitive learning experience.": "Ein vollständiger interaktiver Prototyp mit Lernaktivitäten, Herausforderungen, Ergebnisansichten und anpassbaren Einstellungen für ein spielerisches und intuitives Lernerlebnis.",
+            "Conceptualize a sustainable mobile application \"REFOOD\" aimed at combating food waste by connecting users with recycling machines and organic compost markets.": "Konzeption der nachhaltigen Mobil-App „REFOOD“, die Lebensmittelverschwendung bekämpft, indem sie Nutzende mit Recyclingautomaten und Märkten für Bio-Kompost verbindet.",
+            "Figma, Adobe Photoshop (Logo), UI/UX Mobile Design, Wireframing.": "Figma, Adobe Photoshop (Logo), mobiles UI/UX-Design, Wireframing.",
+            "Eco-friendly user journeys, gamification (competitions and leaderboards), location-based recycling tracking, and a dedicated green marketplace.": "Umweltfreundliche User Journeys, Gamification mit Wettbewerben und Ranglisten, standortbezogene Recyclingverfolgung und ein eigener grüner Marktplatz.",
+            "A comprehensive UI/UX design showcasing a user-centered approach to environmental sustainability, featuring intuitive navigation and engaging reward systems.": "Ein umfassendes UI/UX-Design für nutzerorientierte ökologische Nachhaltigkeit mit intuitiver Navigation und motivierenden Belohnungssystemen.",
+            "Model and texture a diverse asset library of production-ready 3D objects with precise geometry and stylized shading.": "Modellierung und Texturierung einer vielseitigen Sammlung produktionsreifer 3D-Objekte mit präziser Geometrie und stilisierter Schattierung.",
+            "Modeling diverse shapes (Hard-surface & Organic), stylized PBR material creation, and aesthetic scene composition.": "Modellierung unterschiedlicher Formen (Hard Surface und organisch), Erstellung stilisierter PBR-Materialien und ästhetische Szenengestaltung.",
+            "A polished collection of optimized models including a detailed bedroom set, realistic food assets, characters and accessories.": "Eine ausgearbeitete Sammlung optimierter Modelle mit detailliertem Schlafzimmer, realistischen Lebensmitteln, Charakteren und Accessoires.",
+            "Design and build a charming low-poly 3D diorama featuring a detailed vehicle inside a stylized village environment.": "Gestaltung eines charmanten Low-Poly-3D-Dioramas mit einem detaillierten Fahrzeug in einer stilisierten Dorfumgebung.",
+            "Environment layout, residential architecture design, vehicle props, Character modeling, ambient lighting (street lighting effects) and narrative world-building.": "Umgebungsaufbau, Gestaltung von Wohnarchitektur und Fahrzeugen, Charaktermodellierung, Umgebungsbeleuchtung mit Straßeneffekten und erzählerischer Weltenbau.",
+            "An engaging miniature village scene that effectively captures a moment of daily life through environmental storytelling.": "Eine stimmungsvolle Miniaturdorfszene, die durch Environmental Storytelling einen Moment des Alltags einfängt.",
+            "Craft a modular low-poly fantasy dungeon crawler environment specifically tailored for game level design configurations.": "Gestaltung einer modularen Low-Poly-Fantasy-Dungeon-Umgebung für den Einsatz im Leveldesign.",
+            "Modular room architecture (modular kit-bashing), interior prop placement, low-poly aesthetics, palette coordination and high-contrast atmospheric lighting for an immersive mood.": "Modulare Raumarchitektur, Platzierung von Einrichtungsobjekten, Low-Poly-Ästhetik, abgestimmte Farbpaletten und kontrastreiche atmosphärische Beleuchtung.",
+            "Built a game-ready modular environment pack that optimizes scene rendering while maximizing exploration immersion.": "Erstellung eines spielbereiten modularen Umgebungspakets, das die Szenendarstellung optimiert und zugleich ein immersives Erkundungserlebnis bietet.",
+            "Construct a night-time maritime environment centered around a lighthouse island, focusing on the interaction between water and land assets.": "Gestaltung einer nächtlichen maritimen Umgebung rund um eine Leuchtturminsel mit Fokus auf das Zusammenspiel von Wasser und Land.",
+            "Complex scene composition, architectural asset scaling, and object density control, stylized water shaders with reflections, lighthouse architecture, rocky terrain modeling, and dynamic moonlit lighting.": "Komplexer Szenenaufbau, Skalierung architektonischer Elemente, kontrollierte Objektdichte, stilisierte Wassershader mit Spiegelungen, Leuchtturmarchitektur, felsiges Gelände und dynamisches Mondlicht.",
+            "Successfully engineered an intricate low-poly seaport environment with high visual interest distributed across multiple layers.": "Umsetzung einer detailreichen Low-Poly-Hafenumgebung mit abwechslungsreicher Gestaltung auf mehreren Ebenen.",
+            "Design a lively 3D marketplace town square showcasing unique architectural props and vibrant marketplace asset density.": "Gestaltung eines lebendigen 3D-Marktplatzes mit charakteristischen Architekturdetails und vielfältigen Marktobjekten.",
+            "Architectural variation, market stall prop design (carts, barrels, fountain), warm ambient color grading.": "Architektonische Vielfalt, Gestaltung von Marktständen und Objekten wie Wagen, Fässern und Brunnen sowie warme Farbgebung.",
+            "A detailed and inviting town square environment that provides a rich sense of community and place within a low-poly aesthetic harmony.": "Ein detailreicher, einladender Marktplatz, der mit harmonischer Low-Poly-Ästhetik ein lebendiges Gemeinschaftsgefühl vermittelt.",
+            "Create a compelling awareness video to highlight the environmental impact of food waste and introduce the Refood app as a technological solution.": "Produktion eines überzeugenden Informationsvideos, das die Umweltauswirkungen von Lebensmittelverschwendung zeigt und die Refood-App als technische Lösung vorstellt.",
+            "Narrative storytelling through motion graphics, bilingual kinetic typography, UI/UX asset animation, fluid screen transitions and visualizing the \"Waste to Resource\" transformation process.": "Erzählerische Motion Graphics, zweisprachige kinetische Typografie, Animation von UI/UX-Elementen, fließende Übergänge und die Visualisierung des Wandels von „Abfall zu Ressource“.",
+            "A professional promotional video that effectively communicates the app's mission, encouraging user adoption through strong visual calls to action.": "Ein professionelles Werbevideo, das die Mission der App klar vermittelt und mit starken visuellen Handlungsaufforderungen zur Nutzung einlädt.",
+            "Create a creative cultural motion graphics piece animating a traditional Arabic proverb (\"The winds blow contrary to what the ships desire\") to convey its philosophical meaning through creative visual storytelling.": "Gestaltung einer kulturellen Motion-Graphics-Arbeit zu einem traditionellen arabischen Sprichwort („Die Winde wehen entgegen den Wünschen der Schiffe“), dessen philosophische Bedeutung visuell erzählt wird.",
+            "Vector character illustration, narrative timing, environment effects (wind & waves) and educational content design using kinetic typography.": "Vektorillustration von Figuren, erzählerisches Timing, Umwelteffekte wie Wind und Wellen sowie Wissensvermittlung mit kinetischer Typografie.",
+            "Formed an expressive visual narrative short film demonstrating advanced motion principles and creative art direction.": "Ein ausdrucksstarker visueller Kurzfilm, der fortgeschrittene Motion-Prinzipien und kreative Art Direction zeigt.",
+            "Design a captivating editorial magazine layout that balances typography, imagery, and whitespace to create an engaging reading experience.": "Gestaltung eines ansprechenden Magazinlayouts, das Typografie, Bilder und Weißraum zu einem überzeugenden Leseerlebnis verbindet.",
+            "Editorial layout, typographic hierarchy, grid systems, and print-ready digital publishing.": "Redaktionelles Layout, typografische Hierarchie, Rastersysteme und druckfertige digitale Veröffentlichung.",
+            "A beautifully structured multi-page zine/magazine that demonstrates a strong grasp of visual hierarchy and editorial design principles.": "Ein klar strukturiertes mehrseitiges Magazin, das ein sicheres Verständnis visueller Hierarchie und redaktioneller Gestaltungsprinzipien zeigt.",
+            "Open Full Magazine": "Vollständiges Magazin öffnen",
+            "Feeling: Happiness (Photography)": "Gefühl: Glück (Fotografie)",
+            "Capture, curate, and present a photography series that visually explores and translates the abstract human emotion of happiness.": "Eine Fotoserie aufnehmen, auswählen und präsentieren, die das abstrakte menschliche Gefühl Glück visuell erforscht und vermittelt.",
+            "Photographic composition, natural lighting, photo curation, and editorial presentation layout.": "Fotografische Komposition, natürliches Licht, Bildauswahl und redaktionelles Präsentationslayout.",
+            "A compelling visual photobook that effectively communicates emotion through carefully composed shots and clean editorial design.": "Ein ausdrucksstarkes Fotobuch, das Gefühle durch sorgfältig komponierte Aufnahmen und klares Editorial Design vermittelt.",
+            "Open Full PDF Document": "Vollständiges PDF öffnen",
+            "Memories (Photography)": "Erinnerungen (Fotografie)",
+            "Document and preserve nostalgic moments through a cohesive photography collection presented in a well-structured digital layout.": "Nostalgische Momente in einer zusammenhängenden Fotosammlung festhalten und in einem klar strukturierten digitalen Layout präsentieren.",
+            "Visual storytelling, framing techniques, subject focus, and page layout consistency.": "Visuelles Erzählen, Bildausschnitt, Motivfokus und einheitliches Seitenlayout.",
+            "A cohesive photographic narrative that preserves visual memories inside an elegant, minimalist presentation format.": "Eine zusammenhängende fotografische Erzählung, die visuelle Erinnerungen in einer eleganten, minimalistischen Präsentation bewahrt.",
+            "Refood Brand & Presentation": "Refood-Marke und Präsentation",
+            "Develop a comprehensive visual identity and a persuasive presentation deck for the Refood initiative to attract stakeholders and users.": "Entwicklung einer umfassenden visuellen Identität und einer überzeugenden Präsentation, um Interessierte und Nutzende für die Refood-Initiative zu gewinnen.",
+            "Adobe Illustrator, Adobe Photoshop, Figma, Microsoft PowerPoint.": "Adobe Illustrator, Adobe Photoshop, Figma, Microsoft PowerPoint.",
+            "Brand identity design, logo creation, presentation structure, moodboard, posters and cross-platform visual consistency.": "Markenidentität, Logo, Präsentationsaufbau, Moodboard, Poster und plattformübergreifende visuelle Einheitlichkeit.",
+            "A highly professional pitch deck and unified brand identity that effectively communicates the project’s green vision and technological solutions.": "Ein professionelles Pitch Deck und eine einheitliche Markenidentität, die die ökologische Vision und die technischen Lösungen des Projekts überzeugend vermitteln.",
+            "Skills & Languages": "Fähigkeiten & Sprachen",
+            "Technical Skills": "Technische Fähigkeiten",
+            "Interests & Soft Skills": "Interessen & persönliche Fähigkeiten",
+            "Game Development": "Spieleentwicklung",
+            "Web Development": "Webentwicklung",
+            "Animation & 3D Modeling": "Animation & 3D-Modellierung",
+            "Creative Problem Solving": "Kreatives Problemlösen",
+            "Teamwork & Attention to Detail": "Teamarbeit & Liebe zum Detail",
+            "Languages": "Sprachen",
+            "Arabic:": "Arabisch:",
+            "Native": "Muttersprache",
+            "English:": "Englisch:",
+            "Very Good (B2)": "Sehr gut (B2)",
+            "German:": "Deutsch:",
+            "Good (B1)": "Gut (B1)",
+            "🔽 English Certificate": "🔽 Englischzertifikat",
+            "🔽 German Certificate": "🔽 Deutschzertifikat",
+            "Let's work together to build something great 😊": "Lass uns gemeinsam etwas Großartiges schaffen 😊",
+            "Feel free to reach out for collaborations": "Melde dich gerne für eine Zusammenarbeit",
+            "\"Fun fact\"": "„Schon gewusst?“",
+            "I designed and developed this entire website myself ✨": "Ich habe diese Website selbst gestaltet und entwickelt ✨",
+            "📄 Download CV (PDF)": "📄 Lebenslauf herunterladen (PDF)",
+            "Connect with me:": "Kontakt:",
+            "Email Me": "E-Mail schreiben",
+            "Your browser does not support the video tag.": "Dein Browser unterstützt das Video-Tag nicht.",
+            "Website language": "Seitensprache",
+            "Triverse project images": "Triverse-Projektbilder",
+            "Open Full Screen": "Im Vollbild öffnen",
+            "Close image preview": "Bildvorschau schließen",
+            "Previous image": "Vorheriges Bild",
+            "Next image": "Nächstes Bild",
+            "Triverse image preview": "Triverse-Bildvorschau",
+            "My Personal Picture": "Mein persönliches Foto",
+            "Triverse characters": "Triverse-Charaktere",
+            "Triverse ice map": "Triverse-Eiskarte",
+            "Triverse lava map": "Triverse-Lavakarte",
+            "Triverse forest map": "Triverse-Waldkarte",
+            "Triverse user interface": "Triverse-Benutzeroberfläche",
+            "SSD Platform Preview": "SSD-Plattformvorschau",
+            "Refood App Preview": "Refood-App-Vorschau",
+            "3D Low Poly Dungeon": "3D-Low-Poly-Dungeon",
+            "Stars Magazine Design": "Stars-Magazindesign",
+            "Feeling Happiness Photography": "Glücksfotografie",
+            "Memories Photography": "Erinnerungsfotografie",
+            "Refood Branding and Pitch": "Refood-Markenauftritt und Pitch"
+        };
+
+        const originalTextNodes = new WeakMap();
+        const originalAttributes = new WeakMap();
+
+        function setWebsiteLanguage(language) {
+            const textWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+            let textNode;
+
+            while ((textNode = textWalker.nextNode())) {
+                if (!originalTextNodes.has(textNode)) originalTextNodes.set(textNode, textNode.nodeValue);
+                const original = originalTextNodes.get(textNode);
+                const trimmed = original.trim();
+                const translation = germanTranslations[trimmed];
+                if (language === 'de' && translation) {
+                    textNode.nodeValue = original.replace(trimmed, translation);
+                } else {
+                    textNode.nodeValue = original;
+                }
+            }
+
+            document.querySelectorAll('[alt], [title], [aria-label]').forEach(element => {
+                ['alt', 'title', 'aria-label'].forEach(attribute => {
+                    if (!element.hasAttribute(attribute)) return;
+                    let saved = originalAttributes.get(element);
+                    if (!saved) {
+                        saved = {};
+                        originalAttributes.set(element, saved);
+                    }
+                    if (!(attribute in saved)) saved[attribute] = element.getAttribute(attribute);
+                    const original = saved[attribute];
+                    element.setAttribute(attribute, language === 'de' ? germanTranslations[original] || original : original);
+                });
+            });
+
+            document.documentElement.lang = language;
+            document.title = language === 'de' ? 'Portfolio Game Design & Medieninformatik' : 'Game Design & Media Informatics Portfolio';
+            document.querySelectorAll('.language-option').forEach(button => {
+                const selected = button.dataset.language === language;
+                button.classList.toggle('active', selected);
+                button.setAttribute('aria-pressed', String(selected));
+            });
+
+            try {
+                localStorage.setItem('portfolio-language', language);
+            } catch (error) {
+                // Language switching still works when storage is unavailable.
+            }
+        }
+
+        try {
+            setWebsiteLanguage(localStorage.getItem('portfolio-language') === 'de' ? 'de' : 'en');
+        } catch (error) {
+            setWebsiteLanguage('en');
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
             // 1. كود فلترة المشاريع
             const filterBtns = document.querySelectorAll(".filter-btn");
@@ -763,6 +1018,59 @@
                 closeModal(modalId);
             }
         }
+
+        let triverseImageIndex = 0;
+        let triverseImageTrigger = null;
+
+        function showTriverseImage(index) {
+            const imageLinks = Array.from(document.querySelectorAll('.triverse-gallery a'));
+            if (imageLinks.length === 0) return;
+
+            triverseImageIndex = (index + imageLinks.length) % imageLinks.length;
+            const viewer = document.getElementById('triverse-image-viewer');
+            const viewerImage = viewer.querySelector('img');
+            const imageLink = imageLinks[triverseImageIndex];
+            const thumbnail = imageLink.querySelector('img');
+
+            viewerImage.src = imageLink.href;
+            viewerImage.alt = thumbnail.alt;
+        }
+
+        function openTriverseImage(event, imageLink) {
+            event.preventDefault();
+            const imageLinks = Array.from(document.querySelectorAll('.triverse-gallery a'));
+            triverseImageTrigger = imageLink;
+            showTriverseImage(imageLinks.indexOf(imageLink));
+
+            const viewer = document.getElementById('triverse-image-viewer');
+            viewer.classList.add('active');
+            viewer.setAttribute('aria-hidden', 'false');
+            viewer.querySelector('.triverse-image-close').focus();
+        }
+
+        function navigateTriverseImage(direction) {
+            showTriverseImage(triverseImageIndex + direction);
+        }
+
+        function closeTriverseImage() {
+            const viewer = document.getElementById('triverse-image-viewer');
+            viewer.classList.remove('active');
+            viewer.setAttribute('aria-hidden', 'true');
+            if (triverseImageTrigger) triverseImageTrigger.focus();
+        }
+
+        document.addEventListener('keydown', event => {
+            const viewer = document.getElementById('triverse-image-viewer');
+            if (!viewer.classList.contains('active')) return;
+
+            if (event.key === 'Escape') {
+                closeTriverseImage();
+            } else if (event.key === 'ArrowLeft') {
+                navigateTriverseImage(-1);
+            } else if (event.key === 'ArrowRight') {
+                navigateTriverseImage(1);
+            }
+        });
     </script>
 
 </body>
