@@ -996,14 +996,14 @@ footer .btn-download {
     top: 10px;
     right: 20px;
     font-size: 2rem;
-    color: white;
+    color: black;
     cursor: pointer;
     z-index: 10;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
     .close-btn:hover {
-        color: #1a1a1a;
+        color:#3b28cc;
     }
 
 .modal-header {
