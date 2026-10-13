@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Design & Media Informatics Portfolio</title>
+    <link rel="preload" as="image" href="Portfolio Picture2.webp" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body>
 
@@ -42,7 +45,7 @@
                 <p class="hero-subtitle">Merging technology with creative design</p>
             </div>
             <div class="hero-image-container">
-                <img src="Portfolio Picture2.png" alt="My Personal Picture" class="hero-image">
+                <img src="Portfolio Picture2.webp" alt="My Personal Picture" class="hero-image" width="700" height="990" fetchpriority="high" decoding="async">
             </div>
         </div>
     </header>
@@ -120,7 +123,7 @@
             </div>
 
             <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-triverse')">
-                <div class="card-image" style="background-image: url('Projects/triverse logo.png');"></div>
+                <div class="card-image"><img src="Projects/triverse logo-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Triverse - Graduation Project &quot;Team Development&quot;</h3>
                     <p>Click to watch Game &amp; details ▹</p>
@@ -128,7 +131,7 @@
             </div>
 
             <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-ar-aroma')">
-                <div class="card-image" style="background-image: url('Projects/AR image.png');"></div>
+                <div class="card-image"><img src="Projects/AR image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Aroma Diffuser AR Project</h3>
                     <p>Click to watch AR Project & details ▹</p>
@@ -136,7 +139,7 @@
             </div>
 
             <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-obstacle')">
-                <div class="card-image" style="background-image: url('Projects/Obstacle image.png');"></div>
+                <div class="card-image"><img src="Projects/Obstacle image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Obstacle Game</h3>
                     <p>Click to watch Game & details ▹</p>
@@ -144,7 +147,7 @@
             </div>
 
             <div class="project-card case-study" data-category="games-ar" onclick="openModal('modal-dungeon')">
-                <div class="card-image" style="background-image: url('Projects/dungeon image.png');"></div>
+                <div class="card-image"><img src="Projects/dungeon image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Dungeon Game</h3>
                     <p>Click to watch Game & details ▹</p>
@@ -152,7 +155,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="web-app" onclick="openModal('modal-flashcards')">
-                <div class="card-image" style="background-image: url('Projects/Flashcards image.png');"></div>
+                <div class="card-image"><img src="Projects/Flashcards image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Educational Flashcards Website</h3>
                     <p>Click to view Website & details ▹</p>
@@ -160,7 +163,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="web-app" onclick="openModal('modal-ssd')">
-                <div class="card-image" style="background-image: url('Projects/sdd image.png');"></div>
+                <div class="card-image"><img src="Projects/sdd image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>SSD Platform App</h3>
                     <p>Click to view App & details ▹</p>
@@ -168,7 +171,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="web-app" onclick="openModal('modal-little-explorer')">
-                <div class="card-image" style="background-image: url('Projects/Little Explorer App.png');"></div>
+                <div class="card-image"><img src="Projects/Little Explorer App-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Little Explorer App</h3>
                     <p>Click to watch App & details ▹</p>
@@ -176,7 +179,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="web-app" onclick="openModal('modal-refood')">
-                <div class="card-image" style="background-image: url('Projects/refood figma image.png');"></div>
+                <div class="card-image"><img src="Projects/refood figma image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Refood App</h3>
                     <p>Click to view App & details ▹</p>
@@ -184,7 +187,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-objects')">
-                <div class="card-image" style="background-image: url('Projects/3D objects.png');"></div>
+                <div class="card-image"><img src="Projects/3D objects-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>3D Objects Showcase</h3>
                     <p>Click to view 3D Model ▹</p>
@@ -192,7 +195,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-car')">
-                <div class="card-image" style="background-image: url('Projects/car in small village.png');"></div>
+                <div class="card-image"><img src="Projects/car in small village-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>3D Car in Small Village</h3>
                     <p>Click to view 3D Model ▹</p>
@@ -200,7 +203,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-dungeon')">
-                <div class="card-image" style="background-image: url('Projects/Low Poly Dungeon.png');"></div>
+                <div class="card-image"><img src="Projects/Low Poly Dungeon-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>3D Low-Poly Dungeon</h3>
                     <p>Click to view 3D Model ▹</p>
@@ -208,7 +211,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-seaport')">
-                <div class="card-image" style="background-image: url('Projects/Seaport_village.png');"></div>
+                <div class="card-image"><img src="Projects/Seaport_village-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>3D Seaport Village</h3>
                     <p>Click to view 3D Model ▹</p>
@@ -216,7 +219,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-3d-market')">
-                <div class="card-image" style="background-image: url('Projects/Low-Poly Market Square.png');"></div>
+                <div class="card-image"><img src="Projects/Low-Poly Market Square-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>3D Low-Poly Market Square</h3>
                     <p>Click to view 3D Model ▹</p>
@@ -224,7 +227,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-refood-video')">
-                <div class="card-image" style="background-image: url('Projects/refood animation image.png');"></div>
+                <div class="card-image"><img src="Projects/refood animation image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Refood App Promo Video</h3>
                     <p>Click to watch Video ▹</p>
@@ -232,7 +235,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="3d-animation" onclick="openModal('modal-arabic-proverb')">
-                <div class="card-image" style="background-image: url('Projects/animation image.png');"></div>
+                <div class="card-image"><img src="Projects/animation image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Arabic Proverb Animation</h3>
                     <p>Click to watch Animation ▹</p>
@@ -240,7 +243,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="graphic-design" onclick="openModal('modal-stars')">
-                <div class="card-image" style="background-image: url('Projects/stars zine image.png');"></div>
+                <div class="card-image"><img src="Projects/stars zine image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Stars Magazine</h3>
                     <p>Click to view magazine design ▹</p>
@@ -248,7 +251,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="graphic-design" onclick="openModal('modal-happiness')">
-                <div class="card-image" style="background-image: url('Projects/happy image.png');"></div>
+                <div class="card-image"><img src="Projects/happy image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Feeling: Happiness</h3>
                     <p>Click to view photography project ▹</p>
@@ -256,7 +259,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="graphic-design" onclick="openModal('modal-memories')">
-                <div class="card-image" style="background-image: url('Projects/memories image.png');"></div>
+                <div class="card-image"><img src="Projects/memories image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Memories</h3>
                     <p>Click to view photography project ▹</p>
@@ -264,7 +267,7 @@
             </div>
 
             <div class="project-card case-study hide-project" data-category="graphic-design" onclick="openModal('modal-refood-design')">
-                <div class="card-image" style="background-image: url('Projects/refood pres image.png');"></div>
+                <div class="card-image"><img src="Projects/refood pres image-thumb.webp" alt="" loading="lazy" decoding="async"></div>
                 <div class="case-study-content">
                     <h3>Refood Brand & Presentation</h3>
                     <p>Click to view design deck ▹</p>
@@ -279,16 +282,16 @@
                 <div class="modal-body">
                     <h2>Triverse - Graduation Project &quot;Team Development&quot;</h2>
 
-                    <video controls class="project-video">
+                    <video controls preload="none" poster="Projects/triverse logo-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586321/Triverse_Project_Web.mp4" type="video/mp4">
                     </video>
 
                     <div class="triverse-gallery" aria-label="Triverse project images">
-                        <a href="Projects/characters triverse.jpeg" onclick="openTriverseImage(event, this)"><img src="Projects/characters triverse.jpeg" alt="Triverse characters"></a>
-                        <a href="Projects/ice map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/ice map triverse.png" alt="Triverse ice map"></a>
-                        <a href="Projects/lava map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/lava map triverse.png" alt="Triverse lava map"></a>
-                        <a href="Projects/forest map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/forest map triverse.png" alt="Triverse forest map"></a>
-                        <a href="Projects/HUI triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/HUI triverse.png" alt="Triverse user interface"></a>
+                        <a href="Projects/characters triverse.jpeg" onclick="openTriverseImage(event, this)"><img src="Projects/characters triverse.jpeg" alt="Triverse characters" loading="lazy" decoding="async"></a>
+                        <a href="Projects/ice map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/ice map triverse.png" alt="Triverse ice map" loading="lazy" decoding="async"></a>
+                        <a href="Projects/lava map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/lava map triverse.png" alt="Triverse lava map" loading="lazy" decoding="async"></a>
+                        <a href="Projects/forest map triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/forest map triverse.png" alt="Triverse forest map" loading="lazy" decoding="async"></a>
+                        <a href="Projects/HUI triverse.png" onclick="openTriverseImage(event, this)"><img src="Projects/HUI triverse.png" alt="Triverse user interface" loading="lazy" decoding="async"></a>
                     </div>
 
                     <p><strong>Goal:</strong> Create an educational 3D adventure game that combines environmental awareness with interactive gameplay, encouraging players aged 12+ to explore different worlds and learn about protecting the environment.</p>
@@ -312,7 +315,7 @@
                 <div class="modal-body">
                     <h2>Aroma Diffuser AR Project</h2>
                     
-                        <video controls class="project-video">
+                        <video controls preload="none" poster="Projects/AR image-thumb.webp" class="project-video">
                             <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586040/Aroma_Diffuser_AR_Project.mp4" type="video/mp4">
                         </video>
                       
@@ -330,7 +333,7 @@
                 <div class="modal-body">
                     <h2>Obstacle Game</h2>
 
-                    <video controls class="project-video">
+                    <video controls preload="none" poster="Projects/Obstacle image-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791585065/Obstacle_Game_Web.mp4" type="video/mp4">
                     </video>
 
@@ -348,7 +351,7 @@
                 <div class="modal-body">
                     <h2>Dungeon Game</h2>
 
-                    <video controls class="project-video">
+                    <video controls preload="none" poster="Projects/dungeon image-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791585686/Dungeon_Game_Web.mp4" type="video/mp4">
                     </video>
 
@@ -366,7 +369,7 @@
                 <div class="modal-body">
                     <h2>Educational Flashcards Website</h2>
 
-                         <video controls class="project-video">
+                         <video controls preload="none" poster="Projects/Flashcards image-thumb.webp" class="project-video">
                              <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791583051/Flashcards_Website.mp4" type="video/mp4">
                          </video>
 
@@ -385,10 +388,10 @@
                 <div class="modal-body">
                     <h2>SSD Platform App</h2>
 
-                    <iframe src="Projects/SSD Platform.html" class="project-preview-frame" title="SSD Platform Preview"></iframe>
+                    <iframe data-src="Projects/SSD Platform.html" class="project-preview-frame" title="SSD Platform Preview"></iframe>
 
                     <h3>SDD Platform Video</h3>
-                    <video controls class="project-video">
+                    <video controls preload="none" poster="Projects/sdd image-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586393/SSD_Platform_App_Video.mp4" type="video/mp4">
                     </video>
 
@@ -407,7 +410,7 @@
                 <div class="modal-body">
                     <h2>Little Explorer App</h2>
 
-                    <video controls class="project-video">
+                    <video controls preload="none" poster="Projects/Little Explorer App-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586469/Littel_Explorer.mp4" type="video/mp4">
                     </video>
 
@@ -426,7 +429,7 @@
                     <h2>Refood App</h2>
 
                     <div style="background-color: #1a1a1a; padding: 20px; border-radius: 12px; display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-                        <img src="Projects/Refood app.png" alt="Refood App Preview" style="max-height: 280px; width: auto; max-width: 100%; border-radius: 6px; object-fit: contain;">
+                        <img src="Projects/Refood app.png" alt="Refood App Preview" loading="lazy" decoding="async" style="max-height: 280px; width: auto; max-width: 100%; border-radius: 6px; object-fit: contain;">
                     </div>
 
                         <p><strong>Goal:</strong> Conceptualize a sustainable mobile application "REFOOD" aimed at combating food waste by connecting users with recycling machines and organic compost markets.</p>
@@ -443,7 +446,7 @@
                 <span class="close-btn" onclick="closeModal('modal-3d-objects')">&times;</span>
                 <div class="modal-body">
                     <h2>3D Objects Showcase</h2>
-                    <img src="Projects/3D Objects.png" class="project-modal-img" alt="3D Objects Showcase">
+                    <img src="Projects/3D Objects.png" class="project-modal-img" alt="3D Objects Showcase" loading="lazy" decoding="async">
                     <p><strong>Goal:</strong> Model and texture a diverse asset library of production-ready 3D objects with precise geometry and stylized shading.</p>
                     <p><strong>Tools:</strong> Blender.</p>
                     <p><strong>Key Focus:</strong> Modeling diverse shapes (Hard-surface & Organic), stylized PBR material creation, and aesthetic scene composition.</p>
@@ -457,7 +460,7 @@
                 <span class="close-btn" onclick="closeModal('modal-3d-car')">&times;</span>
                 <div class="modal-body">
                     <h2>3D Car in Small Village</h2>
-                    <img src="Projects/car in small village.png" class="project-modal-img" alt="3D Car in Small Village">
+                    <img src="Projects/car in small village.png" class="project-modal-img" alt="3D Car in Small Village" loading="lazy" decoding="async">
                     <p><strong>Goal:</strong> Design and build a charming low-poly 3D diorama featuring a detailed vehicle inside a stylized village environment.</p>
                     <p><strong>Tools:</strong> Blender.</p>
                     <p><strong>Key Focus:</strong> Environment layout, residential architecture design, vehicle props, Character modeling, ambient lighting (street lighting effects) and narrative world-building.</p>
@@ -471,7 +474,7 @@
                 <span class="close-btn" onclick="closeModal('modal-3d-dungeon')">&times;</span>
                 <div class="modal-body">
                     <h2>3D Low Poly Dungeon</h2>
-                    <img src="Projects/Low Poly Dungeon.png" class="project-modal-img" alt="3D Low Poly Dungeon">
+                    <img src="Projects/Low Poly Dungeon.png" class="project-modal-img" alt="3D Low Poly Dungeon" loading="lazy" decoding="async">
                     <p><strong>Goal:</strong> Craft a modular low-poly fantasy dungeon crawler environment specifically tailored for game level design configurations.</p>
                     <p><strong>Tools:</strong> Blender.</p>
                     <p><strong>Key Focus:</strong> Modular room architecture (modular kit-bashing), interior prop placement, low-poly aesthetics, palette coordination and high-contrast atmospheric lighting for an immersive mood.</p>
@@ -485,7 +488,7 @@
                 <span class="close-btn" onclick="closeModal('modal-3d-seaport')">&times;</span>
                 <div class="modal-body">
                     <h2>3D Seaport Village</h2>
-                    <img src="Projects/Seaport_village.png" class="project-modal-img" alt="3D Seaport Village">
+                    <img src="Projects/Seaport_village.png" class="project-modal-img" alt="3D Seaport Village" loading="lazy" decoding="async">
                     <p><strong>Goal:</strong> Construct a night-time maritime environment centered around a lighthouse island, focusing on the interaction between water and land assets.</p>
                     <p><strong>Tools:</strong> Blender.</p>
                     <p><strong>Key Focus:</strong> Complex scene composition, architectural asset scaling, and object density control, stylized water shaders with reflections, lighthouse architecture, rocky terrain modeling, and dynamic moonlit lighting.</p>
@@ -499,7 +502,7 @@
                 <span class="close-btn" onclick="closeModal('modal-3d-market')">&times;</span>
                 <div class="modal-body">
                     <h2>3D Low-Poly Market Square</h2>
-                    <img src="Projects/Low-Poly Market Square.png" class="project-modal-img" alt="3D Low-Poly Market Square">
+                    <img src="Projects/Low-Poly Market Square.png" class="project-modal-img" alt="3D Low-Poly Market Square" loading="lazy" decoding="async">
                     <p><strong>Goal:</strong> Design a lively 3D marketplace town square showcasing unique architectural props and vibrant marketplace asset density.</p>
                     <p><strong>Tools:</strong> Blender.</p>
                     <p><strong>Key Focus:</strong> Architectural variation, market stall prop design (carts, barrels, fountain), warm ambient color grading.</p>
@@ -514,7 +517,7 @@
                 <div class="modal-body">
                     <h2>Refood App Promo Video</h2>
 
-                        <video controls class="project-video">
+                        <video controls preload="none" poster="Projects/refood animation image-thumb.webp" class="project-video">
                             <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586570/refood_project.mp4" type="video/mp4">
                         </video>
 
@@ -532,7 +535,7 @@
                 <div class="modal-body">
                     <h2>Arabic Proverb Animation</h2>
 
-                            <video controls class="project-video">
+                            <video controls preload="none" poster="Projects/animation image-thumb.webp" class="project-video">
                                 <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586664/Animation.mp4" type="video/mp4">
                             </video>
 
@@ -549,7 +552,7 @@
                 <span class="close-btn" onclick="closeModal('modal-stars')">&times;</span>
                 <div class="modal-body">
                     <h2>Stars Magazine</h2>
-                    <iframe src="Projects/stars_magazine.pdf" class="project-preview-frame" title="Stars Magazine Design"></iframe>
+                    <iframe data-src="Projects/stars_magazine.pdf" class="project-preview-frame" title="Stars Magazine Design"></iframe>
                     <p><strong>Goal:</strong> Design a captivating editorial magazine layout that balances typography, imagery, and whitespace to create an engaging reading experience.</p>
                     <p><strong>Tools:</strong> Adobe InDesign.</p>
                     <p><strong>Key Focus:</strong> Editorial layout, typographic hierarchy, grid systems, and print-ready digital publishing.</p>
@@ -564,7 +567,7 @@
                 <span class="close-btn" onclick="closeModal('modal-happiness')">&times;</span>
                 <div class="modal-body">
                     <h2>Feeling: Happiness (Photography)</h2>
-                    <iframe src="Projects/happiness_photography.pdf" class="project-preview-frame" title="Feeling Happiness Photography"></iframe>
+                    <iframe data-src="Projects/happiness_photography.pdf" class="project-preview-frame" title="Feeling Happiness Photography"></iframe>
                     <p><strong>Goal:</strong> Capture, curate, and present a photography series that visually explores and translates the abstract human emotion of happiness.</p>
                     <p><strong>Tools:</strong> Digital Camera, Adobe InDesign.</p>
                     <p><strong>Key Focus:</strong> Photographic composition, natural lighting, photo curation, and editorial presentation layout.</p>
@@ -579,7 +582,7 @@
                 <span class="close-btn" onclick="closeModal('modal-memories')">&times;</span>
                 <div class="modal-body">
                     <h2>Memories (Photography)</h2>
-                    <iframe src="Projects/memories_photography.pdf" class="project-preview-frame" title="Memories Photography"></iframe>
+                    <iframe data-src="Projects/memories_photography.pdf" class="project-preview-frame" title="Memories Photography"></iframe>
                     <p><strong>Goal:</strong> Document and preserve nostalgic moments through a cohesive photography collection presented in a well-structured digital layout.</p>
                     <p><strong>Tools:</strong> Digital Camera, Adobe InDesign.</p>
                     <p><strong>Key Focus:</strong> Visual storytelling, framing techniques, subject focus, and page layout consistency.</p>
@@ -594,7 +597,7 @@
                 <span class="close-btn" onclick="closeModal('modal-refood-design')">&times;</span>
                 <div class="modal-body">
                     <h2>Refood Brand & Presentation</h2>
-                    <iframe src="Projects/refood project.pdf" class="project-preview-frame" title="Refood Branding and Pitch"></iframe>
+                    <iframe data-src="Projects/refood project.pdf" class="project-preview-frame" title="Refood Branding and Pitch"></iframe>
                     <p><strong>Goal:</strong> Develop a comprehensive visual identity and a persuasive presentation deck for the Refood initiative to attract stakeholders and users.</p>
                     <p><strong>Tools:</strong> Adobe Illustrator, Adobe Photoshop, Figma, Microsoft PowerPoint.</p>
                     <p><strong>Key Focus:</strong> Brand identity design, logo creation, presentation structure, moodboard, posters and cross-platform visual consistency.</p>
@@ -927,6 +930,35 @@
             const filterBtns = document.querySelectorAll(".filter-btn");
             const projects = document.querySelectorAll(".project-card");
 
+            document.querySelectorAll(".project-video").forEach(video => {
+                const player = document.createElement("div");
+                player.className = "video-player";
+                video.parentNode.insertBefore(player, video);
+                player.appendChild(video);
+
+                const toggle = document.createElement("button");
+                toggle.type = "button";
+                toggle.className = "video-click-toggle";
+                toggle.setAttribute("aria-label", "Play video");
+                player.appendChild(toggle);
+
+                const updateLabel = () => {
+                    const title = video.closest(".modal-body")?.querySelector("h2")?.textContent.trim();
+                    toggle.setAttribute("aria-label", `${video.paused ? "Play" : "Pause"} ${title || "project video"}`);
+                };
+
+                toggle.addEventListener("click", () => {
+                    if (video.paused) {
+                        video.play().catch(error => console.error("Unable to play project video:", error));
+                    } else {
+                        video.pause();
+                    }
+                });
+                video.addEventListener("play", updateLabel);
+                video.addEventListener("pause", updateLabel);
+                updateLabel();
+            });
+
             function filterProjects(filterValue) {
                 projects.forEach(project => {
                     if (project.getAttribute("data-category") === filterValue) {
@@ -981,7 +1013,11 @@
 
         // 2. دوال فتح وإغلاق النوافذ المنبثقة (Popups)
         function openModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
+            const modal = document.getElementById(modalId);
+            const iframe = modal.querySelector('iframe');
+            if (iframe && !iframe.hasAttribute('src')) iframe.src = iframe.dataset.src;
+
+            modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
@@ -994,12 +1030,11 @@
             if (video) {
                 video.pause();
                 video.currentTime = 0;
+                video.load();
             }
 
             const iframe = modal.querySelector('iframe');
-            if (iframe) {
-                iframe.src = iframe.src;
-            }
+            if (iframe && iframe.hasAttribute('src')) iframe.removeAttribute('src');
         }
 
         function closeOutside(event, modalId) {
