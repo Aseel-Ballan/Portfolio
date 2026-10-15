@@ -243,6 +243,10 @@ footer .btn-download {
     font-size: 0.76rem;
 }
 
+footer .btn-download + .btn-download {
+    margin-left: 8px;
+}
+
     /* تأثير التمرير للروابط */
     .footer-links a:hover {
         color: #F4BBFF; /* لون ليلكي مضيء عند التأشير */
@@ -260,7 +264,7 @@ footer .btn-download {
     border-radius: 30px; /* زوايا دائرية ناعمة (يمكنك تغييرها لـ 8px إذا كنت تفضلين الزوايا الحادة) */
     font-weight: bold;
     font-size: 0.95rem;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
     /* تأثير عند تمرير الماوس (Hover) */
@@ -684,22 +688,22 @@ footer .btn-download {
     top: 50%;
     display: flex;
     transform: translateY(-50%);
-    padding: 3px;
-    border: 1px solid rgba(26, 26, 26, 0.16);
-    border-radius: 6px;
+    padding: 1.5px;
+    border: 1.3px solid rgba(26, 26, 26, 0.16);
+    border-radius: 4px;
     background: rgba(255, 255, 255, 0.75);
 }
 
 .language-option {
-    min-width: 38px;
+    min-width: 35px;
     border: 0;
     border-radius: 4px;
-    padding: 5px 8px;
+    padding: 4px 8px;
     background: transparent;
     color: #1a1a1a;
     font: inherit;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 650;
     cursor: pointer;
 }
 
@@ -712,7 +716,7 @@ footer .btn-download {
         list-style: none;
         display: flex;
         justify-content: center;
-        gap: 50px; /* Space between links */
+        gap: 40px; /* Space between links */
         margin: 0;
         padding: 0;
     }
@@ -720,8 +724,8 @@ footer .btn-download {
     .navbar a {
         text-decoration: none;
         color: #1a1a1a;
-        font-weight: 600;
-        font-size: 1.1rem;
+        font-weight: 590;
+        font-size: 0.8rem;
         transition: color 0.3s ease;
     }
 
@@ -738,7 +742,7 @@ footer .btn-download {
     }
 
     .navbar a {
-        font-size: 0.95rem; /* Shrinks the text slightly on mobile */
+        font-size: 0.9rem; /* Shrinks the text slightly on mobile */
     }
 
     .language-switch {
@@ -839,7 +843,7 @@ footer .btn-download {
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
     /* تأثير التمرير (Hover) */
@@ -885,9 +889,9 @@ footer .btn-download {
     background-color: #E6E6FA; /* لون بنفسجي فاتح للأزرار غير النشطة */
     color: #1a1a1a;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
     .filter-btn:hover {
