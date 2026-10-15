@@ -3,49 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Game Design & Media Informatics Portfolio</title>
     <link rel="preload" as="image" href="Portfolio Picture2.webp" fetchpriority="high">
-    <style>
-        html{scroll-behavior:smooth;scroll-padding-top:80px}
-        *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-        body{background-color:#f9f9f9;color:#1a1a1a;line-height:1.6}
-        .hero{background:linear-gradient(135deg,#3b28cc,#8b40ff);color:#fff;text-align:left;padding:30px 20px;margin-bottom:70px;position:relative;overflow:hidden}
-        .hero-content{width:100%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:70px;position:relative;z-index:2}
-        .hero-copy{flex:0 1 auto}
-        .hero-image-container{flex:0 0 250px;display:flex;justify-content:flex-end;align-items:center;position:relative;z-index:2}
-        .hero h1{font-size:2.5rem;margin-bottom:30px;font-weight:700;position:relative;z-index:2}
-        .hero-image{width:250px!important;height:auto;margin-top:0}
-        .hero-subtitle{font-size:1.2rem;position:relative;z-index:2;margin-top:-20px;margin-bottom:30px;opacity:.9}
-        .stars-container{position:absolute;inset:0;z-index:1;pointer-events:none}
-        .star{width:3px;height:3px;background:#fff;border-radius:50%;position:absolute;opacity:0;box-shadow:0 0 5px rgba(255,255,255,.8);animation:twinkle 3s ease-in-out infinite}
-        @keyframes twinkle{0%{opacity:0;transform:scale(1)}50%{opacity:.8;transform:scale(1.5)}100%{opacity:0;transform:scale(1)}}
-        .navbar{background-color:rgba(255,255,255,.9);backdrop-filter:blur(10px);position:sticky;top:0;width:100%;z-index:1000;box-shadow:0 2px 15px rgba(0,0,0,.05);padding:5px 0}
-        .navbar ul{list-style:none;display:flex;justify-content:center;gap:40px;margin:0;padding:0}
-        .navbar a{text-decoration:none;color:#1a1a1a;font-weight:590;font-size:.8rem;transition:color .3s ease}
-        .navbar a:hover{color:#8b40ff}
-        .language-switch{position:absolute;right:24px;top:50%;display:flex;transform:translateY(-50%);padding:1.5px;border:1.3px solid rgba(26,26,26,.16);border-radius:4px;background:rgba(255,255,255,.75)}
-        .language-option{min-width:35px;border:0;border-radius:4px;padding:4px 8px;background:0 0;color:#1a1a1a;font:inherit;font-size:.85rem;font-weight:650;cursor:pointer}
-        .language-option.active{background:#1a1a1a;color:#fff}
-        @media(max-width:768px){
-            .hero-content{flex-direction:column;gap:20px;text-align:center}
-            .hero-copy{flex:none}
-            .hero h1{text-align:center}
-            .hero-image-container{flex-basis:auto;justify-content:center}
-            .hero-image{max-width:400px;width:100%;height:auto;display:block}
-            .navbar ul{gap:15px;padding-right:92px}
-            .navbar a{font-size:.9rem}
-            .language-switch{right:8px}
-        }
-        @media(max-width:480px){
-            .navbar ul{flex-wrap:wrap;gap:8px 12px;padding:6px 10px;margin-right:92px}
-            .navbar a{font-size:.8rem}
-        }
-    </style>
-    <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
