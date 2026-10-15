@@ -282,7 +282,7 @@
                 <div class="modal-body">
                     <h2>Triverse - Graduation Project &quot;Team Development&quot;</h2>
 
-                    <video controls preload="none" poster="Projects/triverse logo-thumb.webp" class="project-video">
+                    <video controls preload="none" data-poster="Projects/triverse logo-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586321/Triverse_Project_Web.mp4" type="video/mp4">
                     </video>
 
@@ -315,7 +315,7 @@
                 <div class="modal-body">
                     <h2>Aroma Diffuser AR Project</h2>
                     
-                        <video controls preload="none" poster="Projects/AR image-thumb.webp" class="project-video">
+                        <video controls preload="none" data-poster="Projects/AR image-thumb.webp" class="project-video">
                             <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586040/Aroma_Diffuser_AR_Project.mp4" type="video/mp4">
                         </video>
                       
@@ -333,7 +333,7 @@
                 <div class="modal-body">
                     <h2>Obstacle Game</h2>
 
-                    <video controls preload="none" poster="Projects/Obstacle image-thumb.webp" class="project-video">
+                    <video controls preload="none" data-poster="Projects/Obstacle image-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791585065/Obstacle_Game_Web.mp4" type="video/mp4">
                     </video>
 
@@ -351,7 +351,7 @@
                 <div class="modal-body">
                     <h2>Dungeon Game</h2>
 
-                    <video controls preload="none" poster="Projects/dungeon image-thumb.webp" class="project-video">
+                    <video controls preload="none" data-poster="Projects/dungeon image-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791585686/Dungeon_Game_Web.mp4" type="video/mp4">
                     </video>
 
@@ -369,7 +369,7 @@
                 <div class="modal-body">
                     <h2>Educational Flashcards Website</h2>
 
-                         <video controls preload="none" poster="Projects/Flashcards image-thumb.webp" class="project-video">
+                         <video controls preload="none" data-poster="Projects/Flashcards image-thumb.webp" class="project-video">
                              <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791583051/Flashcards_Website.mp4" type="video/mp4">
                          </video>
 
@@ -391,7 +391,7 @@
                     <iframe data-src="Projects/SSD Platform.html" class="project-preview-frame" title="SSD Platform Preview"></iframe>
 
                     <h3>SDD Platform Video</h3>
-                    <video controls preload="none" poster="Projects/sdd image-thumb.webp" class="project-video">
+                    <video controls preload="none" data-poster="Projects/sdd image-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586393/SSD_Platform_App_Video.mp4" type="video/mp4">
                     </video>
 
@@ -410,7 +410,7 @@
                 <div class="modal-body">
                     <h2>Little Explorer App</h2>
 
-                    <video controls preload="none" poster="Projects/Little Explorer App-thumb.webp" class="project-video">
+                    <video controls preload="none" data-poster="Projects/Little Explorer App-thumb.webp" class="project-video">
                         <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586469/Littel_Explorer.mp4" type="video/mp4">
                     </video>
 
@@ -517,7 +517,7 @@
                 <div class="modal-body">
                     <h2>Refood App Promo Video</h2>
 
-                        <video controls preload="none" poster="Projects/refood animation image-thumb.webp" class="project-video">
+                        <video controls preload="none" data-poster="Projects/refood animation image-thumb.webp" class="project-video">
                             <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586570/refood_project.mp4" type="video/mp4">
                         </video>
 
@@ -535,7 +535,7 @@
                 <div class="modal-body">
                     <h2>Arabic Proverb Animation</h2>
 
-                            <video controls preload="none" poster="Projects/animation image-thumb.webp" class="project-video">
+                            <video controls preload="none" data-poster="Projects/animation image-thumb.webp" class="project-video">
                                 <source src="https://res.cloudinary.com/byztgbnb/video/upload/v1791586664/Animation.mp4" type="video/mp4">
                             </video>
 
@@ -1017,6 +1017,7 @@
         // 2. دوال فتح وإغلاق النوافذ المنبثقة (Popups)
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
+            modal.querySelectorAll('video[data-poster]').forEach(video => video.poster = video.dataset.poster);
             const iframe = modal.querySelector('iframe');
             if (iframe && !iframe.hasAttribute('src')) iframe.src = iframe.dataset.src;
 
